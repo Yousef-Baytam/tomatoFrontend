@@ -19,6 +19,7 @@ nav {
     padding: 4vh 8vw;
     justify-content: space-between;
     box-sizing: border-box;
+    font-size: 150%;
 }
 
 nav div {
@@ -36,7 +37,19 @@ nav div {
     display: none !important;
 }
 
+a {
+    text-decoration: none;
+    color: var(--secondary-color);
+    transition: all 100ms ease;
+}
 
+a:hover::after {
+    content: ' »';
+}
+
+a:hover {
+    transform: translateX(-5%);
+}
 
 .form-bg {
     display: flex;
