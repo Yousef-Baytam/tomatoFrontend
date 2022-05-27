@@ -1,0 +1,33 @@
+:root {
+    --main-color: #353941;
+    --primary-color: #26282B;
+    --secondary-color: #F0F0F0;
+    --tertiary-color: #90B8F8;
+    --text-color: #000000;
+    --diabled-color: #2c3036;
+}
+
+* {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw 5vw;
+    background-color: #90B8F8;
+}
+
+nav div {
+    display: flex;
+    width: 15em;
+}
+
+.logIn {
+    justify-content: end;
+    width: fit-content;
+}
+
+.d-none {
+    display: none;
+}
