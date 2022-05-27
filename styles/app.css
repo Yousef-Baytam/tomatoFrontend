@@ -33,6 +33,7 @@ nav div {
     display: none !important;
 }
 
+
 .form-bg {
     display: flex;
     justify-content: center;
@@ -62,9 +63,37 @@ nav div {
     height: fit-content;
     border-radius: 10px;
     transition: all 100ms linear;
-    transform: translateX(50%);
 }
 
 .translate {
-    transform: translateX(50vw);
+    transform: translateX(500%);
+    display: none;
+}
+
+.fade {
+    animation: fade 200ms linear forwards;
+}
+
+.slide {
+    animation: slide 200ms ease-in-out reverse;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
