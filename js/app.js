@@ -1,2 +1,6 @@
 const logIn = document.querySelector('.log-in .log-in')
-logIn.addEventListener('click')
+const formBg = document.querySelector('.form-bg')
+
+logIn.addEventListener('click', (e) => {
+    formBg.classList.toggle('hidden')
+})
