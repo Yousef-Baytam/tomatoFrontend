@@ -15,9 +15,10 @@ nav {
     display: flex;
     position: fixed;
     width: 100%;
-    padding: 2em 0em;
-    justify-content: space-around;
+    padding: 4vh 8vw;
+    justify-content: space-between;
     background-color: #90B8F8;
+    box-sizing: border-box;
 }
 
 nav div {
