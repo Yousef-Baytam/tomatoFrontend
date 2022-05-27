@@ -1,4 +1,4 @@
-const logIn = [document.querySelector('.log-in .log-in'), document.querySelector('.fa-xmark')]
+const logIn = [document.querySelector('.log-in .log-in'), document.querySelectorAll('.fa-xmark')[0], document.querySelectorAll('.fa-xmark')[1]]
 const formBg = document.querySelector('.form-bg')
 
 for (let items of logIn)

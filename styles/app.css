@@ -62,4 +62,9 @@ nav div {
     height: fit-content;
     border-radius: 10px;
     transition: all 100ms linear;
+    transform: translateX(50%);
+}
+
+.translate {
+    transform: translateX(50vw);
 }
