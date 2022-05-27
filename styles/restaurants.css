@@ -14,11 +14,31 @@
 
 .header div:nth-of-type(2) {
     text-align: end;
+    display: flex;
+    justify-content: space-between;
+}
 
+.container {
+    display: flex;
+    width: 50%;
+    min-width: fit-content;
+}
+
+.filters,
+.Sort {
+    margin-right: 2em;
+    background-color: maroon;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+.search {
+    flex-grow: 1;
+    margin-left: 2em;
 }
 
 input[name='search'] {
-    width: 50%;
+    width: 100%;
     background-image: url('../assets/magnifying-glass-solid\ \(1\).svg');
     background-repeat: no-repeat;
     background-size: 2em;
