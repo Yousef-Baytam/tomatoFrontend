@@ -60,7 +60,7 @@ input[name='search'] {
 }
 
 .categories {
-    width: 55%;
+    width: 55vw;
     justify-content: center;
     display: flex;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -75,7 +75,7 @@ input[name='search'] {
 }
 
 [cat]:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
 }
 
 [cat]:not([cat]:nth-of-type(3)) {
