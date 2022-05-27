@@ -9,8 +9,7 @@ for (let items of logIn)
     })
 
 steps[0].addEventListener('click', () => {
-    console.log('khgara')
-    formsContainers[0].classList.add('fade')
+    formsContainers[0].classList.add('fade-out')
     if (formsContainers[0].classList.contains('slide'))
         formsContainers[0].classList.remove('slide')
     formsContainers[0].addEventListener('animationend', () => {
@@ -21,11 +20,10 @@ steps[0].addEventListener('click', () => {
     }, { once: true })
 })
 steps[1].addEventListener('click', () => {
-    formsContainers[0].classList.remove('fade')
+    formsContainers[0].classList.remove('fade-out')
     formsContainers[1].classList.remove('slide')
-    formsContainers[1].classList.add('fade')
+    formsContainers[1].classList.add('fade-out')
     formsContainers[1].addEventListener('animationend', () => {
-        console.log(';2gre bhayete')
         formsContainers[1].classList.add('translate')
         formsContainers[0].classList.remove('translate')
         formsContainers[0].classList.add('slide')
