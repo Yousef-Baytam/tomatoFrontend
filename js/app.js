@@ -1,2 +1,2 @@
-const logIn = document.querySelector('.logIn .logIn')
+const logIn = document.querySelector('.log-in .log-in')
 logIn.addEventListener('click')
