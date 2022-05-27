@@ -13,8 +13,10 @@
 
 nav {
     display: flex;
-    justify-content: space-between;
-    padding: 2vw 5vw;
+    position: fixed;
+    width: 100%;
+    padding: 2em 0em;
+    justify-content: space-around;
     background-color: #90B8F8;
 }
 
@@ -57,7 +59,7 @@ nav div {
 
 .form {
     width: 350px;
-    height: 40vh;
+    height: 350px;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -82,6 +84,7 @@ nav div {
     width: 50%;
     height: 5vh;
     cursor: pointer;
+    margin-bottom: 0.8em;
 }
 
 i {
@@ -92,16 +95,15 @@ i {
 }
 
 input {
-    width: 95%;
+    width: 83%;
     height: 5vh;
     border-radius: 5px;
-    padding: 0.5em;
+    padding: 0.5em 2em;
 }
 
-input[submit] {
-    color: white;
-    background-color: #90B8F8;
-
+input[type='submit'] {
+    width: 100%;
+    margin-top: 4em;
 }
 
 .translate {
