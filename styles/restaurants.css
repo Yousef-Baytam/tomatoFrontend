@@ -26,6 +26,7 @@
 
 .filters,
 .Sort {
+    font-size: 0.7em;
     margin-right: 2em;
     background-color: maroon;
     border-radius: 5px;
@@ -34,7 +35,6 @@
 
 .search {
     flex-grow: 1;
-    margin-left: 2em;
 }
 
 input[name='search'] {
