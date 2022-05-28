@@ -195,4 +195,13 @@ input[name='search'] {
 textarea {
     border-radius: 10px;
     padding: 1em;
+    outline: none;
+    border: none;
+}
+
+label[for='rating'] {
+    color: white;
+    align-self: flex-start;
+    margin: 2em 0 0 0.5em;
+    font-size: 150%;
 }

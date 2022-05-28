@@ -5,6 +5,8 @@ const steps = document.querySelectorAll('[step]')
 const submit = document.querySelectorAll('input[type="submit"]')
 nav = document.querySelector('nav')
 const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xmark')[2]]
+const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
+const reviewForm = document.querySelector('#review')
 
 for (let items of logIn)
     items.addEventListener('click', () => {
@@ -39,6 +41,13 @@ if (edit[0] != null)
             formBg[1].classList.toggle('hidden')
         })
 
+if (review[0] != null)
+    for (let rev of review)
+        rev.addEventListener('click', () => {
+            reviewForm.classList.toggle('hidden')
+        })
+
+
 document.addEventListener('scroll', () => {
 
     let scrollTop = window.pageYOffset
@@ -47,7 +56,6 @@ document.addEventListener('scroll', () => {
     if (scrollTop < 250)
         if (nav.classList.contains('scrolled'))
             nav.classList.remove('scrolled')
-    console.log(scrollTop)
 })
 
 
