@@ -2,9 +2,9 @@
     color: var(--secondary-color);
     padding: 15vh 8vw 0em 8vw;
     font-size: 150%;
-    background: linear-gradient(-45deg, rgba(128, 0, 0, 0.6), maroon);
+    background: linear-gradient(-45deg, rgba(128, 0, 0, 0.6), maroon, rgba(128, 0, 0, 0.6));
     background-size: 200% 200%;
-    animation: color 15s ease infinite;
+    animation: color 10s ease infinite;
     height: fit-content;
     display: flex;
     flex-direction: row;
@@ -14,11 +14,19 @@
 
 [info] {
     height: 50vh;
-    margin: 2em 8em;
+    margin: 2em 0 2em 8em;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+}
+
+[extra] {
+    height: 1em;
+}
+
+[two] {
+    margin-left: 2em;
 }
 
 .profile-pic {
