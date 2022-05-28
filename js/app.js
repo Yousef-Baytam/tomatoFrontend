@@ -41,6 +41,3 @@ document.addEventListener('scroll', () => {
             nav.classList.remove('scrolled')
 })
 
-const cardGenerator = () => {
-
-}
