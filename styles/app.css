@@ -171,7 +171,7 @@ a:hover {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--main-color);
+    background-color: rgba(97, 0, 0, 0.705);
     border-radius: 10px;
     transition: all 100ms linear;
 }
@@ -193,6 +193,11 @@ a:hover {
     margin-bottom: 0.8em;
     transition: all 200ms ease;
     color: var(--secondary-color);
+}
+
+[dob-label] {
+    color: white;
+    margin: 0 0 1em 0.5em;
 }
 
 i {
