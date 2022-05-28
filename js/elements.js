@@ -83,6 +83,7 @@ const createCard = (imageSrc, title, rating, cuisine) => {
 const conatiner = document.querySelector('.container')
 
 const cardGenerator = (api) => {
+    conatiner.innerHTML = ''
     axios.get(api)
         .then((res) => {
             if (!res)
