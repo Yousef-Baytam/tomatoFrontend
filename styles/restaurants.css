@@ -139,4 +139,12 @@ input[name='search'] {
     display: flex;
     width: 100%;
     justify-content: space-between;
+    align-items: center;
+}
+
+.leave-a-review {
+    background-color: maroon;
+    color: var(--secondary-color);
+    padding: 5px 15px;
+    border-radius: 10px;
 }
