@@ -271,6 +271,60 @@ input[type='submit']:hover {
     animation: slide 200ms ease-in-out reverse;
 }
 
+.admin-container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+.sidebar{
+    height: 100%;
+    width: 256px;
+    background-color: maroon;
+}
+
+.sidebar-head{
+    color: var(--secondary-color);
+    text-align: center;
+    height: 64px;
+}
+
+.nav-list{
+    list-style: none;
+    padding-left: 0;
+}
+
+.nav-list a:hover::after{
+        content: '';
+}
+
+.nav-list li{
+    height: 48px;
+    padding-top: 16px;
+    margin: 1px 5px;
+    border-radius: 5px;
+}
+.nav-list li:hover, .nav-list .selected{
+    background-color: rgb(86, 0, 0);
+}
+
+.nav-list li *{
+    padding-right: 32px;
+}
+
+.nav-list li i{
+    transition: none;
+    padding-left: 16px;
+    color: var(--secondary-color);
+}
+
+.nav-list li i:hover{
+    transform: none;
+}
+
+.restaurants-admin-container{
+    margin: 10px;
+}
+
 @keyframes slide {
     0% {
         transform: translateX(0%);
