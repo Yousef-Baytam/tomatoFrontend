@@ -30,6 +30,16 @@
     color: white;
 }
 
+[main] div {
+    display: flex;
+    flex-direction: column;
+}
+
+[main] span {
+    margin-left: 1em;
+    font-size: 0.2em;
+}
+
 [main] img {
     width: 25%;
 }
