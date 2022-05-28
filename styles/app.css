@@ -12,6 +12,15 @@
     box-sizing: border-box;
 }
 
+.home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/shawnanggg-nmpW_WwwVSc-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+
+}
+
 nav {
     color: var(--secondary-color);
     display: flex;
