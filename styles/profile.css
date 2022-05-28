@@ -3,19 +3,32 @@
     background-size: 400% 400%;
     animation: color 15s ease infinite;
     height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+[info] {
+    height: 50vh;
+    margin: 2em 8em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
 }
 
 .profile-pic {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     border-radius: 10px;
     box-sizing: content-box;
 }
 
 .profile-pic img {
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     object-fit: cover;
 }
 
