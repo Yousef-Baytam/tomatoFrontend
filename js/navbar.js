@@ -3,7 +3,7 @@ class Nav extends HTMLElement {
         this.innerHTML = `<nav>
         <div>
             <div class='logo'>
-            <img src="./assets/—Pngtree—tomato cartoon hand drawn clip_6942198.png" alt="">
+            <img src="../assets/—Pngtree—tomato cartoon hand drawn clip_6942198.png" alt="">
                 Tomato
             </div>
             <div class='logo'>
@@ -11,12 +11,12 @@ class Nav extends HTMLElement {
             </div>
         </div>
         <div class="log-in">
-            <div class="log-in logo">
+            <div class="log-in logo d-none">
                 Login
             </div>
-            <div class="log-in d-none">
-                <div>username</div>
-                <div>profile img</div>
+            <div class="logged-in logo ">
+                <div username>username</div>
+                <div img><img src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
             </div>
         </div>
     </nav>

@@ -49,7 +49,7 @@ nav {
     display: flex;
     position: fixed;
     width: 100%;
-    padding: 4vh 8vw;
+    padding: 2.5vh 8vw;
     justify-content: space-between;
     box-sizing: border-box;
     font-size: 150%;
@@ -58,7 +58,6 @@ nav {
 
 .logo {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -72,6 +71,10 @@ nav div {
     width: 15em;
 }
 
+nav div:nth-of-type(2) {
+    justify-content: end;
+}
+
 .log-in {
     justify-content: end;
     width: fit-content;
@@ -82,6 +85,23 @@ nav div {
 .log-in:hover {
     color: var(--tertiary-color);
     transform: scale(1.1);
+}
+
+.logged-in {
+    display: flex;
+    width: 8em;
+    text-align: end;
+    justify-content: flex-end;
+}
+
+.logged-in [img] img {
+    border-radius: 50%;
+}
+
+.logged-in [img],
+[username] {
+    width: fit-content;
+    margin-left: 1em;
 }
 
 .d-none {
