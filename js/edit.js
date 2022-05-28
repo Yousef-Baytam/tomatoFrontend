@@ -6,17 +6,17 @@ class Edit extends HTMLElement {
                 <form action="#" method="POST" class="form">
                     <div>
                         <i class="fa-solid fa-xmark"></i>
-                        <input type="text" name="First" placeholder="First Name">
+                        <input type="text" name="name" placeholder="First Name" value='${ this.getAttribute('name') }'>
                     </div>
                     <div>
-                        <input type="text" name="Last" placeholder="Last Name">
+                        <input type="text" name="Last" placeholder="Last Name" value='${ this.getAttribute('lastName') }'>
                     </div>
                     <div>
-                        <input type="number" name="Phone" placeholder="Phone Number">
+                        <input type="text" name="Phone" placeholder="Phone Number" value='${ this.getAttribute('phone') }'>
                     </div>
                     <div>
                         <label dob-label for="dob"> Date of Birth</label>
-                        <input type="Date" name="dob" id='dob'>
+                        <input type="Date" name="dob" id='dob' value='${ this.getAttribute('dob') }'>
                     </div>
                     <input type="submit" name="submit" value="Submit">
                 </form>
