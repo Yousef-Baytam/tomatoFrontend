@@ -6,15 +6,15 @@ class Nav extends HTMLElement {
             <img src="../assets/—Pngtree—tomato cartoon hand drawn clip_6942198.png" alt="">
                 Tomato
             </div>
-            <div class='logo'>
+            <div class='logo d-none'>
                 <a href="./views/restaurants.html">All restaurants</a>
             </div>
         </div>
         <div>
-            <div class="log-in logo d-none">
+            <div class="log-in logo">
                 Login
             </div>
-            <div class="logged-in logo">
+            <div class="logged-in logo d-none">
                 <div username> ${ this.getAttribute('name') } ${ this.getAttribute('lastName') }</div>
                 <div img><img src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
                 <div profile class='d-none'>
@@ -42,6 +42,19 @@ class Nav extends HTMLElement {
                 <form action="#" method="POST" class="form">
                     <div>
                         <i class="fa-solid fa-xmark"></i>
+                        <input type="text" name="First" placeholder="First Name">
+                    </div>
+                    <div>
+                        <input type="text" name="Last" placeholder="Last Name">
+                    </div>
+                    <div>
+                        <input type="number" name="Phone" placeholder="Phone Number">
+                    </div>
+                    <div>
+                        <label dob-label for="dob"> Date of Birth</label>
+                        <input type="Date" name="dob" id='dob'>
+                    </div>
+                    <div>
                         <input type="Email" name="Email" placeholder="Email">
                     </div>
                     <div>

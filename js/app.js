@@ -1,4 +1,4 @@
-const logIn = [document.querySelector('.log-in .log-in'), ...document.querySelectorAll('.fa-xmark')]
+const logIn = [document.querySelector('div .log-in'), ...document.querySelectorAll('.fa-xmark')]
 const formBg = document.querySelectorAll('.form-bg')
 const formsContainers = document.querySelectorAll('.form-container')
 const steps = document.querySelectorAll('[step]')
