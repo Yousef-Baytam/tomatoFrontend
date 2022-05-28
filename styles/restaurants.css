@@ -164,6 +164,8 @@ input[name='search'] {
 }
 
 [review] {
+    padding: 1em;
+    border-radius: 10px;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -172,4 +174,25 @@ input[name='search'] {
 
 [review-form] {
     background-color: rgba(255, 255, 255, 0);
+}
+
+[review] .card {
+    margin: 0;
+    color: white;
+    background-color: rgba(0, 255, 255, 0);
+}
+
+[review] .card .title {
+    color: white;
+    margin-bottom: 0.6em;
+}
+
+.description {
+    font-size: 0.8em;
+    margin: 1em 0em;
+}
+
+textarea {
+    border-radius: 10px;
+    padding: 1em;
 }
