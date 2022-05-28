@@ -89,7 +89,7 @@ nav div:nth-of-type(2) {
 
 .logged-in {
     display: flex;
-    width: 8em;
+    width: fit-content;
     text-align: end;
     justify-content: flex-end;
 }
@@ -104,8 +104,27 @@ nav div:nth-of-type(2) {
     margin-left: 1em;
 }
 
+[profile] {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: fit-content;
+    padding: 0.51em 2em;
+    position: absolute;
+    top: 2.8em;
+    right: 5em;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.logged-in:hover [profile] {
+    display: block !important;
+}
+
 .d-none {
     display: none !important;
+}
+
+.d-block {
+    display: block !important;
 }
 
 a {

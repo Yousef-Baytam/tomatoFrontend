@@ -10,13 +10,16 @@ class Nav extends HTMLElement {
                 <a href="./views/restaurants.html">All restaurants</a>
             </div>
         </div>
-        <div class="log-in">
+        <div>
             <div class="log-in logo d-none">
                 Login
             </div>
-            <div class="logged-in logo ">
-                <div username>username</div>
+            <div class="logged-in logo">
+                <div username> ${ this.getAttribute('name') } ${ this.getAttribute('lastName') }</div>
                 <div img><img src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
+                <div profile class='d-none'>
+                    My profile
+                </div>
             </div>
         </div>
     </nav>
