@@ -162,3 +162,14 @@ input[name='search'] {
 .scrolled {
     background-color: maroon;
 }
+
+[review] {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: rgba(97, 0, 0, 0.705);
+}
+
+[review-form] {
+    background-color: rgba(255, 255, 255, 0);
+}

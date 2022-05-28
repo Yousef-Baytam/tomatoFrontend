@@ -33,18 +33,21 @@ steps[1].addEventListener('click', () => {
     }, { once: true })
 })
 
-for (let ed of edit)
-    ed.addEventListener('click', () => {
-        formBg[1].classList.toggle('hidden')
-    })
+if (edit[0] != null)
+    for (let ed of edit)
+        ed.addEventListener('click', () => {
+            formBg[1].classList.toggle('hidden')
+        })
 
 document.addEventListener('scroll', () => {
+
     let scrollTop = window.pageYOffset
     if (scrollTop > 250)
         nav.classList.add('scrolled')
     if (scrollTop < 250)
         if (nav.classList.contains('scrolled'))
             nav.classList.remove('scrolled')
+    console.log(scrollTop)
 })
 
 
