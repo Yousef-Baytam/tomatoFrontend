@@ -1,7 +1,7 @@
 .header {
     color: var(--secondary-color);
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/tim-toomey-STqHLqMne3k-unsplash.jpg');
-    height: 40vh;
+    height: 50vh;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -22,10 +22,12 @@
     display: flex;
     width: 50%;
     min-width: fit-content;
+    height: 2em;
 }
 
 .filters,
 .Sort {
+    align-self: center;
     font-size: 0.7em;
     margin-right: 2em;
     background-color: maroon;

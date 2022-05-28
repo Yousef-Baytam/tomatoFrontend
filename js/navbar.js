@@ -6,7 +6,7 @@ class Nav extends HTMLElement {
             <img src="../assets/—Pngtree—tomato cartoon hand drawn clip_6942198.png" alt="">
                 Tomato
             </div>
-            <div class='logo d-none'>
+            <div class='logo'>
                 <a href="./views/restaurants.html">All restaurants</a>
             </div>
         </div>
