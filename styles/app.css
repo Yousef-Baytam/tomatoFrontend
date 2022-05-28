@@ -300,6 +300,10 @@ input[type='submit']:hover {
     width: 44.8% !important;
 }
 
+[new-account] [type="submit"] {
+    margin-top: 1em;
+}
+
 @keyframes slide {
     0% {
         transform: translateX(0%);
