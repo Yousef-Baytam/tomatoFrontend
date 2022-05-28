@@ -92,6 +92,7 @@ nav div:nth-of-type(2) {
     width: fit-content;
     text-align: end;
     justify-content: flex-end;
+    transition: all 200ms ease;
 }
 
 .logged-in [img] img {
@@ -107,10 +108,10 @@ nav div:nth-of-type(2) {
 [profile] {
     background-color: rgba(0, 0, 0, 0.7);
     width: fit-content;
-    padding: 0.51em 2em;
+    padding: 0.51em 1.5em;
     position: absolute;
     top: 2.8em;
-    right: 5em;
+    right: 12%;
     border-radius: 10px;
     cursor: pointer;
 }
