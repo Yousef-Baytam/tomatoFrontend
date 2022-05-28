@@ -1,3 +1,10 @@
+.header {
+    background: linear-gradient(-45deg, rgba(128, 0, 0, 0.7), maroon);
+    background-size: 400% 400%;
+    animation: color 15s ease infinite;
+    height: fit-content;
+}
+
 .profile-pic {
     width: 200px;
     height: 200px;
@@ -10,4 +17,18 @@
     width: 200px;
     height: 200px;
     object-fit: cover;
+}
+
+@keyframes color {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
