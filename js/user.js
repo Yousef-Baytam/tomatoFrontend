@@ -5,12 +5,12 @@ class User extends HTMLElement {
     </div>
     <div info>
         <div>First Name: ${ this.getAttribute('name') }</div>
-        <div>Last Name:${ this.getAttribute('lastName') }</div>
+        <div>Last Name: ${ this.getAttribute('lastName') }</div>
         <div>Email: ${ this.getAttribute('email') }</div>
         <div>Phone: ${ this.getAttribute('phone') }</div>
         <div>Location: ${ this.getAttribute('location') }</div>
         <div>Date of Birth: ${ this.getAttribute('dob') }</div>
-        <button>Edit</button>
+        <button class='edit'>Edit</button>
     </div></div>`
     }
 }

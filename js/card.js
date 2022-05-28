@@ -26,7 +26,7 @@ class Card extends HTMLElement {
             </div>
             <div>
                 <div class="cuisine">Cuisine: ${ this.getAttribute('cuisine') }</div>
-                <div class="leave-a-review">Leave a Review</div>
+                <div class="leave-a-review" id='${ this.getAttribute('id') }'>Leave a Review</div>
             </div>
         </div>
     </div>`

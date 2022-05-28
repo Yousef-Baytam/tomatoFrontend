@@ -39,6 +39,14 @@
     border: none !important;
 }
 
+.edit {
+    padding: 0.5em 4em;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
 @keyframes color {
     0% {
         background-position: 0% 50%;

@@ -1,13 +1,13 @@
 const logIn = [document.querySelector('.log-in .log-in'), ...document.querySelectorAll('.fa-xmark')]
-const formBg = document.querySelector('.form-bg')
+const formBg = document.querySelectorAll('.form-bg')
 const formsContainers = document.querySelectorAll('.form-container')
 const steps = document.querySelectorAll('[step]')
 const submit = document.querySelectorAll('input[type="submit"]')
 nav = document.querySelector('nav')
 
 for (let items of logIn)
-    items.addEventListener('click', (e) => {
-        formBg.classList.toggle('hidden')
+    items.addEventListener('click', () => {
+        formBg[0].classList.toggle('hidden')
     })
 
 steps[0].addEventListener('click', () => {
