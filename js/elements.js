@@ -80,6 +80,23 @@ const createCard = (imageSrc, title, rating, cuisine) => {
     </div>`
     )
 }
+const conatiner = document.querySelector('.container')
+
+const cardGenerator = (api) => {
+    axios.get(api)
+        .then((res) => {
+            if (!res)
+                conatiner.appendChild(document.createElement('div').innerHTML('<h1>No restaurants matching this criteria</h1>'))
+            for (let i of res) {
+                let { image, title, rating, category } = i
+                let card = createCard(image, title, rating, category)
+                conatiner.appendChild(card)
+            }
+        }).catch((e) => {
+            console.log(e)
+        })
+}
+
 let nav = document.querySelector('.nav')
 
 nav.insertAdjacentHTML('afterbegin', navbar)
