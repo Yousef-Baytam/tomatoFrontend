@@ -39,6 +39,4 @@ document.addEventListener('scroll', () => {
     if (scrollTop < 250)
         if (nav.classList.contains('scrolled'))
             nav.classList.remove('scrolled')
-
-    console.log(scrollTop)
 })
