@@ -46,6 +46,17 @@ nav {
     transition: all 200ms ease;
 }
 
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    align-self: center;
+    width: 50px;
+}
+
 nav div {
     display: flex;
     width: 15em;

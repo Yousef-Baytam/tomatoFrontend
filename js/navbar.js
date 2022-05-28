@@ -3,14 +3,15 @@ class Nav extends HTMLElement {
         this.innerHTML = `<nav>
         <div>
             <div class='logo'>
+            <img src="./assets/—Pngtree—tomato cartoon hand drawn clip_6942198.png" alt="">
                 Tomato
             </div>
-            <div>
+            <div class='logo'>
                 <a href="./views/restaurants.html">All restaurants</a>
             </div>
         </div>
         <div class="log-in">
-            <div class="log-in">
+            <div class="log-in logo">
                 Login
             </div>
             <div class="log-in d-none">
