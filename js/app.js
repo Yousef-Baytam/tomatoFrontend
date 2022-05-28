@@ -2,6 +2,8 @@ const logIn = [document.querySelector('.log-in .log-in'), ...document.querySelec
 const formBg = document.querySelector('.form-bg')
 const formsContainers = document.querySelectorAll('.form-container')
 const steps = document.querySelectorAll('[step]')
+const submit = document.querySelectorAll('input[type="submit"]')
+const axios = require('axios')
 
 for (let items of logIn)
     items.addEventListener('click', (e) => {
