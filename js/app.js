@@ -3,7 +3,7 @@ const formBg = document.querySelector('.form-bg')
 const formsContainers = document.querySelectorAll('.form-container')
 const steps = document.querySelectorAll('[step]')
 const submit = document.querySelectorAll('input[type="submit"]')
-const axios = require('axios')
+nav = document.querySelector('nav')
 
 for (let items of logIn)
     items.addEventListener('click', (e) => {
@@ -30,4 +30,15 @@ steps[1].addEventListener('click', () => {
         formsContainers[0].classList.remove('translate')
         formsContainers[0].classList.add('slide')
     }, { once: true })
+})
+
+document.addEventListener('scroll', () => {
+    let scrollTop = window.pageYOffset
+    if (scrollTop > 250)
+        nav.classList.add('scrolled')
+    if (scrollTop < 250)
+        if (nav.classList.contains('scrolled'))
+            nav.classList.remove('scrolled')
+
+    console.log(scrollTop)
 })

@@ -49,6 +49,6 @@ const navbar = `
             </div>
         </div>`
 
-const nav = document.querySelector('.nav')
+let nav = document.querySelector('.nav')
 
 nav.insertAdjacentHTML('afterbegin', navbar)

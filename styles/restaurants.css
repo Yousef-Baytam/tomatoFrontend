@@ -85,7 +85,7 @@ input[name='search'] {
 .container {
     display: flex;
     flex-wrap: wrap;
-    padding: 6em;
+    padding: 4em 8em;
     width: 100%;
     justify-content: center;
 }
@@ -147,4 +147,14 @@ input[name='search'] {
     color: var(--secondary-color);
     padding: 5px 15px;
     border-radius: 10px;
+    cursor: pointer;
+    transition: all 200ms ease;
+}
+
+.leave-a-review:hover {
+    background-color: rgb(92, 0, 0);
+}
+
+.scrolled {
+    background-color: maroon;
 }

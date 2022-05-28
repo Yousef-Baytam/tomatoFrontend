@@ -21,6 +21,7 @@ nav {
     justify-content: space-between;
     box-sizing: border-box;
     font-size: 150%;
+    transition: all 200ms ease;
 }
 
 nav div {
