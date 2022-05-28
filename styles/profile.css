@@ -19,14 +19,17 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+    transition: all 200ms ease;
 }
 
 [extra] {
     height: 1.2em;
+    transition: all 200ms ease;
 }
 
 [two] {
     margin-left: 2em;
+    transition: all 200ms ease;
 }
 
 .profile-pic {
@@ -34,6 +37,7 @@
     height: 300px;
     border-radius: 10px;
     box-sizing: content-box;
+    transition: all 200ms ease;
 }
 
 .profile-pic img {
@@ -66,5 +70,35 @@
 
     100% {
         background-position: 0% 50%;
+    }
+}
+
+@media (max-width:900px) {
+    nav {
+        font-size: 1em;
+    }
+
+    [info] {
+        font-size: 0.6em;
+        margin-left: 3em;
+        height: 15em;
+    }
+
+    [two] {
+        margin-left: 0em;
+    }
+
+    .profile-pic img,
+    .profile-pic {
+        width: 150px;
+        height: 150px;
+    }
+
+    [extra] {
+        height: 2em;
+    }
+
+    .edit {
+        transform: scale(0.8);
     }
 }
