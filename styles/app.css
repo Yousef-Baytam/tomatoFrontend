@@ -28,6 +28,7 @@
     align-items: center;
     justify-content: center;
     color: white;
+    transition: all 200ms ease;
 }
 
 [main] div {
@@ -41,7 +42,7 @@
 }
 
 [main] img {
-    width: 25%;
+    width: 3em;
 }
 
 nav {
