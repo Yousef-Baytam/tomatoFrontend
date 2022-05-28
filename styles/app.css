@@ -176,6 +176,8 @@ a:hover {
     transition: all 100ms linear;
 }
 
+
+
 .form div {
     flex-direction: column;
     display: flex;
@@ -269,6 +271,27 @@ input[type='submit']:hover {
 
 .slide {
     animation: slide 200ms ease-in-out reverse;
+}
+
+[new-account] {
+    width: 700px;
+}
+
+[new-account] div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+[new-account] div div {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: baseline;
+}
+
+[new-account] input {
+    max-width: 300px;
 }
 
 @keyframes slide {

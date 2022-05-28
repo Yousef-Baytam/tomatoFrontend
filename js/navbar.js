@@ -24,48 +24,59 @@ class Nav extends HTMLElement {
         </div>
     </nav>
     <div class="form-bg hidden">
-        <div class="steps-container">
-            <div class="form-container">
-                <form action="#" method="POST" class="form">
+    <div class="steps-container">
+        <div class="form-container">
+            <form action="#" method="POST" class="form">
+                <div>
+                    <i class="fa-solid fa-xmark"></i>
+                    <input type="Email" name="Email" placeholder="Email">
+                </div>
+                <div>
+                    <input type="password" name="Passwrod" placeholder="Password">
+                </div>
+                <input type="submit" name="submit" value="Log in">
+                <div class="signIn" step>Create New Account</div>
+            </form>
+        </div>
+        <div class="form-container translate">
+            <form action="#" method="POST" class="form" new-account>
+                <i class="fa-solid fa-xmark"></i>
+                <div>
                     <div>
-                        <i class="fa-solid fa-xmark"></i>
-                        <input type="Email" name="Email" placeholder="Email">
+                        <label dob-label for="first">First Name</label>
+                        <input type="text" name="First" placeholder="First Name" id='first'>
                     </div>
                     <div>
-                        <input type="password" name="Passwrod" placeholder="Password">
+                        <label dob-label for="last">Last Name</label>
+                        <input type="text" name="Last" placeholder="Last Name" id='last'>
                     </div>
-                    <input type="submit" name="submit" value="Log in">
-                    <div class="signIn" step>Create New Account</div>
-                </form>
-            </div>
-            <div class="form-container translate">
-                <form action="#" method="POST" class="form">
+                </div>
+                <div>
                     <div>
-                        <i class="fa-solid fa-xmark"></i>
-                        <input type="text" name="First" placeholder="First Name">
-                    </div>
-                    <div>
-                        <input type="text" name="Last" placeholder="Last Name">
-                    </div>
-                    <div>
-                        <input type="text" name="Phone" placeholder="Phone Number">
+                        <label dob-label for="phone">Phone Number</label>
+                        <input type="text" name="Phone" placeholder="Phone Number" id='phone'>
                     </div>
                     <div>
                         <label dob-label for="dob"> Date of Birth</label>
                         <input type="Date" name="dob" id='dob'>
                     </div>
+                </div>
+                <div>
                     <div>
-                        <input type="Email" name="Email" placeholder="Email">
+                        <label dob-label for="email">Email</label>
+                        <input type="Email" name="Email" placeholder="Email" id="email">
                     </div>
                     <div>
-                        <input type="password" name="Passwrod" placeholder="Password">
+                        <label dob-label for="pass">Password</label>
+                        <input type="password" name="Passwrod" placeholder="Password" id="pass">
                     </div>
-                    <input type="submit" name="submit" value="Sign In">
-                    <div class="back" step>Back</div>
-                </form>
-            </div>
+                </div>
+                <input type="submit" name="submit" value="Sign In">
+                <div class="back link" step>Back</div>
+            </form>
         </div>
-    </div>`
+    </div>
+</div>`
     }
 }
 
