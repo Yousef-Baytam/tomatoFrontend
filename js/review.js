@@ -25,7 +25,7 @@ class Review extends HTMLElement {
                     </div>
                     <div class="rating">
                         <div>Rating </div>
-                        <div>${ this.rating }</div>
+                        <div>${ this.rating() }</div>
                     </div>
                     <div>
                         <div class="cuisine">Cuisine: ${ this.getAttribute('cuisine') }</div>
