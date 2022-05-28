@@ -109,4 +109,12 @@
     .search {
         transform: scale(0.8) translateY(-12%);
     }
+
+    [new-account] {
+        transform: scale(0.7);
+    }
+
+    [review] {
+        transform: scale(0.7);
+    }
 }

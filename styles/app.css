@@ -156,6 +156,7 @@ a:hover {
     transition: all 200ms linear;
     opacity: 1;
     box-shadow: 0 0 50em black;
+    z-index: 1;
 }
 
 .hidden {
