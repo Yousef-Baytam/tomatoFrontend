@@ -37,7 +37,7 @@ const cardGenerator = (api) => {
     axios.get(api)
         .then((res) => {
             if (!res)
-                conatiner.appendChild(document.createElement('div').innerHTML('<h1>No restaurants matching this criteria</h1>'))
+                conatiner.innerHTML = '<h1>No restaurants matching this criteria</h1>'
             for (let i of res) {
                 let { image, title, rating, category } = i
                 let card = `<my-card imgSrc='${ image }' title='${ title }' cuisine='${ category }' rating='rating'/>`
