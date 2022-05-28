@@ -71,7 +71,7 @@ input[name='search'] {
 [cat] {
     min-width: fit-content;
     margin-top: 1.5em;
-    padding: 2vw 5vw;
+    padding: 1vw 5vw;
     cursor: pointer;
     transition: all 200ms ease;
 }
@@ -87,7 +87,7 @@ input[name='search'] {
 .container {
     display: flex;
     flex-wrap: wrap;
-    padding: 4em 8em;
+    padding: 4em 4em;
     width: 100%;
     justify-content: center;
 }

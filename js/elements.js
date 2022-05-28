@@ -49,6 +49,37 @@ const navbar = `
             </div>
         </div>`
 
+const createCard = (imageSrc, title, rating, cuisine) => {
+    let stars = ``
+    for (let i = 0; i < 5; i++) {
+        if (i < rating)
+            stars += `<i class="fa-solid fa-star"></i>`
+        else
+            stars += `<i class="fa-regular fa-star"></i>`
+    }
+    return (
+        `<div class="card-container">
+        <div class="card">
+            <div class="img">
+                <img src="${ imageSrc }" alt="">
+            </div>
+            <div class="title">
+                ${ title }
+            </div>
+            <div class="rating">
+                <div>Rating </div>
+                <div>
+                    ${ stars }
+                </div>
+            </div>
+            <div>
+                <div class="cuisine">Cuisine: ${ cuisine }</div>
+                <div class="leave-a-review">Leave a Review</div>
+            </div>
+        </div>
+    </div>`
+    )
+}
 let nav = document.querySelector('.nav')
 
 nav.insertAdjacentHTML('afterbegin', navbar)

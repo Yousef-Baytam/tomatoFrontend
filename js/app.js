@@ -40,3 +40,7 @@ document.addEventListener('scroll', () => {
         if (nav.classList.contains('scrolled'))
             nav.classList.remove('scrolled')
 })
+
+const cardGenerator = () => {
+
+}
