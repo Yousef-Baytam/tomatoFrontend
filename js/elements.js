@@ -47,7 +47,3 @@ const cardGenerator = (api) => {
             console.log(e)
         })
 }
-
-let nav = document.querySelector('.nav')
-
-nav.insertAdjacentHTML('afterbegin', navbar)
