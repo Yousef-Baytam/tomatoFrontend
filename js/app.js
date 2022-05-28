@@ -1,9 +1,10 @@
-const logIn = [document.querySelector('div .log-in'), ...document.querySelectorAll('.fa-xmark')]
+const logIn = [document.querySelector('div .log-in'), document.querySelectorAll('.fa-xmark')[0], document.querySelectorAll('.fa-xmark')[1]]
 const formBg = document.querySelectorAll('.form-bg')
 const formsContainers = document.querySelectorAll('.form-container')
 const steps = document.querySelectorAll('[step]')
 const submit = document.querySelectorAll('input[type="submit"]')
 nav = document.querySelector('nav')
+const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xmark')[2]]
 
 for (let items of logIn)
     items.addEventListener('click', () => {
@@ -32,6 +33,11 @@ steps[1].addEventListener('click', () => {
     }, { once: true })
 })
 
+for (let ed of edit)
+    ed.addEventListener('click', () => {
+        formBg[1].classList.toggle('hidden')
+    })
+
 document.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset
     if (scrollTop > 250)
@@ -40,4 +46,5 @@ document.addEventListener('scroll', () => {
         if (nav.classList.contains('scrolled'))
             nav.classList.remove('scrolled')
 })
+
 

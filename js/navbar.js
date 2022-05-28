@@ -48,7 +48,7 @@ class Nav extends HTMLElement {
                         <input type="text" name="Last" placeholder="Last Name">
                     </div>
                     <div>
-                        <input type="number" name="Phone" placeholder="Phone Number">
+                        <input type="text" name="Phone" placeholder="Phone Number">
                     </div>
                     <div>
                         <label dob-label for="dob"> Date of Birth</label>
