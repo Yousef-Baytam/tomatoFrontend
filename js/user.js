@@ -2,6 +2,7 @@ class User extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<div class="header-2"><div class="profile-pic">
         <img src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt="user Image">
+        <i class="fa-solid fa-camera"></i>
     </div>
     <div info>
         <div>First Name:</div>
