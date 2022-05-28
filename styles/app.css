@@ -21,6 +21,19 @@
 
 }
 
+[main] {
+    font-size: 8em;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+[main] img {
+    width: 25%;
+}
+
 nav {
     color: var(--secondary-color);
     display: flex;

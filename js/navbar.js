@@ -2,7 +2,7 @@ class Nav extends HTMLElement {
     connectedCallback() {
         this.innerHTML = `<nav>
         <div>
-            <div>
+            <div class='logo'>
                 Tomato
             </div>
             <div>
