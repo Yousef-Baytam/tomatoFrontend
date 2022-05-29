@@ -39,22 +39,22 @@ class Nav extends HTMLElement {
             </form>
         </div>
         <div class="form-container translate">
-            <form action="#" method="POST" class="form" new-account>
+            <form action="http://localhost/tomatoBackend/addUser.php" method="POST" class="form" new-account>
                 <i class="fa-solid fa-xmark"></i>
                 <div>
                     <div>
                         <label dob-label for="first">First Name</label>
-                        <input type="text" name="First" placeholder="First Name" id='first'>
+                        <input type="text" name="first" placeholder="First Name" id='first'>
                     </div>
                     <div>
                         <label dob-label for="last">Last Name</label>
-                        <input type="text" name="Last" placeholder="Last Name" id='last'>
+                        <input type="text" name="last" placeholder="Last Name" id='last'>
                     </div>
                 </div>
                 <div>
                     <div>
                         <label dob-label for="phone">Phone Number</label>
-                        <input type="text" name="Phone" placeholder="Phone Number" id='phone'>
+                        <input type="text" name="phone" placeholder="Phone Number" id='phone'>
                     </div>
                     <div>
                         <label dob-label for="dob"> Date of Birth</label>
@@ -64,11 +64,11 @@ class Nav extends HTMLElement {
                 <div>
                     <div>
                         <label dob-label for="email">Email</label>
-                        <input type="Email" name="Email" placeholder="Email" id="email">
+                        <input type="Email" name="email" placeholder="Email" id="email">
                     </div>
                     <div>
                         <label dob-label for="pass">Password</label>
-                        <input type="password" name="Passwrod" placeholder="Password" id="pass">
+                        <input type="password" name="passwrod" placeholder="Password" id="pass">
                     </div>
                 </div>
                 <input type="submit" name="submit" value="Sign In">
