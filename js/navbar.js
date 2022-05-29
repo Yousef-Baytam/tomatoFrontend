@@ -6,15 +6,15 @@ class Nav extends HTMLElement {
             <img src="${ this.getAttribute('logoSrc') }" alt="">
                 Tomato
             </div>
-            <div class='logo d-none'>
+            <div class='logo d-none' knownUser>
                 <a href="http://localhost/tomato/tomatoFrontend/views/restaurants.html">All restaurants</a>
             </div>
         </div>
         <div>
-            <div class="log-in logo">
+            <div class="log-in logo" knownUser>
                 Login
             </div>
-            <div class="logged-in logo d-none">
+            <div class="logged-in logo d-none" knownUser>
                 <div username> ${ this.getAttribute('name') } ${ this.getAttribute('lastName') }</div>
                 <div img><img src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
                 <div profile class='d-none'>

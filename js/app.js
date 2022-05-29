@@ -7,7 +7,7 @@ nav = document.querySelector('nav')
 const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xmark')[2]]
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
-let loggedIn = false
+const knownUser = document.querySelectorAll('[knownUser]')
 let userId = 0
 
 for (let items of logIn)
@@ -60,10 +60,14 @@ document.addEventListener('scroll', () => {
             nav.classList.remove('scrolled')
 })
 
-document.addEventListener("load", () => {
-    userId = getCookieValue(tomatoUser)
+window.addEventListener("load", () => {
+    console.log('hello')
+    userId = getCookieValue('tomatoUser')
     if (!userId)
         return
+    console.log('hello')
+    for (let i of knownUser)
+        i.classList.toggle('d-none')
 
 })
 
@@ -76,7 +80,7 @@ const getCookieValue = (cname) => {
             i = i.substring(1);
         }
         if (i.indexOf(name) == 0) {
-            return c.substring(name.length, i.length);
+            return i.substring(name.length, i.length);
         }
     }
     return "";
