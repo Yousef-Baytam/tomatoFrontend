@@ -220,7 +220,7 @@ div[step]:hover {
     background-color: green;
 }
 
-input {
+input, .cousine-list {
     width: 100%;
     margin-bottom: 1.5em;
     height: 3.5em;
@@ -329,7 +329,7 @@ input[type='submit']:hover {
     margin-bottom: 50px;
 }
 
-.card{
+.admin-card{
     background-color: var(--secondary-color);
     width: 90%;
     padding: 10px 20px;
@@ -339,7 +339,7 @@ input[type='submit']:hover {
     border-radius: 10px;
 }
 
-.card:hover {
+.admin-card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 

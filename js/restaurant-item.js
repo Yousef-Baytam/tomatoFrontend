@@ -1,15 +1,14 @@
 class RestaurantItem extends HTMLElement{
-
     connectedCallback(){
         this.innerHTML=`
-            <div class="card">
+            <div class="admin-card">
                 <div class='head'>
                     <div class="title">
                         <h3>${this.getAttribute('name') || 'name'}</h3>
                     </div>
                     <div class="action-buttons">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                        <i class="fa-solid fa-trash-can"></i>
+                        <span onclick="edit()"><i class="fa-solid fa-pen-to-square"></i></span>
+                        <span onclick="remove()"><i class="fa-solid fa-trash-can"></i></span>
                     </div>
                 </div>
                 <div class='content'>
@@ -36,6 +35,13 @@ function generateStars(rate){
         }
     }
     return stars
+}
+
+function edit(){
+    
+}
+function remove(){
+    return console.log("remove")
 }
 
 customElements.define('restaurant-item', RestaurantItem);
