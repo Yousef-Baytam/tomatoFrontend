@@ -12,34 +12,38 @@ class EditRestaurant extends HTMLElement {
     }
 
     connectedCallback() {
-        this.innerHTML += `<div class="form-bg " id="review">
-        <div class="steps-container">
-            <div class="form-container" review>
-                <div class="card">
-                    <div class="img">
-                        <img src="../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
-                    </div>
+        this.innerHTML += `
+        <div class= "edit-restaurant">
+            <div class="form-bg " id="review">
+            <div class="steps-container">
+                <div class="form-container" review>
                     <div class="edit-restaurant-close"><i class="fa-solid fa-xmark" id="review-x"></i></div>
-                    <input type="file" style="padding: 0; margin-top:10px"/>
-                    <div class="title">
-                        <input id='restaurant-name' value="${this.getAttribute('title') || 'Restaurant name'}">
-                    </div>
-                    <div class="description">
-                       <textarea>${this.getAttribute('description') || 'description'}</textarea>
-                    </div>
-                    <div class="rating">
-                        <div>Rating </div>
-                        <div>
-                            ${this.rating()}
+                    <div class="card">
+                        <div class="img">
+                            <img src="../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
                         </div>
-                    </div>
-                    <div>
-                        <div class="cousine">
-                            <select class="cousine-list">
-                                <option value="cousine 1">Cousine 1</option>
-                                <option value="cousine 2">Cousine 2</option>
-                                <option value="cousine 3">Cousine 3</option>
-                            </select>
+                        
+                        <input type="file" style="padding: 0; margin-top:10px"/>
+                        <div class="title">
+                            <input id='restaurant-name' value="${this.getAttribute('title') || 'Restaurant name'}">
+                        </div>
+                        <div class="description">
+                        <textarea>${this.getAttribute('description') || 'description'}</textarea>
+                        </div>
+                        <div class="rating">
+                            <div>Rating </div>
+                            <div>
+                                ${this.rating()}
+                            </div>
+                        </div>
+                        <div>
+                            <div class="cousine">
+                                <select class="cousine-list">
+                                    <option value="cousine 1">Cousine 1</option>
+                                    <option value="cousine 2">Cousine 2</option>
+                                    <option value="cousine 3">Cousine 3</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
                 </div>

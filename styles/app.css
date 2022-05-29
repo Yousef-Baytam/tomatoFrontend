@@ -353,6 +353,13 @@ input[type='submit']:hover {
     white-space: nowrap;
 }
 
+.edit-restaurant .form-container{
+    flex-direction: column;
+}
+.edit-restaurant-close{
+    align-self: flex-end;
+}
+
 @keyframes slide {
     0% {
         transform: translateX(0%);
