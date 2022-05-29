@@ -3,11 +3,11 @@ class Nav extends HTMLElement {
         this.innerHTML = `<nav>
         <div>
             <div class='logo'>
-            <img src="../assets/—Pngtree—tomato cartoon hand drawn clip_6942198.png" alt="">
+            <img src="${ this.getAttribute('logoSrc') }" alt="">
                 Tomato
             </div>
             <div class='logo'>
-                <a href="./views/restaurants.html">All restaurants</a>
+                <a href="http://localhost/tomato/tomatoFrontend/views/restaurants.html">All restaurants</a>
             </div>
         </div>
         <div>
@@ -71,7 +71,7 @@ class Nav extends HTMLElement {
                         <input type="password" name="passwrod" placeholder="Password" id="pass">
                     </div>
                 </div>
-                <input type="submit" name="submit" value="Sign In">
+                <input type="submit" name="submit" value="Register">
                 <div class="back link" step>Back</div>
             </form>
         </div>
