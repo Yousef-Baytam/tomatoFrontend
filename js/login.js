@@ -25,9 +25,18 @@ loginForm.addEventListener('submit', (e) => {
                     errorMsg.classList.add('d-none')
                 loggedIn = true
                 userId = user_id
+                setCookie('tomatoUser', user_id, 0.05)
+                document.location.reload()
             }
         })
         .catch((err) => {
             console.log('errrrorrr', err)
         })
 })
+
+const setCookie = (cookieName, cookieValue, expiryDays) => {
+    const date = new Date()
+    date.setTime(date.getTime() + (expiryDays * 1000 * 60 * 60 * 24))
+    let exp = `expires=${ date.toUTCString() }`
+    document.cookie = `${ cookieName }=${ cookieValue };path=/`
+}
