@@ -343,11 +343,11 @@ input[type='submit']:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
-.card .head {
+.admin-card .head {
     display: flex;
     justify-content: space-between;
 }
-.title>*, .description>*{
+.admin-card .head .title *, .admin-card .head .description *{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
