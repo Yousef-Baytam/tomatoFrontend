@@ -8,6 +8,11 @@ const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xm
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
 
+const restaurantEditClose = document.getElementById('restaurant-edit-close').onclick = (e)=>{
+    console.log(e)
+    document.getElementsByTagName('edit-restaurant')[0].children[0]?.classList.add('hidden')
+}
+
 for (let items of logIn)
     items.addEventListener('click', () => {
         formBg[0].classList.toggle('hidden')

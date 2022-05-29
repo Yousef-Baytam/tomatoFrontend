@@ -17,7 +17,7 @@ class EditRestaurant extends HTMLElement {
             <div class="form-bg" id="review">
             <div class="steps-container">
                 <div class="form-container" review>
-                    <div class="edit-restaurant-close"><span onclick="close()"><i class="fa-solid fa-xmark" id="review-x"></i></span></div>
+                    <div class="edit-restaurant-close"><span id="restaurant-edit-close"><i class="fa-solid fa-xmark" id="review-x"></i></span></div>
                     <div class="card">
                         <div class="img">
                             <img src="../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
@@ -54,10 +54,6 @@ class EditRestaurant extends HTMLElement {
 
 }
 
-function close(){
-    console.log("fefw")
-    document.getElementsByTagName('edit-restaurant')[0].children[0]?.classList.add('hidden')
-}
 
 customElements.define('edit-restaurant', EditRestaurant)
 

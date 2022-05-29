@@ -8,7 +8,7 @@ class RestaurantItem extends HTMLElement{
                         <h3>${this.getAttribute('name') || 'name'}</h3>
                     </div>
                     <div class="action-buttons">
-                        <span onclick="edit()"><i class="fa-solid fa-pen-to-square"></i></span>
+                        <span onclick="editRest()"><i class="fa-solid fa-pen-to-square"></i></span>
                         <span onclick="remove()"><i class="fa-solid fa-trash-can"></i></span>
                     </div>
                 </div>
@@ -26,7 +26,6 @@ class RestaurantItem extends HTMLElement{
 }
 
 function generateStars(rate){
-    console.log(rate)
     stars=''
     for(let i = 0; i < 5; i++){
         if(i < rate){
@@ -38,7 +37,7 @@ function generateStars(rate){
     return stars
 }
 
-function edit(){
+function editRest(){
     
     let elm = document.getElementsByTagName('edit-restaurant')[0].children[0].classList.remove('hidden')
 }
