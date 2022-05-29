@@ -10,6 +10,7 @@ class RestaurantItem extends HTMLElement{
                     <div class="action-buttons">
                         <span onclick="editRest()"><i class="fa-solid fa-pen-to-square"></i></span>
                         <span onclick="remove()"><i class="fa-solid fa-trash-can"></i></span>
+                        <span onclick="ban()"><i class="fa-solid fa-ban"></i></span>
                     </div>
                 </div>
                 <div class='content'>
@@ -43,6 +44,10 @@ function editRest(){
 }
 function remove(){
     return console.log("remove")
+}
+
+function ban(){
+    console.log('ban')
 }
 
 customElements.define('restaurant-item', RestaurantItem);
