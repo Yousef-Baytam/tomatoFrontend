@@ -2,7 +2,7 @@
 
 
 window.onload = (e)=>{
-    fetchDate();
+    fetchData();
 }
 
 const restaurantEditClose = document.getElementById('restaurant-edit-close').onclick = (e)=>{
@@ -13,7 +13,7 @@ const restaurantAddClose = document.getElementById('restaurant-add-close').oncli
     document.getElementById('add-restaurant').classList.add('hidden')
 }
 
-const fetchDate = async ()=>{
+const fetchData = async ()=>{
     let restaurants = []
     await axios.get('http://127.0.0.1/tomatobackend/getRestaurants.php').then(response=>{
         restaurants = response.data
