@@ -8,7 +8,7 @@ const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xm
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
 let loggedIn = false
-let userId
+let userId = 0
 
 for (let items of logIn)
     items.addEventListener('click', () => {
@@ -60,4 +60,24 @@ document.addEventListener('scroll', () => {
             nav.classList.remove('scrolled')
 })
 
+document.addEventListener("load", () => {
+    userId = getCookieValue(tomatoUser)
+    if (!userId)
+        return
 
+})
+
+const getCookieValue = (cname) => {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookie = decodedCookie.split(';');
+    for (let i of cookie) {
+        while (i.charAt(0) == ' ') {
+            i = i.substring(1);
+        }
+        if (i.indexOf(name) == 0) {
+            return c.substring(name.length, i.length);
+        }
+    }
+    return "";
+}

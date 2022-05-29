@@ -23,8 +23,6 @@ loginForm.addEventListener('submit', (e) => {
             } else {
                 if (!errorMsg.classList.contains('d-none'))
                     errorMsg.classList.add('d-none')
-                loggedIn = true
-                userId = user_id
                 setCookie('tomatoUser', user_id, 0.05)
                 document.location.reload()
             }
