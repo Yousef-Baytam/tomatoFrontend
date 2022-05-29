@@ -426,6 +426,35 @@ input[type='submit']:hover {
         padding-left: 10px;
 }   
 
+.restaurant-add {
+    width: 90%;
+    margin: auto;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.restaurant-add button{
+    padding-top: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    color: maroon;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.restaurant-add button:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.restaurant-add button:active{
+    opacity: 0.7;
+}
+
+.restaurant-add button i {
+    transform: none;
+    color: inherit;
+    
+}
 
 @keyframes slide {
     0% {
