@@ -10,7 +10,7 @@ class RestaurantAdd extends HTMLElement{
                 <div class="form-bg">
                     <div class="steps-container">
                         <div class="form-container" review>
-                            <div class="edit-restaurant-close"><span id="restaurant-edit-close"><i class="fa-solid fa-xmark" id="review-x"></i></span></div>
+                            <div class="edit-restaurant-close"><span id="restaurant-add-close"><i class="fa-solid fa-xmark" id="review-x"></i></span></div>
                             <div class="card">
                                 <div class="img">
                                     <img src="../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">

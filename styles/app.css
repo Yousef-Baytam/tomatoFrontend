@@ -353,7 +353,7 @@ input[type='submit']:hover {
     white-space: nowrap;
 }
 
-.edit-restaurant .form-container{
+.edit-restaurant .form-container, .add-restaurant .form-container{
     flex-direction: column;
 }
 .edit-restaurant-close{
