@@ -19,7 +19,7 @@ class UserItem extends HTMLElement{
                             <span onclick="remove()"><i class="fa-solid fa-trash-can"></i></span>
                         </div>
                     </div>
-                    
+                    <div class = "content">
                         <div class="description">
                             <p>${this.getAttribute('dob') || 'Date of birth'}</p>
                         </div>

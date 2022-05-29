@@ -347,7 +347,7 @@ input[type='submit']:hover {
     display: flex;
     justify-content: space-between;
 }
-.admin-card .head .title *, .admin-card .head .description *{
+.admin-card .head .title *, .admin-card .content .description *{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -385,11 +385,46 @@ input[type='submit']:hover {
     display: flex;
     justify-content: space-between;
 }
-.admin-user-card .head .title *, .admin-card .head .description *{
+.admin-user-card .head .title *, .admin-user-card .content .description *{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+.admin-review-card{
+    display: flex;
+    background-color: var(--secondary-color);
+    width: 90%;
+    padding: 10px 20px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.admin-review-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.admin-review-card .profile-pic img{
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+}
+
+.admin-review-card .head {
+    display: flex;
+    justify-content: space-between;
+}
+.admin-review-card .head .title *, .admin-review-card .content .description *{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-review-card .head .action-buttons span{
+        padding-left: 10px;
+}   
 
 
 @keyframes slide {
