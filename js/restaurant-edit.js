@@ -19,6 +19,7 @@ class EditRestaurant extends HTMLElement {
                     <div class="img">
                         <img src="../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
                     </div>
+                    <div class="edit-restaurant-close"><i class="fa-solid fa-xmark" id="review-x"></i></div>
                     <input type="file" style="padding: 0; margin-top:10px"/>
                     <div class="title">
                         <input id='restaurant-name' value="${this.getAttribute('title') || 'Restaurant name'}">
