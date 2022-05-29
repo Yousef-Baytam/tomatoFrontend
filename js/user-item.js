@@ -33,8 +33,7 @@ class UserItem extends HTMLElement{
 
 
 function editRest(){
-    
-    let elm = document.getElementsByTagName('my-edit')[0].children[0].classList.remove('hidden')
+    document.getElementsByTagName('my-edit')[0].children[0].classList.remove('hidden')
 }
 function remove(){
     return console.log("remove")

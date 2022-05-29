@@ -5,7 +5,7 @@ class Edit extends HTMLElement {
             <div class="form-container">
                 <form action="#" method="POST" class="form">
                     <div>
-                        <i class="fa-solid fa-xmark"></i>
+                        <i id="user-edit-close" class="fa-solid fa-xmark"></i>
                         <input type="text" name="First" placeholder="First Name">
                     </div>
                     <div>
@@ -25,6 +25,9 @@ class Edit extends HTMLElement {
     </div>`
     }
 }
+
+
+
 
 customElements.define('my-edit', Edit)
 
