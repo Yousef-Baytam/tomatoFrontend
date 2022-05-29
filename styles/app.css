@@ -321,11 +321,11 @@ input[type='submit']:hover {
     transform: none;
 }
 
-.restaurants-admin-container{
+.restaurants-admin-container, .users-admin-container{
     margin: 10px;
 }
 
-.restaurants-admin-container>h1{
+.restaurants-admin-container>h1, .users-admin-container>h1{
     margin-bottom: 50px;
 }
 
@@ -359,6 +359,38 @@ input[type='submit']:hover {
 .edit-restaurant-close{
     align-self: flex-end;
 }
+
+.admin-user-card{
+    display: flex;
+    background-color: var(--secondary-color);
+    width: 90%;
+    padding: 10px 20px;
+    margin: auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.admin-user-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.admin-user-card .profile-pic img{
+    height: 64px;
+    width: 64px;
+    border-radius: 50%;
+}
+
+.admin-user-card .head {
+    display: flex;
+    justify-content: space-between;
+}
+.admin-user-card .head .title *, .admin-card .head .description *{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 
 @keyframes slide {
     0% {
