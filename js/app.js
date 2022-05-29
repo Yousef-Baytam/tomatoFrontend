@@ -8,6 +8,7 @@ const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xm
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
 const knownUser = document.querySelectorAll('[knownUser]')
+const myNav = document.querySelector('my-navbar')
 let userId = 0
 
 for (let items of logIn)
@@ -49,7 +50,6 @@ if (review[0] != null)
             reviewForm.classList.toggle('hidden')
         })
 
-
 document.addEventListener('scroll', () => {
 
     let scrollTop = window.pageYOffset
@@ -65,23 +65,7 @@ window.addEventListener("load", () => {
     userId = getCookieValue('tomatoUser')
     if (!userId)
         return
-    console.log('hello')
-    for (let i of knownUser)
-        i.classList.toggle('d-none')
-
+    const userData = getUserData(userId)
+    console.log(userData)
+    myNav.setAttribute()
 })
-
-const getCookieValue = (cname) => {
-    let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie);
-    let cookie = decodedCookie.split(';');
-    for (let i of cookie) {
-        while (i.charAt(0) == ' ') {
-            i = i.substring(1);
-        }
-        if (i.indexOf(name) == 0) {
-            return i.substring(name.length, i.length);
-        }
-    }
-    return "";
-}

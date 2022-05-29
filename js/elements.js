@@ -15,3 +15,31 @@ const cardGenerator = (api) => {
             console.log(e)
         })
 }
+
+const getCookieValue = (cname) => {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let cookie = decodedCookie.split(';');
+    for (let i of cookie) {
+        while (i.charAt(0) == ' ') {
+            i = i.substring(1);
+        }
+        if (i.indexOf(name) == 0) {
+            return i.substring(name.length, i.length);
+        }
+    }
+    return "";
+}
+
+const getUserData = (id) => {
+    axios.get(`http://localhost/tomato/tomatoBackend/getUser.php?id=${ id }`)
+        .then((res) => {
+            console.log(res, res.data)
+            if (res.data.response === 'User Not Found')
+                return false
+            for (let i of knownUser)
+                i.classList.toggle('d-none')
+            return res.data.response
+        })
+        .catch(e => console.log(e))
+}
