@@ -13,11 +13,11 @@ class EditRestaurant extends HTMLElement {
 
     connectedCallback() {
         this.innerHTML += `
-        <div class= "edit-restaurant">
-            <div class="form-bg " id="review">
+        <div class= "edit-restaurant hidden">
+            <div class="form-bg" id="review">
             <div class="steps-container">
                 <div class="form-container" review>
-                    <div class="edit-restaurant-close"><i class="fa-solid fa-xmark" id="review-x"></i></div>
+                    <div class="edit-restaurant-close"><span onclick="close()"><i class="fa-solid fa-xmark" id="review-x"></i></span></div>
                     <div class="card">
                         <div class="img">
                             <img src="../../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
@@ -51,6 +51,12 @@ class EditRestaurant extends HTMLElement {
         </div>
     </div>`
     }
+
+}
+
+function close(){
+    console.log("fefw")
+    document.getElementsByTagName('edit-restaurant')[0].children[0]?.classList.add('hidden')
 }
 
 customElements.define('edit-restaurant', EditRestaurant)

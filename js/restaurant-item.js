@@ -1,9 +1,5 @@
 class RestaurantItem extends HTMLElement{
 
-    edit(){
-        this.innerHTML += `<edit-restaurant></edit-restaurant>`
-    }
-
     connectedCallback(){
         this.innerHTML=`
             <div class="admin-card">
@@ -44,7 +40,7 @@ function generateStars(rate){
 
 function edit(){
     
-    document.getElementsByClassName('restaurants-admin-container')[0].innerHTML += `<edit-restaurant></edit-restaurant>`
+    let elm = document.getElementsByTagName('edit-restaurant')[0].children[0].classList.remove('hidden')
 }
 function remove(){
     return console.log("remove")
