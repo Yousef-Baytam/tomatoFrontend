@@ -7,6 +7,7 @@ nav = document.querySelector('nav')
 const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xmark')[2]]
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
+let loggedIn = false
 
 for (let items of logIn)
     items.addEventListener('click', () => {

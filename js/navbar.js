@@ -29,12 +29,12 @@ class Nav extends HTMLElement {
             <form action="http://localhost/tomato/tomatoBackend/login.php" method="POST" class="form login-form">
                 <div>
                     <i class="fa-solid fa-xmark"></i>
-                    <input type="Email" id='email123' name="email" placeholder="Email" required>
+                    <input type="Email" id='loginEmail' name="email" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="password" id='pass' name="passwrod" placeholder="Password" required>
+                    <input type="password" id='password' name="passwrod" placeholder="Password" required>
                 </div>
-                <div not-found> user not found: invalid email or password</div>
+                <div not-found class='d-none'> user not found: invalid email or password</div>
                 <input type="submit" id='login' name="submit" value="Log in">
                 <div class="signIn" step>Create New Account</div>
             </form>

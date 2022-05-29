@@ -1,7 +1,8 @@
 const login = document.querySelector('#login')
 const loginForm = document.querySelector('.login-form')
-const em = document.querySelector('#email123')
-const pass = document.querySelector('#pass')
+const em = document.querySelector('#loginEmail')
+const pass = document.querySelector('#password')
+const errorMsg = document.querySelector('[not-found]')
 
 
 loginForm.addEventListener('submit', (e) => {
@@ -14,6 +15,12 @@ loginForm.addEventListener('submit', (e) => {
     axios.post('http://localhost/tomato/tomatoBackend/login.php', body)
         .then((res) => {
             console.log('it worked', res)
+            let { response } = res.data
+            if (response = 'User Not Found') {
+                console.log('fuck you hacker')
+                errorMsg.classList.remove('d-none')
+                return
+            }
         })
         .catch((err) => {
             console.log('errrrorrr', err)
