@@ -8,6 +8,7 @@ const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xm
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
 let loggedIn = false
+let userId
 
 for (let items of logIn)
     items.addEventListener('click', () => {

@@ -15,11 +15,16 @@ loginForm.addEventListener('submit', (e) => {
     axios.post('http://localhost/tomato/tomatoBackend/login.php', body)
         .then((res) => {
             console.log('it worked', res)
-            let { response } = res.data
-            if (response = 'User Not Found') {
+            let { response, user_id } = res.data
+            if (!user_id) {
                 console.log('fuck you hacker')
                 errorMsg.classList.remove('d-none')
                 return
+            } else {
+                if (!errorMsg.classList.contains('d-none'))
+                    errorMsg.classList.add('d-none')
+                loggedIn = true
+                userId = user_id
             }
         })
         .catch((err) => {
