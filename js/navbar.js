@@ -6,7 +6,7 @@ class Nav extends HTMLElement {
             <img src="${ this.getAttribute('logoSrc') }" alt="">
                 Tomato
             </div>
-            <div class='logo'>
+            <div class='logo d-none'>
                 <a href="http://localhost/tomato/tomatoFrontend/views/restaurants.html">All restaurants</a>
             </div>
         </div>
@@ -26,15 +26,16 @@ class Nav extends HTMLElement {
     <div class="form-bg hidden">
     <div class="steps-container">
         <div class="form-container">
-            <form action="#" method="POST" class="form">
+            <form action="http://localhost/tomato/tomatoBackend/login.php" method="POST" class="form login-form">
                 <div>
                     <i class="fa-solid fa-xmark"></i>
-                    <input type="Email" name="Email" placeholder="Email">
+                    <input type="Email" id='email123' name="email" placeholder="Email" required>
                 </div>
                 <div>
-                    <input type="password" name="Passwrod" placeholder="Password">
+                    <input type="password" id='pass' name="passwrod" placeholder="Password" required>
                 </div>
-                <input type="submit" name="submit" value="Log in">
+                <div not-found> user not found: invalid email or password</div>
+                <input type="submit" id='login' name="submit" value="Log in">
                 <div class="signIn" step>Create New Account</div>
             </form>
         </div>
