@@ -321,7 +321,7 @@ input[type='submit']:hover {
     transform: none;
 }
 
-.restaurants-admin-container, .users-admin-container{
+.restaurants-admin-container, .users-admin-container, .reviews-admin-container{
     margin: 10px;
 }
 
