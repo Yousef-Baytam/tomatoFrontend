@@ -60,6 +60,19 @@ document.addEventListener('scroll', () => {
             nav.classList.remove('scrolled')
 })
 
+const getUserData = (id) => {
+    axios.get(`http://localhost/tomato/tomatoBackend/getUser.php?id=${ id }`)
+        .then((res) => {
+            console.log(res, res.data)
+            if (res.data.response === 'User Not Found')
+                return false
+            for (let i of knownUser)
+                i.classList.toggle('d-none')
+            return res.data.response
+        })
+        .catch(e => console.log(e))
+}
+
 window.addEventListener("load", () => {
     console.log('hello')
     userId = getCookieValue('tomatoUser')

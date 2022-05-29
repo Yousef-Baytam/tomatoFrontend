@@ -18,7 +18,7 @@ class Nav extends HTMLElement {
                 <div username> ${ this.getAttribute('name') } ${ this.getAttribute('lastName') }</div>
                 <div img><img src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
                 <div profile class='d-none'>
-                    My profile
+                <a href="http://localhost/tomato/tomatoFrontend/views/profile.html">My profile</a>
                 </div>
             </div>
         </div>
