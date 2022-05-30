@@ -57,7 +57,7 @@ class EditRestaurant extends HTMLElement {
             <div class="modal-content">
                 <div class="modal-header">
                     <h2>Edit Restaurant</h2>
-                    <span class="close">&times;</span>
+                    <span class="edit-close">&times;</span>
                 </div>
                 <div class="modal-body">
                     <div class="logo-container">

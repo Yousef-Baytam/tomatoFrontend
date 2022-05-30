@@ -506,7 +506,7 @@ input[type='submit']:hover {
     margin-bottom: 10px;
   }
 
-  .modal-footer #edit-save{
+  .modal-footer #edit-save, .modal-footer #add-save{
     padding: 5px 10px;
     background-color: maroon;
     color: white;
@@ -515,7 +515,7 @@ input[type='submit']:hover {
     cursor: pointer;
   }
 
-  .modal-footer #edit-cancel{
+  .modal-footer #edit-cancel, .modal-footer #add-cancel{
     padding: 5px 10px;
     background-color: transparent;
     color: maroon;
@@ -537,15 +537,17 @@ input[type='submit']:hover {
     animation-duration: 0.4s
   }
   
-  .close {
+  .edit-close, .add-close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
   }
   
-  .close:hover,
-  .close:focus {
+  .edit-close:hover,
+  .edit-close:focus,
+  .add-close:hover,
+  .add-close:focus {
     color: #aaa;
     text-decoration: none;
     cursor: pointer;
@@ -562,14 +564,15 @@ input[type='submit']:hover {
       width: 50%;
 
   }
-  #restaurant-logo{
+  #restaurant-logo, #restaurant-add-logo{
       border: 1px solid maroon;
       border-radius: 8px;
       height: 200px;
       width: 200px;
   }
 
-  #restaurant-edit-modal #restaurant-namee, #restaurant-edit-modal #restaurant-description, #restaurant-edit-modal #restaurant-city, #restaurant-edit-modal #restaurant-status{
+  #restaurant-edit-modal #restaurant-namee, #restaurant-edit-modal #restaurant-description, #restaurant-edit-modal #restaurant-city, #restaurant-edit-modal #restaurant-status,
+  #restaurant-add-modal #restaurant-add-namee, #restaurant-add-modal #restaurant-add-description, #restaurant-add-modal #restaurant-add-city, #restaurant-add-modal #restaurant-add-status{
       width: 100%;
       border: 1px solid maroon;
       margin-bottom: 1.5em;

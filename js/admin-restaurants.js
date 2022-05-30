@@ -1,19 +1,44 @@
-var modal;
-var span;
+var editModal;
+var editSpan;
+var editCancel;
+
+var addModal;
+var addSpan;
+var addCancel;
+
 
 window.onload = (e)=>{
+    
     fetchData().then(()=>{
         
         
-        modal = document.getElementById("restaurant-edit-modal");
+        addModal = document.getElementById("restaurant-add-modal");
+        editModal = document.getElementById("restaurant-edit-modal");
 
 
+        editSpan = document.getElementsByClassName("edit-close")[0];
+        editCancel = document.getElementById("edit-cancel");
 
-        span = document.getElementsByClassName("close")[0];
+        addSpan = document.getElementsByClassName("add-close")[0];
+        addCancel = document.getElementById("add-cancel");
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
+
+        editSpan.onclick = function() {
+            editModal.style.display = "none";
+        }
+
+        
+        editCancel.onclick = function() {
+            editModal.style.display = "none";
+        }
+
+        addSpan.onclick = function() {
+            addModal.style.display = "none";
+        }
+
+        
+        addCancel.onclick = function() {
+            addModal.style.display = "none";
         }
     
     });
@@ -45,10 +70,57 @@ const fetchData = async ()=>{
     
 }
 
+async function addRest(){
+
+    addModal.style.display="block"
+
+    document.getElementById('restaurant-add-logo-input').addEventListener('change',(e)=>{
+        let reader = new FileReader()
+        reader.readAsDataURL(e.target.files[0]);
+        reader.addEventListener('loadend', ()=>{
+            document.getElementById('restaurant-add-logo').src = reader.result
+        })
+    })
+
+    let cities = []
+    await axios.get('http://127.0.0.1/tomatobackend/getCities.php').then(response=>{
+        cities = [...response.data]
+        let citySelect = document.getElementById('restaurant-add-city');
+        cities?.map(city=>citySelect.innerHTML+=`<option value='${city.id}'>${city.name}</option>`)
+    })
+
+    document.getElementById('add-save').onclick = saveNewRestaurant
+
+}
+
+async function saveNewRestaurant(){
+    let img = document.getElementById('restaurant-add-logo').src
+    let name = document.getElementById('restaurant-add-namee').value
+    let description = document.getElementById('restaurant-add-description').value
+    let status = document.getElementById('restaurant-add-status').value
+    let city = document.getElementById('restaurant-add-city').value
+
+    const form = new FormData();
+    form.append('img', img)
+    form.append('name', name)
+    form.append('description', description)
+    form.append('status', status)
+    form.append('city', city)
+
+        console.log(img,
+            name,
+            description,
+            status,
+            city)
+    await axios.post('http://127.0.0.1/tomatobackend/addRestaurant.php', form).then(response=>{
+            addModal.style.display = 'none';
+            location.reload()
+    })
+}
 async function editRest(id){
     const form = new FormData();
     form.append('id', id)
-    modal.style.display="block"
+    editModal.style.display="block"
 
     let cities = []
     await axios.get('http://127.0.0.1/tomatobackend/getCities.php').then(response=>{
@@ -59,8 +131,6 @@ async function editRest(id){
 
     await axios.post('http://127.0.0.1/tomatobackend/getRestaurant.php', form).then(response=>{
         const data = response.data[0];
-        console.log(data)
-        console.log(document.getElementById('restaurant-name'))
         document.getElementById('restaurant-logo').src = data.image
         document.getElementById('restaurant-namee').defaultValue = data.name
         document.getElementById('restaurant-description').defaultValue = data.description
@@ -94,18 +164,13 @@ async function editRest(id){
     form.append('status', status)
     form.append('city', city)
 
-    console.log(
-        name,
-        description,
-        status,
-        city,)
     await axios.post('http://127.0.0.1/tomatobackend/updateRestaurant.php', form).then(()=>{
         document.getElementById('restaurant-logo').src = ''
         document.getElementById('restaurant-namee').value = ''
         document.getElementById('restaurant-description').value =''
         document.getElementById('restaurant-status').value = ''
         document.getElementById('restaurant-city').value = ''
-        modal.style.display = "none";
+        editModal.style.display = "none";
         location.reload()
     })
  }
