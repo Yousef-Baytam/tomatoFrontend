@@ -48,13 +48,14 @@ const renderRestaurants = (obj) => {
     console.log(obj)
     for (let i of obj) {
         let { image, name, category, id } = i
-        let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating=${ i['AVG(rev.rating)'] } id=${ id }/>`
+        let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating='${ i['AVG(rev.rating)'] }' id='${ id }'/>`
         conatiner.insertAdjacentHTML('beforeend', card)
     }
-    let review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
-    if (review[0] != null)
-        for (let rev of review)
-            rev.addEventListener('click', () => {
-                reviewForm.classList.toggle('hidden')
-            })
+    let review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x123')]
+    console.log(review)
+    console.log(document.querySelector('#review-x'))
+    for (let rev of review)
+        rev.addEventListener('click', (e) => {
+            reviewForm.classList.toggle('hidden')
+        })
 }

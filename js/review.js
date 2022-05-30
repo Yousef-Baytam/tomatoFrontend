@@ -32,10 +32,11 @@ class Review extends HTMLElement {
                     </div>
                 </div>
                 <form action="#" method="POST" class="form" review-form>
-                    <div>
-                        <i class="fa-solid fa-xmark" id="review-x"></i>
+                    <div> 
+
+                        <i class="fa-solid fa-xmark" id="review-x123"></i>
                         <textarea name="" id="" cols="30" rows="6" placeholder="Review"></textarea>
-                    </div>
+                        </div>
                     <label for="rating">Rating</label>
                     <input type="range" min="1" max="6" name="rating">
                     <input type="submit" name="submit" value="Submit">
