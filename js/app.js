@@ -186,7 +186,8 @@ const clearFilters = () => {
     searchBar.value = ''
     renderRestaurants(allRestaurants)
 }
-cfilters.addEventListener('click', clearFilters)
+if (cfilters)
+    cfilters.addEventListener('click', clearFilters)
 
 if (searchBar)
     searchBar.addEventListener('keyup', () => {

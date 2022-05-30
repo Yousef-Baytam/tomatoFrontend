@@ -55,7 +55,7 @@ const renderRestaurants = (obj) => {
     conatiner.innerHTML = ''
     for (let i of obj) {
         let { image, name, category, id } = i
-        let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating='${ i['AVG(rev.rating)'] }' id='${ id }'/>`
+        let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating='${ Math.round(i['AVG(rev.rating)']) }' id='${ id }'/>`
         conatiner.insertAdjacentHTML('beforeend', card)
     }
     let review = [...document.querySelectorAll('.leave-a-review')]
@@ -70,13 +70,16 @@ const renderRestaurants = (obj) => {
             myReview.title = restro.name
             myReview.desc = restro.description
             myReview.cuisine = restro.category
-            myReview.rating = restro['AVG(rev.rating)']
+            console.log(Math.round(restro['AVG(rev.rating)']))
+            myReview.rating = Math.round(restro['AVG(rev.rating)'])
             reviewForm.classList.toggle('hidden')
-            document.querySelector('[reviewSubmit]').addEventListener('click', (e) => {
-                e.preventDefault()
+            document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
+                evt.preventDefault()
                 let body = new FormData()
                 body.append('rating', document.querySelector('[type="range"]').value)
-                body.append('rating', document.querySelector('[cols="30"]').value)
+                body.append('text', document.querySelector('[cols="30"]').value)
+                body.append('id', userId)
+                body.append('restId', e.target.id)
                 axios.post('', body)
                     .then(res => console.log(res))
                     .catch(err => console.log(err))
