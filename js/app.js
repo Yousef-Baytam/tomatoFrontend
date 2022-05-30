@@ -8,6 +8,7 @@ const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xm
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
 const myNav = document.querySelector('my-navbar')
+const myUser = document.querySelector('my-user')
 let userId = 0
 
 for (let items of logIn)
@@ -69,6 +70,14 @@ const getUserData = (id) => {
             const knownUser = document.querySelectorAll('[knownUser]')
             for (let i of knownUser)
                 i.classList.toggle('d-none')
+            if (myUser) {
+                myUser.name = res.data.name
+                myUser.lastName = res.data.last
+                myUser.email = res.data.email
+                myUser.phone = res.data.phone
+                myUser.location = res.data.location
+                myUser.dob = res.data.dob
+            }
             return res.data
         })
         .catch(e => console.log(e))
