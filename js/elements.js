@@ -7,8 +7,11 @@ const fetchRes = () => {
             if (window.location.href.includes('restaurants.html')) {
                 renderRestaurants(res.data)
             }
-            allRestaurants = res.data
-            return (res.data)
+            let filteredRestros = []
+            for (let i of res.data)
+                if (i.status == 'active')
+                    filteredRestros.push(i)
+            allRestaurants = filteredRestros
         }).catch((e) => {
             console.log(e)
         })

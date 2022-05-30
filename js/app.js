@@ -13,7 +13,8 @@ const myEdit = document.querySelector('my-edit')
 const userImg = document.querySelector('#imgyaay')
 const userImgDsiplay = document.querySelector('[alt="user Image"]')
 let userId = 0
-let allRestaurants = fetchRes()
+let allRestaurants
+fetchRes()
 
 /* ****************NavBar event listeners (to toggle animation classes)**************** */
 for (let items of logIn)
@@ -151,4 +152,8 @@ const getRestro = (id) => {
         restro.id == id ? rest = restro : ''
     }
     return rest
+}
+
+const filterRestroByCat = () => {
+
 }
