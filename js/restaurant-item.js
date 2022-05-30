@@ -4,23 +4,28 @@ class RestaurantItem extends HTMLElement{
     connectedCallback(){
         this.innerHTML=`
             <div class="admin-card">
-                <div class='head'>
-                    <div class="title">
-                        <h3>${this.getAttribute('name') || 'name'}</h3>
-                    </div>
-                    <div class="action-buttons">
-                        <span title="edit" onclick="editRest(${this.id})"><i class="fa-solid fa-pen-to-square"></i></span>
-                        <span title="remove" onclick="remove(${this.id})"><i class="fa-solid fa-trash-can"></i></span>`+
-                        (this.status != "banned" ? `<span title="ban" onclick="ban(${this.id})"><i class="fa-solid fa-ban"></i></span>`:'') +
-                        (this.status == "banned" ? `<span title="unban" onclick="activate(${this.id})"><i class="fa-solid fa-check"></i></span>` :'')+
-                    `</div>
+                <div class="restaurant-item-logo">
+                    <img src="${this.getAttribute('image')}" />
                 </div>
-                <div class='content'>
-                    <div>
-                        ${generateStars(this.getAttribute('rate') || 0)} (${this.getAttribute('rate') || 0}/5)
+                <div style="width: 100%">
+                    <div class='head'>
+                        <div class="title">
+                            <h3>${this.getAttribute('name') || 'name'}</h3>
+                        </div>
+                        <div class="action-buttons">
+                            <span title="edit" onclick="editRest(${this.id})"><i class="fa-solid fa-pen-to-square"></i></span>
+                            <span title="remove" onclick="remove(${this.id})"><i class="fa-solid fa-trash-can"></i></span>`+
+                            (this.status != "banned" ? `<span title="ban" onclick="ban(${this.id})"><i class="fa-solid fa-ban"></i></span>`:'') +
+                            (this.status == "banned" ? `<span title="unban" onclick="activate(${this.id})"><i class="fa-solid fa-check"></i></span>` :'')+
+                        `</div>
                     </div>
-                    <div class="description">
-                        <p>${this.getAttribute('description') || 'description'}</p>
+                    <div class='content'>
+                        <div>
+                            ${generateStars(this.getAttribute('rate') || 0)} (${this.getAttribute('rate') || 0}/5)
+                        </div>
+                        <div class="description">
+                            <p>${this.getAttribute('description') || 'description'}</p>
+                        </div>
                     </div>
                 </div>
             </div>

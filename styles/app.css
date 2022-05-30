@@ -330,6 +330,8 @@ input[type='submit']:hover {
 }
 
 .admin-card{
+    display:flex;
+    align-items: center;
     background-color: var(--secondary-color);
     width: 90%;
     padding: 10px 20px;
@@ -352,7 +354,15 @@ input[type='submit']:hover {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.restaurant-item-logo {
+    margin: 10px;
+}
 
+.restaurant-item-logo img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+}
 .edit-restaurant .form-container, .add-restaurant .form-container{
     flex-direction: column;
 }

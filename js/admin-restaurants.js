@@ -64,7 +64,7 @@ const fetchData = async ()=>{
     if(restaurants.length > 0){
         const container = document.getElementsByClassName('restaurants-admin-container')[0];
         restaurants.map(rest=>
-            container.innerHTML +=`<restaurant-item id="${rest.id}" status="${rest.status}" name="${rest.name}" description="${rest.description}" rate="${rest.rate}"></restaurant-item>`
+            container.innerHTML +=`<restaurant-item id="${rest.id}" status="${rest.status}" name="${rest.name}" description="${rest.description}" rate="${rest.rate}" image="${rest.image}"></restaurant-item>`
         )
     }
     
