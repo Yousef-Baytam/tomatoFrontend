@@ -26,6 +26,7 @@ const getCookieValue = (cname) => {
             i = i.substring(1);
         }
         if (i.indexOf(name) == 0) {
+            sessionCookie = i
             return i.substring(name.length, i.length);
         }
     }

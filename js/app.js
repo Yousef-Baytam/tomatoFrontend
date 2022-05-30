@@ -14,6 +14,8 @@ const userImg = document.querySelector('#imgyaay')
 const userImgDsiplay = document.querySelector('[alt="user Image"]')
 const cat = document.querySelectorAll('[cat]')
 const searchBar = document.querySelector('[placeholder="Search by Name"]')
+const logOut = document.querySelector('[logOut]')
+let sessionCookie
 let userId = 0
 let allRestaurants
 let temRest
@@ -180,3 +182,12 @@ if (searchBar)
         }
         renderRestaurants(result)
     })
+
+const logout = () => {
+    console.log('hello')
+    document.cookie = `${ sessionCookie }; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/`;
+    window.location.href = 'http://localhost/tomato/tomatoFrontend/index.html'
+}
+
+logOut.addEventListener('click', logout)
+
