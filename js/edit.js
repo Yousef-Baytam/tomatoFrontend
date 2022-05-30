@@ -3,7 +3,6 @@ class Edit extends HTMLElement {
         return this.querySelector('[placeholder="First Name"]').value
     }
     set name(val) {
-        console.log('triggered')
         val ? this.querySelector('[placeholder="First Name"]').value = val : ''
     }
 
@@ -46,7 +45,7 @@ class Edit extends HTMLElement {
         this.innerHTML = `<div class="form-bg hidden">
         <div class="steps-container">
             <div class="form-container">
-                <form action="#" method="POST" class="form">
+                <form action="" method="POST" class="form">
                     <div>
                         <i class="fa-solid fa-xmark"></i>
                         <input type="text" name="name" placeholder="First Name" value='${ this.getAttribute('name') }'>

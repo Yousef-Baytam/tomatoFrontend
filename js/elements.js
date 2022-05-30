@@ -30,3 +30,11 @@ const getCookieValue = (cname) => {
     }
     return "";
 }
+
+const updateInfo = (id, n, l, e, p, loc, d) => {
+    axios.get(`?id=${ id }&name=${ n }&last=${ l }&email=${ e }&phone=${ p }&location=${ loc }&dob=${ d }`)
+        .then((res) => {
+            console.log(res)
+            document.location.reload()
+        }).catch(err => console.log(err))
+}

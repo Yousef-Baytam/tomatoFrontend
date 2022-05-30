@@ -80,7 +80,6 @@ const getUserData = (id) => {
                 myUser.dob = res.data.dob
             }
             if (myEdit) {
-                console.log('hakoona matata')
                 myEdit.name = res.data.name
                 myEdit.lastName = res.data.last
                 myEdit.email = res.data.email
@@ -99,4 +98,10 @@ window.addEventListener("load", () => {
         return
     const userData = getUserData(userId)
 })
+
+if (myEdit)
+    myEdit.addEventListener('submit', (e) => {
+        e.preventDefault()
+        updateInfo(userId, document.querySelector('[placeholder="First Name"]').value, document.querySelector('[placeholder="Last Name"]').value, document.querySelector('[placeholder="Email"]').value, document.querySelector('[placeholder="Phone Number"]').value, document.querySelector('[placeholder="Location"]').value, document.querySelector('[type="Date"]').value)
+    })
 
