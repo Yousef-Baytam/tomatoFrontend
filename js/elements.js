@@ -42,10 +42,10 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
     data.append('phone', p)
     data.append('location', loc)
     data.append('dob', d)
-    axios.post(``, data)
+    console.log(id, n, l, e, p, loc, d, data)
+    axios.post(`http://localhost/tomato/tomatoBackend/updateUserInfo.php`, data)
         .then((res) => {
-            console.log(res)
-            document.location.reload()
+            window.location.reload()
         }).catch(err => console.log(err))
 }
 

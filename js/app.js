@@ -96,7 +96,7 @@ const getUserData = (id) => {
                 myUser.lastName = res.data.last
                 myUser.email = res.data.email
                 myUser.phone = res.data.phone
-                myUser.location = res.data.location
+                myUser.location = res.data.city
                 myUser.dob = res.data.dob
                 myUser.imgSrc = res.data.profilePic
             }
@@ -105,7 +105,7 @@ const getUserData = (id) => {
                 myEdit.lastName = res.data.last
                 myEdit.email = res.data.email
                 myEdit.phone = res.data.phone
-                myEdit.location = res.data.location
+                myEdit.location = res.data.city
                 myEdit.dob = res.data.dob
             }
             return res.data
@@ -127,7 +127,14 @@ window.addEventListener("load", () => {
 if (myEdit)
     myEdit.addEventListener('submit', (e) => {
         e.preventDefault()
-        updateInfo(userId, document.querySelector('[placeholder="First Name"]').value, document.querySelector('[placeholder="Last Name"]').value, document.querySelector('[placeholder="Email"]').value, document.querySelector('[placeholder="Phone Number"]').value, document.querySelector('[placeholder="Location"]').value, document.querySelector('[type="Date"]').value)
+        let f = document.querySelector('[editfirstname]').value
+        let l = document.querySelector('[editlastname]').value
+        let m = document.querySelector('[editemail]').value
+        let p = document.querySelector('[editphone]').value
+        let loc = document.querySelector('[editlocation]').value
+        let d = document.querySelector('#dob123').value
+        console.log(userId, f, l, m, p, loc, d)
+        updateInfo(userId, f, l, m, p, loc, d)
     })
 /***************************************************************************** */
 
@@ -172,6 +179,8 @@ if (cat)
                     renderRestaurants(temRest)
                 }).catch(err => console.log(err))
         })
+
+
 
 if (searchBar)
     searchBar.addEventListener('keyup', () => {

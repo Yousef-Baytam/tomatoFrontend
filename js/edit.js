@@ -48,23 +48,23 @@ class Edit extends HTMLElement {
                 <form action="" method="POST" class="form">
                     <div>
                         <i class="fa-solid fa-xmark"></i>
-                        <input type="text" name="name" placeholder="First Name" value='${ this.getAttribute('name') }'>
+                        <input type="text" name="name" placeholder="First Name" editfirstname value='${ this.getAttribute('name') }'>
                     </div>
                     <div>
-                        <input type="text" name="Last" placeholder="Last Name" value='${ this.getAttribute('lastName') }'>
+                        <input type="text" name="Last" placeholder="Last Name" editlastname value='${ this.getAttribute('lastName') }'>
                     </div>
                     <div>
-                        <input type="text" name="email" placeholder="Email" value='${ this.getAttribute('email') }'>
+                        <input type="text" name="email" placeholder="Email" editemail value='${ this.getAttribute('email') }'>
                     </div>
                     <div>
-                        <input type="text" name="Phone" placeholder="Phone Number" value='${ this.getAttribute('phone') }'>
+                        <input type="text" name="Phone" placeholder="Phone Number" editphone value='${ this.getAttribute('phone') }'>
                     </div>
                     <div>
                         <label dob-label for="dob"> Date of Birth</label>
-                        <input type="Date" name="dob" id='dob' value='${ this.getAttribute('dob') ? this.getAttribute('dob') : '' }'>
+                        <input type="Date" name="dob" id='dob123' value='${ this.getAttribute('dob') ? this.getAttribute('dob') : '' }'>
                     </div>
                     <div>
-                        <input type="text" name="Phone" placeholder="Location" value='${ this.getAttribute('location') }'>
+                        <input type="text" name="Phone" editlocation placeholder="Location" value='${ this.getAttribute('location') }'>
                     </div>
                     <input type="submit" name="submit" value="Submit">
                 </form>
