@@ -1,10 +1,24 @@
 class Nav extends HTMLElement {
+
+    get name() {
+        return this.querySelector('[username]').innerHTML
+    }
+    set name(val) {
+        val ? this.querySelector('[username]').innerHTML = val : ''
+    }
+    get imgSrc() {
+        return this.querySelector('[userimage]').src
+    }
+    set imgSrc(val) {
+        val ? this.querySelector('[userimage]').src = val : ''
+    }
     connectedCallback() {
         this.innerHTML = `<nav>
         <div>
             <div class='logo'>
             <img src="${ this.getAttribute('logoSrc') }" alt="">
-                Tomato
+            <a href="http://localhost/tomato/tomatoFrontend/index.html">Tomato</a>
+                
             </div>
             <div class='logo d-none' knownUser>
                 <a href="http://localhost/tomato/tomatoFrontend/views/restaurants.html">All restaurants</a>
@@ -16,7 +30,7 @@ class Nav extends HTMLElement {
             </div>
             <div class="logged-in logo d-none" knownUser>
                 <div username> ${ this.getAttribute('name') } ${ this.getAttribute('lastName') }</div>
-                <div img><img src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
+                <div img><img userimage src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
                 <div profile class='d-none'>
                 <a href="http://localhost/tomato/tomatoFrontend/views/profile.html">My profile</a>
                 </div>

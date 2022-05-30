@@ -7,7 +7,7 @@ nav = document.querySelector('nav')
 const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xmark')[2]]
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
-const myNav = document.createElement('my-navbar')
+const myNav = document.querySelector('my-navbar')
 let userId = 0
 
 for (let items of logIn)
@@ -64,11 +64,8 @@ const getUserData = (id) => {
         .then((res) => {
             if (res.data.response === 'User Not Found')
                 return false
-            myNav.setAttribute('name', res.data.name)
-            myNav.setAttribute('last', res.data.last)
-            myNav.setAttribute('imgSrc', res.data.profilePic)
-            myNav.setAttribute('logoSrc', '../assets/tomato.png')
-            document.body.prepend(myNav)
+            myNav.name = `${ res.data.name } ${ res.data.last }`
+            myNav.imgSrc = res.data.profilePic
             const knownUser = document.querySelectorAll('[knownUser]')
             for (let i of knownUser)
                 i.classList.toggle('d-none')
@@ -78,7 +75,6 @@ const getUserData = (id) => {
 }
 
 window.addEventListener("load", () => {
-    console.log('hello')
     userId = getCookieValue('tomatoUser')
     if (!userId)
         return

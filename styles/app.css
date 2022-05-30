@@ -135,11 +135,11 @@ a {
     transition: all 200ms ease;
 }
 
-a:hover::after {
+a:not([href="http://localhost/tomato/tomatoFrontend/index.html"]):hover::after {
     content: ' »';
 }
 
-a:hover {
+a:hover:not([href="http://localhost/tomato/tomatoFrontend/index.html"]) {
     transform: translateX(-5%);
     color: var(--tertiary-color);
 }
