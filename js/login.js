@@ -36,5 +36,5 @@ const setCookie = (cookieName, cookieValue, expiryDays) => {
     const date = new Date()
     date.setTime(date.getTime() + (expiryDays * 1000 * 60 * 60 * 24))
     let exp = `expires=${ date.toUTCString() }`
-    document.cookie = `${ cookieName }=${ cookieValue };path=/`
+    document.cookie = `${ cookieName }=${ cookieValue };${ exp };path=/`
 }
