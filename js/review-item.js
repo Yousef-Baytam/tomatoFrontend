@@ -1,6 +1,6 @@
 class ReviewItem extends HTMLElement{
 
-
+    status = this.getAttribute('status')
     connectedCallback(){
         this.innerHTML=`
             <div class="admin-review-card">

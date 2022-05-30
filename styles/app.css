@@ -456,6 +456,22 @@ input[type='submit']:hover {
     
 }
 
+.filter{
+    width: 90%;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.filter-list {
+    width: 100%;
+    margin-bottom: 1.5em;
+    height: 3.5em;
+    border-radius: 5px;
+    padding: 0.5em 2em;
+    outline: none;
+    border: 1px solid maroon;
+}
+
 @keyframes slide {
     0% {
         transform: translateX(0%);
