@@ -1,12 +1,13 @@
 const conatiner = document.querySelector('.container')
+const myReview = document.querySelector('my-review')
 
 const fetchRes = () => {
-    conatiner.innerHTML = ''
     axios.get(`http://localhost/tomato/tomatoBackend/getAllRes.php`)
         .then((res) => {
             if (window.location.href.includes('restaurants.html')) {
                 renderRestaurants(res.data)
             }
+            allRestaurants = res.data
             return (res.data)
         }).catch((e) => {
             console.log(e)
@@ -45,17 +46,28 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
 }
 
 const renderRestaurants = (obj) => {
+    conatiner.innerHTML = ''
     console.log(obj)
     for (let i of obj) {
         let { image, name, category, id } = i
         let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating='${ i['AVG(rev.rating)'] }' id='${ id }'/>`
         conatiner.insertAdjacentHTML('beforeend', card)
     }
-    let review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x123')]
-    console.log(review)
-    console.log(document.querySelector('#review-x'))
+    let review = [...document.querySelectorAll('.leave-a-review')]
+    document.querySelector('#review-x123').addEventListener('click', () => {
+        reviewForm.classList.toggle('hidden')
+    })
     for (let rev of review)
         rev.addEventListener('click', (e) => {
+            const restro = getRestro(e.target.id)
+            console.log(restro)
+            console.log(restro['AVG(rev.rating)'])
+            myReview.imgSrc = restro.image
+            myReview.title = restro.name
+            myReview.desc = restro.description
+            myReview.cuisine = restro.category
+            myReview.rating = restro['AVG(rev.rating)']
             reviewForm.classList.toggle('hidden')
         })
 }
+
