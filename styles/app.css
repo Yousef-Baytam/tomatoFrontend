@@ -569,7 +569,7 @@ input[type='submit']:hover {
       width: 200px;
   }
 
-  #restaurant-edit-modal #name, #restaurant-edit-modal #description, #restaurant-edit-modal #city, #restaurant-edit-modal #status{
+  #restaurant-edit-modal #restaurant-namee, #restaurant-edit-modal #restaurant-description, #restaurant-edit-modal #restaurant-city, #restaurant-edit-modal #restaurant-status{
       width: 100%;
       border: 1px solid maroon;
       margin-bottom: 1.5em;

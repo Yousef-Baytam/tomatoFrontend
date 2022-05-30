@@ -1,16 +1,15 @@
+var modal;
+var span;
+
 window.onload = (e)=>{
     fetchData().then(()=>{
-        var btn = document.getElementById("myBtn");
-        // When the user clicks on the button, open the modal
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
         
-        var modal = document.getElementById("restaurant-edit-modal");
+        
+        modal = document.getElementById("restaurant-edit-modal");
 
 
 
-        var span = document.getElementsByClassName("close")[0];
+        span = document.getElementsByClassName("close")[0];
 
         // When the user clicks on <span> (x), close the modal
         span.onclick = function() {
@@ -46,10 +45,63 @@ const fetchData = async ()=>{
     
 }
 
-function editRest(){
-    
-    document.getElementsByTagName('edit-restaurant')[0].children[0].classList.remove('hidden')
+async function editRest(id){
+    const form = new FormData();
+    form.append('id', id)
+    modal.style.display="block"
+
+    let cities = []
+    await axios.get('http://127.0.0.1/tomatobackend/getCities.php').then(response=>{
+        cities = [...response.data]
+        let citySelect = document.getElementById('restaurant-city');
+        cities?.map(city=>citySelect.innerHTML+=`<option value='${city.id}'>${city.name}</option>`)
+    })
+
+    await axios.post('http://127.0.0.1/tomatobackend/getRestaurant.php', form).then(response=>{
+        const data = response.data[0];
+        console.log(data)
+        console.log(document.getElementById('restaurant-name'))
+        document.getElementById('restaurant-logo').src = data.image
+        document.getElementById('restaurant-namee').defaultValue = data.name
+        document.getElementById('restaurant-description').defaultValue = data.description
+        document.getElementById('restaurant-status').value = data.status
+        document.getElementById('restaurant-city').value = data.cities_id
+
+        document.getElementById('edit-save').onclick = ()=>saveRestaurantChanges(data.id)
+        
+    })
  }
+
+ async function saveRestaurantChanges(id){
+    let img = document.getElementById('restaurant-logo').src
+    let name = document.getElementById('restaurant-namee').value
+    let description = document.getElementById('restaurant-description').value
+    let status = document.getElementById('restaurant-status').value
+    let city = document.getElementById('restaurant-city').value
+
+    const form = new FormData();
+    form.append('id', id)
+    form.append('img', img)
+    form.append('name', name)
+    form.append('description', description)
+    form.append('status', status)
+    form.append('city', city)
+
+    console.log(
+        name,
+        description,
+        status,
+        city,)
+    await axios.post('http://127.0.0.1/tomatobackend/updateRestaurant.php', form).then(()=>{
+        document.getElementById('restaurant-logo').src = ''
+        document.getElementById('restaurant-namee').value = ''
+        document.getElementById('restaurant-description').value =''
+        document.getElementById('restaurant-status').value = ''
+        document.getElementById('restaurant-city').value = ''
+        modal.style.display = "none";
+    })
+ }
+
  async function remove(id){
     const form = new FormData();
     form.append('id', id)

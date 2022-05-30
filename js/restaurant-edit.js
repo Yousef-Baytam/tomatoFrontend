@@ -64,14 +64,14 @@ class EditRestaurant extends HTMLElement {
                         <img id="restaurant-logo" >
                         <input type="file" id="restaurant-logo-input"/>
                     </div>
-                    <input id="name" placeholder="Name"/>
-                    <textarea id="description" placeholder="Description"></textarea>
+                    <input id="restaurant-namee" placeholder="Name"/>
+                    <textarea id="restaurant-description" placeholder="Description"></textarea>
 
-                    <select id="city" name="city">
+                    <select id="restaurant-city" name="restaurant-city">
 
                     </select>
 
-                    <select id="status" name="status">
+                    <select id="restaurant-status" name="restaurant-status">
                         <option value="active">Active</option>
                         <option value="banned">Banned</option>
                     </select>
