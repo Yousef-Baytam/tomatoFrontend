@@ -12,7 +12,7 @@ class RestaurantItem extends HTMLElement{
                         <span title="edit" onclick="editRest(${this.id})"><i class="fa-solid fa-pen-to-square"></i></span>
                         <span title="remove" onclick="remove(${this.id})"><i class="fa-solid fa-trash-can"></i></span>`+
                         (this.status != "banned" ? `<span title="ban" onclick="ban(${this.id})"><i class="fa-solid fa-ban"></i></span>`:'') +
-                       (this.status == "banned" ? `<span title="unban" onclick="activate(${this.id})"><i class="fa-solid fa-check"></i></span>` :'')+
+                        (this.status == "banned" ? `<span title="unban" onclick="activate(${this.id})"><i class="fa-solid fa-check"></i></span>` :'')+
                     `</div>
                 </div>
                 <div class='content'>

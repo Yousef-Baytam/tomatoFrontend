@@ -1,18 +1,35 @@
-
-
-
 window.onload = (e)=>{
-    fetchData();
+    fetchData().then(()=>{
+        var btn = document.getElementById("myBtn");
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+        
+        var modal = document.getElementById("restaurant-edit-modal");
+
+
+
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    
+    });
+
+    
 }
 
-const restaurantEditClose = document.getElementById('restaurant-edit-close').onclick = (e)=>{
-    console.log("TEST")
-    document.getElementsByClassName('edit-restaurant')[0]?.classList.add('hidden')
-}
+// const restaurantEditClose = document.getElementById('restaurant-edit-close').onclick = (e)=>{
+//     console.log("TEST")
+//     document.getElementsByClassName('edit-restaurant')[0]?.classList.add('hidden')
+// }
 
-const restaurantAddClose = document.getElementById('restaurant-add-close').onclick = (e)=>{
-    document.getElementById('add-restaurant').classList.add('hidden')
-}
+// const restaurantAddClose = document.getElementById('restaurant-add-close').onclick = (e)=>{
+//     document.getElementById('add-restaurant').classList.add('hidden')
+// }
 
 const fetchData = async ()=>{
     let restaurants = []
