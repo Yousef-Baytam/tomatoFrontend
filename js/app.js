@@ -7,8 +7,7 @@ nav = document.querySelector('nav')
 const edit = [document.querySelector('.edit'), document.querySelectorAll('.fa-xmark')[2]]
 const review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
 const reviewForm = document.querySelector('#review')
-const knownUser = document.querySelectorAll('[knownUser]')
-const myNav = document.querySelector('my-navbar')
+const myNav = document.createElement('my-navbar')
 let userId = 0
 
 for (let items of logIn)
@@ -63,12 +62,17 @@ document.addEventListener('scroll', () => {
 const getUserData = (id) => {
     axios.get(`http://localhost/tomato/tomatoBackend/getUser.php?id=${ id }`)
         .then((res) => {
-            console.log(res, res.data)
             if (res.data.response === 'User Not Found')
                 return false
+            myNav.setAttribute('name', res.data.name)
+            myNav.setAttribute('last', res.data.last)
+            myNav.setAttribute('imgSrc', res.data.profilePic)
+            myNav.setAttribute('logoSrc', '../assets/tomato.png')
+            document.body.prepend(myNav)
+            const knownUser = document.querySelectorAll('[knownUser]')
             for (let i of knownUser)
                 i.classList.toggle('d-none')
-            return res.data.response
+            return res.data
         })
         .catch(e => console.log(e))
 }
@@ -79,6 +83,4 @@ window.addEventListener("load", () => {
     if (!userId)
         return
     const userData = getUserData(userId)
-    console.log(userData)
-    myNav.setAttribute()
 })

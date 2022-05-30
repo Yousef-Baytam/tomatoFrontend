@@ -16,7 +16,7 @@ class Edit extends HTMLElement {
                     </div>
                     <div>
                         <label dob-label for="dob"> Date of Birth</label>
-                        <input type="Date" name="dob" id='dob' value='${ this.getAttribute('dob') }'>
+                        <input type="Date" name="dob" id='dob' value='${ this.getAttribute('dob') ? this.getAttribute('dob') : '' }'>
                     </div>
                     <div>
                         <input type="text" name="Phone" placeholder="Location" value='${ this.getAttribute('location') }'>
