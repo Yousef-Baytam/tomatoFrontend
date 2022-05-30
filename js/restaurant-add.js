@@ -41,13 +41,8 @@ class RestaurantAdd extends HTMLElement{
 }
 
 function openAdd(){
-    console.log("test")
-    let elm = document.getElementById('add-restaurant').classList.remove('hidden')
-    console.log(elm)
+    document.getElementById('add-restaurant').classList.remove('hidden')
 }
 
-function remove(){
-    return console.log("remove")
-}
 
 customElements.define('restaurant-add', RestaurantAdd);

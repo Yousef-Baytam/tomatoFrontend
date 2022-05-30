@@ -1,5 +1,6 @@
 class RestaurantItem extends HTMLElement{
-
+    id = this.getAttribute('id')
+    status = this.getAttribute('status')
     connectedCallback(){
         this.innerHTML=`
             <div class="admin-card">
@@ -8,10 +9,11 @@ class RestaurantItem extends HTMLElement{
                         <h3>${this.getAttribute('name') || 'name'}</h3>
                     </div>
                     <div class="action-buttons">
-                        <span onclick="editRest()"><i class="fa-solid fa-pen-to-square"></i></span>
-                        <span onclick="remove()"><i class="fa-solid fa-trash-can"></i></span>
-                        <span onclick="ban()"><i class="fa-solid fa-ban"></i></span>
-                    </div>
+                        <span title="edit" onclick="editRest(${this.id})"><i class="fa-solid fa-pen-to-square"></i></span>
+                        <span title="remove" onclick="remove(${this.id})"><i class="fa-solid fa-trash-can"></i></span>`+
+                        (this.status != "banned" ? `<span title="ban" onclick="ban(${this.id})"><i class="fa-solid fa-ban"></i></span>`:'') +
+                       (this.status == "banned" ? `<span title="unban" onclick="activate(${this.id})"><i class="fa-solid fa-check"></i></span>` :'')+
+                    `</div>
                 </div>
                 <div class='content'>
                     <div>
@@ -36,18 +38,6 @@ function generateStars(rate){
         }
     }
     return stars
-}
-
-function editRest(){
-    
-    let elm = document.getElementsByTagName('edit-restaurant')[0].children[0].classList.remove('hidden')
-}
-function remove(){
-    return console.log("remove")
-}
-
-function ban(){
-    console.log('ban')
 }
 
 customElements.define('restaurant-item', RestaurantItem);
