@@ -42,12 +42,14 @@ async function accept(id){
     form.append('status', 'accepted')
     form.append('id', id)
     await axios.post('http://127.0.0.1/tomatobackend/updateReviewStatus.php', form).then(response=>
-    console.log(response))
+        location.reload()
+    )
 }
 async function decline(id){
     const form = new FormData();
     form.append('status', 'declined')
     form.append('id', id)
     await axios.post('http://127.0.0.1/tomatobackend/updateReviewStatus.php', form).then(response=>
-    console.log(response))
+        location.reload()
+    )
 }
