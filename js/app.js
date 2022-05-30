@@ -126,5 +126,14 @@ if (myEdit)
 /*******************User img upload changes****************** */
 userImg.addEventListener('change', (e) => {
     userImgDsiplay.src = URL.createObjectURL(e.target.files[0]);
-    console.log(userImgDsiplay.src)
+    if (!userImgDsiplay.src)
+        return
+    let body = new FormData()
+    body.append('id', userId)
+    body.append('img', userImgDsiplay.src)
+    axios.post('http://localhost/tomato/tomatoBackend/userImage.php', body)
+        .then((res) => {
+            console.log(res)
+        }).catch(e => console.log(e))
 })
+/************************************************************ */
