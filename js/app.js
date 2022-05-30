@@ -15,6 +15,7 @@ const userImgDsiplay = document.querySelector('[alt="user Image"]')
 const cat = document.querySelectorAll('[cat]')
 const searchBar = document.querySelector('[placeholder="Search by Name"]')
 const logOut = document.querySelector('[logOut]')
+const cfilters = document.querySelector('.filters')
 let sessionCookie
 let userId = 0
 let allRestaurants
@@ -169,7 +170,7 @@ const getRestro = (id) => {
 if (cat)
     for (let c of cat)
         c.addEventListener('click', (e) => {
-            axios.get(`?cat=${ e.target.innerText }`)
+            axios.get(`http://localhost/tomato/tomatoBackend/getByCat.php?cat=${ e.target.innerText }`)
                 .then((res) => {
                     let filteredRestros = []
                     for (let i of res.data)
@@ -180,12 +181,21 @@ if (cat)
                 }).catch(err => console.log(err))
         })
 
-
+const clearFilters = () => {
+    temRest = []
+    searchBar.value = ''
+    renderRestaurants(allRestaurants)
+}
+cfilters.addEventListener('click', clearFilters)
 
 if (searchBar)
     searchBar.addEventListener('keyup', () => {
+        let arr
+        if (temRest)
+            arr = temRest
+        else arr = allRestaurants
         let result = []
-        for (let i of allRestaurants) {
+        for (let i of arr) {
             if (i.name.toLowerCase().includes(searchBar.value))
                 result.push(i)
         }

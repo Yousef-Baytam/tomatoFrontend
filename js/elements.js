@@ -49,6 +49,8 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
         }).catch(err => console.log(err))
 }
 
+/***********************Render cards plus review listeners*********************** */
+
 const renderRestaurants = (obj) => {
     conatiner.innerHTML = ''
     for (let i of obj) {
@@ -82,4 +84,4 @@ const renderRestaurants = (obj) => {
             })
         })
 }
-
+/***************************************************************************** */
