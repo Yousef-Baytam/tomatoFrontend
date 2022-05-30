@@ -13,6 +13,7 @@ const myEdit = document.querySelector('my-edit')
 const userImg = document.querySelector('#imgyaay')
 const userImgDsiplay = document.querySelector('[alt="user Image"]')
 let userId = 0
+let allRestaurants = fetchRes()
 
 /* ****************NavBar event listeners (to toggle animation classes)**************** */
 for (let items of logIn)
@@ -125,20 +126,22 @@ if (myEdit)
 /***************************************************************************** */
 
 /*******************User img upload changes****************** */
-userImg.addEventListener('change', (e) => {
-    let reader = new FileReader()
-    reader.readAsDataURL(e.target.files[0])
-    reader.addEventListener('loadend', () => {
-        userImgDsiplay.src = reader.result;
-        if (!userImgDsiplay.src)
-            return
-        let body = new FormData()
-        body.append('id', userId)
-        body.append('img', reader.result)
-        axios.post('http://localhost/tomato/tomatoBackend/userImage.php', body)
-            .then((res) => {
-                console.log(res)
-            }).catch(e => console.log(e))
+if (userImg)
+    userImg.addEventListener('change', (e) => {
+        let reader = new FileReader()
+        reader.readAsDataURL(e.target.files[0])
+        reader.addEventListener('loadend', () => {
+            userImgDsiplay.src = reader.result;
+            if (!userImgDsiplay.src)
+                return
+            let body = new FormData()
+            body.append('id', userId)
+            body.append('img', reader.result)
+            axios.post('http://localhost/tomato/tomatoBackend/userImage.php', body)
+                .then((res) => {
+                    console.log(res)
+                }).catch(e => console.log(e))
+        })
     })
-})
 /************************************************************ */
+

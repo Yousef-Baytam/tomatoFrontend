@@ -1,16 +1,13 @@
 const conatiner = document.querySelector('.container')
 
-const cardGenerator = (api) => {
+const fetchRes = () => {
     conatiner.innerHTML = ''
-    axios.get(api)
+    axios.get(`http://localhost/tomato/tomatoBackend/getAllRes.php`)
         .then((res) => {
-            if (!res)
-                conatiner.innerHTML = '<h1>No restaurants matching this criteria</h1>'
-            for (let i of res) {
-                let { image, title, rating, category } = i
-                let card = `<my-card imgSrc='${ image }' title='${ title }' cuisine='${ category }' rating=${ rating }/>`
-                conatiner.insertAdjacentHTML('beforeend', card)
+            if (window.location.href.includes('restaurants.html')) {
+                renderRestaurants(res.data)
             }
+            return (res.data)
         }).catch((e) => {
             console.log(e)
         })
@@ -45,4 +42,19 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
             console.log(res)
             document.location.reload()
         }).catch(err => console.log(err))
+}
+
+const renderRestaurants = (obj) => {
+    console.log(obj)
+    for (let i of obj) {
+        let { image, name, category, id } = i
+        let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating=${ i['AVG(rev.rating)'] } id=${ id }/>`
+        conatiner.insertAdjacentHTML('beforeend', card)
+    }
+    let review = [...document.querySelectorAll('.leave-a-review'), document.querySelector('#review-x')]
+    if (review[0] != null)
+        for (let rev of review)
+            rev.addEventListener('click', () => {
+                reviewForm.classList.toggle('hidden')
+            })
 }
