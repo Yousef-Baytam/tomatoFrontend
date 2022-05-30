@@ -12,8 +12,10 @@ const myUser = document.querySelector('my-user')
 const myEdit = document.querySelector('my-edit')
 const userImg = document.querySelector('#imgyaay')
 const userImgDsiplay = document.querySelector('[alt="user Image"]')
+const cat = document.querySelectorAll('[cat]')
 let userId = 0
 let allRestaurants
+let temRest
 fetchRes()
 
 /* ****************NavBar event listeners (to toggle animation classes)**************** */
@@ -154,6 +156,16 @@ const getRestro = (id) => {
     return rest
 }
 
-const filterRestroByCat = () => {
-
-}
+if (cat)
+    for (let c of cat)
+        c.addEventListener('click', (e) => {
+            axios.get(`?cat=${ e.target.innerText }`)
+                .then((res) => {
+                    let filteredRestros = []
+                    for (let i of res.data)
+                        if (i.status == 'active')
+                            filteredRestros.push(i)
+                    temRest = filteredRestros
+                    renderRestaurants(temRest)
+                }).catch(err => console.log(err))
+        })

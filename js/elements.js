@@ -69,7 +69,8 @@ const renderRestaurants = (obj) => {
             myReview.cuisine = restro.category
             myReview.rating = restro['AVG(rev.rating)']
             reviewForm.classList.toggle('hidden')
-            document.querySelector('[reviewSubmit]').addEventListener('click', () => {
+            document.querySelector('[reviewSubmit]').addEventListener('click', (e) => {
+                e.preventDefault()
                 let body = new FormData()
                 body.append('rating', document.querySelector('[type="range"]').value)
                 body.append('rating', document.querySelector('[cols="30"]').value)
