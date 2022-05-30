@@ -13,6 +13,7 @@ const myEdit = document.querySelector('my-edit')
 const userImg = document.querySelector('#imgyaay')
 const userImgDsiplay = document.querySelector('[alt="user Image"]')
 const cat = document.querySelectorAll('[cat]')
+const searchBar = document.querySelector('[placeholder="Search by Name"]')
 let userId = 0
 let allRestaurants
 let temRest
@@ -169,3 +170,13 @@ if (cat)
                     renderRestaurants(temRest)
                 }).catch(err => console.log(err))
         })
+
+if (searchBar)
+    searchBar.addEventListener('keyup', () => {
+        let result = []
+        for (let i of allRestaurants) {
+            if (i.name.toLowerCase().includes(searchBar.value))
+                result.push(i)
+        }
+        renderRestaurants(result)
+    })
