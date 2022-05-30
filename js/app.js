@@ -15,12 +15,8 @@ const userImg = document.createElement('input')
 userImg.type = 'file'
 userImg.id = 'imgyay'
 let userId = 0
-let label = document.createElement('label')
-label.htmlFor = 'imgyay'
-if (camIcon) {
-    label.innerHTML = camIcon
-}
 
+/* ****************NavBar event listeners (to toggle animation classes)**************** */
 for (let items of logIn)
     items.addEventListener('click', () => {
         formBg[0].classList.toggle('hidden')
@@ -47,19 +43,25 @@ steps[1].addEventListener('click', () => {
         formsContainers[0].classList.add('slide')
     }, { once: true })
 })
+/******************************************************************************************** */
 
+/* *************Edit form display toggler************ */
 if (edit[0] != null)
     for (let ed of edit)
         ed.addEventListener('click', () => {
             formBg[1].classList.toggle('hidden')
         })
+/***************************************************** */
 
+/* *************Review form display toggler************ */
 if (review[0] != null)
     for (let rev of review)
         rev.addEventListener('click', () => {
             reviewForm.classList.toggle('hidden')
         })
+/***************************************************** */
 
+/* *************Navbar on scroll color toggler************ */
 document.addEventListener('scroll', () => {
 
     let scrollTop = window.pageYOffset
@@ -69,11 +71,15 @@ document.addEventListener('scroll', () => {
         if (nav.classList.contains('scrolled'))
             nav.classList.remove('scrolled')
 })
+/************************************************************/
 
+/*************************Get User Info from Id (Used only on page load)************************ */
 const getUserData = (id) => {
     axios.get(`http://localhost/tomato/tomatoBackend/getUser.php?id=${ id }`)
         .then((res) => {
             if (res.data.response === 'User Not Found')
+                return false
+            if (res.data.status === 'suspended')
                 return false
             myNav.name = `${ res.data.name } ${ res.data.last }`
             myNav.imgSrc = res.data.profilePic
@@ -100,17 +106,23 @@ const getUserData = (id) => {
         })
         .catch(e => console.log(e))
 }
+/************************************************************************************************* */
 
+/*********************on load get id from cookie (if any)********************* */
 window.addEventListener("load", () => {
     userId = getCookieValue('tomatoUser')
     if (!userId)
         return
     const userData = getUserData(userId)
 })
+/******************************************************************************* */
 
+/**********************Edit form on submit post request********************** */
 if (myEdit)
     myEdit.addEventListener('submit', (e) => {
         e.preventDefault()
         updateInfo(userId, document.querySelector('[placeholder="First Name"]').value, document.querySelector('[placeholder="Last Name"]').value, document.querySelector('[placeholder="Email"]').value, document.querySelector('[placeholder="Phone Number"]').value, document.querySelector('[placeholder="Location"]').value, document.querySelector('[type="Date"]').value)
     })
+/***************************************************************************** */
+
 
