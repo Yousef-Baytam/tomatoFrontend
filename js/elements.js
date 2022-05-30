@@ -80,7 +80,8 @@ const renderRestaurants = (obj) => {
                 body.append('text', document.querySelector('[cols="30"]').value)
                 body.append('id', userId)
                 body.append('restId', e.target.id)
-                axios.post('', body)
+                reviewForm.classList.toggle('hidden')
+                axios.post('http://localhost/tomato/tomatoBackend/addReview.php', body)
                     .then(res => console.log(res))
                     .catch(err => console.log(err))
                 document.querySelector('[cols="30"]').value = ''
