@@ -66,6 +66,13 @@ async function editRest(id){
         document.getElementById('restaurant-description').defaultValue = data.description
         document.getElementById('restaurant-status').value = data.status
         document.getElementById('restaurant-city').value = data.cities_id
+        document.getElementById('restaurant-logo-input').addEventListener('change',(e)=>{
+            let reader = new FileReader()
+            reader.readAsDataURL(e.target.files[0]);
+            reader.addEventListener('loadend', ()=>{
+                document.getElementById('restaurant-logo').src = reader.result
+            })
+        })
 
         document.getElementById('edit-save').onclick = ()=>saveRestaurantChanges(data.id)
         
@@ -99,6 +106,7 @@ async function editRest(id){
         document.getElementById('restaurant-status').value = ''
         document.getElementById('restaurant-city').value = ''
         modal.style.display = "none";
+        location.reload()
     })
  }
 
