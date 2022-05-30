@@ -47,7 +47,6 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
 
 const renderRestaurants = (obj) => {
     conatiner.innerHTML = ''
-    console.log(obj)
     for (let i of obj) {
         let { image, name, category, id } = i
         let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating='${ i['AVG(rev.rating)'] }' id='${ id }'/>`
@@ -60,7 +59,6 @@ const renderRestaurants = (obj) => {
     for (let rev of review)
         rev.addEventListener('click', (e) => {
             const restro = getRestro(e.target.id)
-            console.log(restro)
             console.log(restro['AVG(rev.rating)'])
             myReview.imgSrc = restro.image
             myReview.title = restro.name

@@ -32,10 +32,10 @@ class Review extends HTMLElement {
         return this.querySelector('[ratinggg]').innerHTML
     }
     set rating(val) {
-        val ? this.querySelector('[ratinggg]').innerHTML = this.rating(val) : ''
+        val ? this.querySelector('[ratinggg]').innerHTML = this.ratings(val) : ''
     }
 
-    rating(val) {
+    ratings(val) {
         let stars = ``
         for (let i = 0; i < 5; i++) {
             if (i < val)
@@ -61,7 +61,7 @@ class Review extends HTMLElement {
                     </div>
                     <div class="rating">
                         <div>Rating </div>
-                        <div ratinggg>${ this.rating() }</div>
+                        <div ratinggg>${ this.ratings() }</div>
                     </div>
                     <div>
                         <div class="cuisine" restroC>Cuisine: ${ this.getAttribute('cuisine') }</div>

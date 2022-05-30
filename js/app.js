@@ -148,7 +148,6 @@ if (userImg)
 const getRestro = (id) => {
     let rest = {}
     for (let restro of allRestaurants) {
-        console.log(restro.id, id)
         restro.id == id ? rest = restro : ''
     }
     return rest
