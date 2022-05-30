@@ -1,6 +1,7 @@
 class ReviewItem extends HTMLElement{
 
     status = this.getAttribute('status')
+    id = this.getAttribute('id')
     connectedCallback(){
         this.innerHTML=`
             <div class="admin-review-card">
@@ -9,11 +10,12 @@ class ReviewItem extends HTMLElement{
                         <div class="title">
                             <h3>${this.getAttribute('name')}</h3>
                         </div>
-                        <div class="action-buttons">
-                            <span title="Accept" onclick="accept()"><i class="fa-solid fa-check"></i></span>
-                            <span title="Decline" onclick="decline()"><i class="fa-solid fa-xmark"></i></span>
-                        </div>
-                    </div>
+                        <div class="action-buttons">` +
+                            (this.status === 'pending' || this.status === 'declined' ? `<span title="Accept" onclick="accept(${this.id})"><i class="fa-solid fa-check"></i></span>` : '') +
+                            (this.status === 'pending' || this.status === 'accepted' ? `<span title="Decline" onclick="decline(${this.id})"><i class="fa-solid fa-xmark"></i></span>` : '')+
+                            
+                        `</div>
+                    </div> 
                     <div class="content">
                         <div>
                             ${generateStars(this.getAttribute('rate') || 0)} (${this.getAttribute('rate') || 0}/5)
@@ -40,11 +42,6 @@ function generateStars(rate){
     return stars
 }
 
-function accept(){
-   console.log("accept")
-}
-function decline(){
-    console.log("decline")
-}
+
 
 customElements.define('review-item', ReviewItem);
