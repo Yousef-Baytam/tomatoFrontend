@@ -41,6 +41,13 @@ class User extends HTMLElement {
         val ? this.querySelector('[dob]').innerHTML = val : ''
     }
 
+    get imgSrc() {
+        return this.querySelector('[dob]').innerHTML
+    }
+    set imgSrc(val) {
+        val ? this.querySelector('[dob]').innerHTML = val : ''
+    }
+
     connectedCallback() {
         this.innerHTML = `<div class="header-2"><div class="profile-pic">
         <img src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt="user Image">

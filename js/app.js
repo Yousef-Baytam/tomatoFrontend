@@ -10,10 +10,8 @@ const reviewForm = document.querySelector('#review')
 const myNav = document.querySelector('my-navbar')
 const myUser = document.querySelector('my-user')
 const myEdit = document.querySelector('my-edit')
-const camIcon = document.querySelector('.fa-camera')
-const userImg = document.createElement('input')
-userImg.type = 'file'
-userImg.id = 'imgyay'
+const userImg = document.querySelector('#imgyaay')
+const userImgDsiplay = document.querySelector('[alt="user Image"]')
 let userId = 0
 
 /* ****************NavBar event listeners (to toggle animation classes)**************** */
@@ -125,4 +123,8 @@ if (myEdit)
     })
 /***************************************************************************** */
 
-
+/*******************User img upload changes****************** */
+userImg.addEventListener('change', (e) => {
+    userImgDsiplay.src = URL.createObjectURL(e.target.files[0]);
+    console.log(userImgDsiplay.src)
+})
