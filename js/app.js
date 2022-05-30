@@ -117,8 +117,8 @@ const getUserData = (id) => {
 /*********************on load get id from cookie (if any)********************* */
 window.addEventListener("load", () => {
     userId = getCookieValue('tomatoUser')
-    if (!userId)
-        return
+    if (!userId && !window.location.href.includes('index.html'))
+        window.location.href = 'http://localhost/tomato/tomatoFrontend/index.html'
     const userData = getUserData(userId)
 })
 /******************************************************************************* */
