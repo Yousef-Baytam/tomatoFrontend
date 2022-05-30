@@ -74,7 +74,7 @@ class Review extends HTMLElement {
                         </div>
                     <label for="rating">Rating</label>
                     <input type="range" min="1" max="6" name="rating">
-                    <input type="submit" name="submit" value="Submit">
+                    <input type="submit" name="submit" value="Submit" reviewSubmit>
                 </form>
             </div>
         </div>
