@@ -10,7 +10,16 @@ const reviewForm = document.querySelector('#review')
 const myNav = document.querySelector('my-navbar')
 const myUser = document.querySelector('my-user')
 const myEdit = document.querySelector('my-edit')
+const camIcon = document.querySelector('.fa-camera')
+const userImg = document.createElement('input')
+userImg.type = 'file'
+userImg.id = 'imgyay'
 let userId = 0
+let label = document.createElement('label')
+label.htmlFor = 'imgyay'
+if (camIcon) {
+    label.innerHTML = camIcon
+}
 
 for (let items of logIn)
     items.addEventListener('click', () => {

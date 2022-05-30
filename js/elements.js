@@ -32,7 +32,15 @@ const getCookieValue = (cname) => {
 }
 
 const updateInfo = (id, n, l, e, p, loc, d) => {
-    axios.get(`?id=${ id }&name=${ n }&last=${ l }&email=${ e }&phone=${ p }&location=${ loc }&dob=${ d }`)
+    let data = new FormData()
+    data.append('id', id)
+    data.append('name', n)
+    data.append('last', l)
+    data.append('email', e)
+    data.append('phone', p)
+    data.append('location', loc)
+    data.append('dob', d)
+    axios.post(``, data)
         .then((res) => {
             console.log(res)
             document.location.reload()
