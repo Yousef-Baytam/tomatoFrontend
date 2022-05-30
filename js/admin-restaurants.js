@@ -33,8 +33,12 @@ function editRest(){
     
     document.getElementsByTagName('edit-restaurant')[0].children[0].classList.remove('hidden')
  }
- function remove(){
-     return console.log("remove")
+ async function remove(id){
+    const form = new FormData();
+    form.append('id', id)
+    await axios.post('http://127.0.0.1/tomatobackend/removeRestaurant.php', form).then(response=>
+        location.reload()
+    )
  }
  
  async function ban(id){
