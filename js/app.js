@@ -9,6 +9,7 @@ const review = [...document.querySelectorAll('.leave-a-review'), document.queryS
 const reviewForm = document.querySelector('#review')
 const myNav = document.querySelector('my-navbar')
 const myUser = document.querySelector('my-user')
+const myEdit = document.querySelector('my-edit')
 let userId = 0
 
 for (let items of logIn)
@@ -78,6 +79,15 @@ const getUserData = (id) => {
                 myUser.location = res.data.location
                 myUser.dob = res.data.dob
             }
+            if (myEdit) {
+                console.log('hakoona matata')
+                myEdit.name = res.data.name
+                myEdit.lastName = res.data.last
+                myEdit.email = res.data.email
+                myEdit.phone = res.data.phone
+                myEdit.location = res.data.location
+                myEdit.dob = res.data.dob
+            }
             return res.data
         })
         .catch(e => console.log(e))
@@ -89,3 +99,4 @@ window.addEventListener("load", () => {
         return
     const userData = getUserData(userId)
 })
+
