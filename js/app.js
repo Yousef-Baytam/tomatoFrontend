@@ -91,6 +91,7 @@ const getUserData = (id) => {
                 myUser.phone = res.data.phone
                 myUser.location = res.data.location
                 myUser.dob = res.data.dob
+                myUser.imgSrc = res.data.profilePic
             }
             if (myEdit) {
                 myEdit.name = res.data.name
@@ -125,15 +126,19 @@ if (myEdit)
 
 /*******************User img upload changes****************** */
 userImg.addEventListener('change', (e) => {
-    userImgDsiplay.src = URL.createObjectURL(e.target.files[0]);
-    if (!userImgDsiplay.src)
-        return
-    let body = new FormData()
-    body.append('id', userId)
-    body.append('img', userImgDsiplay.src)
-    axios.post('http://localhost/tomato/tomatoBackend/userImage.php', body)
-        .then((res) => {
-            console.log(res)
-        }).catch(e => console.log(e))
+    let reader = new FileReader()
+    reader.readAsDataURL(e.target.files[0])
+    reader.addEventListener('loadend', () => {
+        userImgDsiplay.src = reader.result;
+        if (!userImgDsiplay.src)
+            return
+        let body = new FormData()
+        body.append('id', userId)
+        body.append('img', reader.result)
+        axios.post('http://localhost/tomato/tomatoBackend/userImage.php', body)
+            .then((res) => {
+                console.log(res)
+            }).catch(e => console.log(e))
+    })
 })
 /************************************************************ */

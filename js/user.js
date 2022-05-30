@@ -42,10 +42,10 @@ class User extends HTMLElement {
     }
 
     get imgSrc() {
-        return this.querySelector('[dob]').innerHTML
+        return this.querySelector('[alt="user Image"]').src
     }
     set imgSrc(val) {
-        val ? this.querySelector('[dob]').innerHTML = val : ''
+        val ? this.querySelector('[alt="user Image"]').src = val : ''
     }
 
     connectedCallback() {
