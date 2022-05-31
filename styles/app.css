@@ -620,8 +620,8 @@ input[type='submit']:hover {
       width: 200px;
   }
 
-  #restaurant-edit-modal #restaurant-namee, #restaurant-edit-modal #restaurant-description, #restaurant-edit-modal #restaurant-city, #restaurant-edit-modal #restaurant-status,
-  #restaurant-add-modal #restaurant-add-namee, #restaurant-add-modal #restaurant-add-description, #restaurant-add-modal #restaurant-add-city, #restaurant-add-modal #restaurant-add-status{
+  #restaurant-edit-modal #restaurant-namee, #restaurant-edit-modal #restaurant-description, #restaurant-edit-modal #restaurant-city, #restaurant-edit-modal #restaurant-status, #restaurant-edit-modal #restaurant-edit-category, #restaurant-edit-modal #restaurant-edit-type,
+  #restaurant-add-modal #restaurant-add-namee, #restaurant-add-modal #restaurant-add-description, #restaurant-add-modal #restaurant-add-city, #restaurant-add-modal #restaurant-add-status, #restaurant-add-modal #restaurant-add-category, #restaurant-add-modal #restaurant-add-type{
       width: 100%;
       border: 1px solid maroon;
       margin-bottom: 1.5em;
