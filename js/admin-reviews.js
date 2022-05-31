@@ -48,7 +48,7 @@ function showReviews(){
 
 async function accept(id){
     const form = new FormData();
-    form.append('status', 'accepted')
+    form.append('status', 'approved')
     form.append('id', id)
     await axios.post('http://127.0.0.1/tomato/tomatoBackend/updateReviewStatus.php', form).then(response=>
         location.reload()
