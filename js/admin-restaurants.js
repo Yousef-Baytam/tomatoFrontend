@@ -103,7 +103,8 @@ async function addRest(){
     await axios.get('http://127.0.0.1/tomatobackend/getCities.php').then(response=>{
         cities = [...response.data]
         let citySelect = document.getElementById('restaurant-add-city');
-        cities?.map(city=>citySelect.innerHTML+=`<option value='${city.id}'>${city.name}</option>`)
+        citySelect.innerHTML = ``
+        cities?.map(city=>citySelect.innerHTML+=`<option value='${city.id}'>${city.city_name}</option>`)
     })
 
     document.getElementById('add-save').onclick = saveNewRestaurant
@@ -143,7 +144,8 @@ async function editRest(id){
     await axios.get('http://127.0.0.1/tomatobackend/getCities.php').then(response=>{
         cities = [...response.data]
         let citySelect = document.getElementById('restaurant-city');
-        cities?.map(city=>citySelect.innerHTML+=`<option value='${city.id}'>${city.name}</option>`)
+        citySelect.innerHTML = ``
+        cities?.map(city=>citySelect.innerHTML+=`<option value='${city.id}'>${city.city_name}</option>`)
     })
 
     await axios.post('http://127.0.0.1/tomatobackend/getRestaurant.php', form).then(response=>{
