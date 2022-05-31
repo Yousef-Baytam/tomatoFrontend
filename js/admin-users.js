@@ -59,6 +59,11 @@ async function ban(id) {
         location.reload()
     )
 }
+await axios.post('http://127.0.0.1/tomato/tomatoBackend/updateUserStatus.php', form).then(response => {
+    console.log(response)
+    location.reload()
+})
+ }
 
 async function activate(id) {
     const form = new FormData();
