@@ -19,7 +19,7 @@ window.onload = () => {
 const fetchData = async () => {
     container = document.getElementsByClassName('reviews-list')[0];
 
-    await axios.get('http://lcoalhost/tomato/tomatoBackend/getAllReviews.php').then(response => {
+    await axios.get('http://localhost/tomato/tomatoBackend/getAllReviews.php').then(response => {
         reviews = response.data
     })
 
@@ -50,7 +50,7 @@ async function accept(id) {
     const form = new FormData();
     form.append('status', 'approved')
     form.append('id', id)
-    await axios.post('http://lcoalhost/tomato/tomatoBackend/updateReviewStatus.php', form).then(response =>
+    await axios.post('http://localhost/tomato/tomatoBackend/updateReviewStatus.php', form).then(response =>
         location.reload()
     )
 }
@@ -58,7 +58,7 @@ async function decline(id) {
     const form = new FormData();
     form.append('status', 'declined')
     form.append('id', id)
-    await axios.post('http://lcoalhost/tomato/tomatoBackend/updateReviewStatus.php', form).then(response =>
+    await axios.post('http://localhost/tomato/tomatoBackend/updateReviewStatus.php', form).then(response =>
         location.reload()
     )
 }

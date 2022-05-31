@@ -13,7 +13,7 @@ window.onload = () => {
 
 const fetchData = async () => {
     container = document.getElementsByClassName('users-list')[0];
-    await axios.get('http://lcoalhost/tomato/tomatoBackend/getUsers.php').then(response => {
+    await axios.get('http://localhost/tomato/tomatoBackend/getUsers.php').then(response => {
         users = response.data
     })
 
@@ -46,7 +46,7 @@ function showUsers() {
 async function remove(id) {
     const form = new FormData();
     form.append('id', id)
-    await axios.post('http://lcoalhost/tomato/tomatoBackend/removeUser.php', form).then(response =>
+    await axios.post('http://localhost/tomato/tomatoBackend/removeUser.php', form).then(response =>
         location.reload()
     )
 }
@@ -55,21 +55,17 @@ async function ban(id) {
     const form = new FormData();
     form.append('status', 'banned')
     form.append('id', id)
-    await axios.post('http://lcoalhost/tomato/tomatoBackend/updateUserStatus.php', form).then(response =>
+    await axios.post('http://localhost/tomato/tomatoBackend/updateUserStatus.php', form).then(response =>
         location.reload()
     )
 }
-await axios.post('http://127.0.0.1/tomato/tomatoBackend/updateUserStatus.php', form).then(response => {
-    console.log(response)
-    location.reload()
-})
 
 
 async function activate(id) {
     const form = new FormData();
     form.append('status', 'active')
     form.append('id', id)
-    await axios.post('http://lcoalhost/tomato/tomatoBackend/updateUserStatus.php', form).then(response =>
+    await axios.post('http://localhost/tomato/tomatoBackend/updateUserStatus.php', form).then(response =>
         location.reload()
     )
 }
