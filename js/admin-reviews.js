@@ -1,10 +1,16 @@
 let filterValue 
 let reviews = []
 let container
+let searchInput = "";
 
 window.onload = ()=>{
     filterValue = document.getElementById('filter-list').value
-    fetchData()
+    fetchData().then(()=>{
+        document.getElementById('reviews-search').oninput = (e)=>{
+            searchInput = e.target.value
+            showReviews()
+        }
+    })
     
 }
 
@@ -34,7 +40,7 @@ function onFilterChange(e){
 function showReviews(){
     
     container.innerHTML = ``
-    reviews.filter(review=>review.status === filterValue).map(review=>
+    reviews.filter(review=>(review.status === filterValue && (review.name.includes(searchInput) || review.review.includes(searchInput)))).map(review=>
         container.innerHTML +=`<review-item id="${review.id}" name="${review.name}" review-text="${review.review}" rate="${review.rating}" status="${review.status}"></review-item>`
     )
 }
