@@ -94,12 +94,12 @@ document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
     body.append('restId', clickedEvtId)
     if (userReview) {
         axios.post('/tomato/tomatoBackend/updateReview.php', body)
-            .then(res => console.log(res))
+            .then(res => window.location.reload())
             .catch(err => console.log(err))
     }
     else
         axios.post('/tomato/tomatoBackend/addReview.php', body)
-            .then(res => console.log(res))
+            .then(res => window.location.reload())
             .catch(err => console.log(err))
     document.querySelector('[cols="30"]').value = ''
 })

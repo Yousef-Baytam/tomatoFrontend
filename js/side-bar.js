@@ -1,6 +1,6 @@
-class SideBar extends HTMLElement{
+class SideBar extends HTMLElement {
 
-    connectedCallback(){
+    connectedCallback() {
         this.innerHTML += `
             <div class = 'sidebar'>
                 <div class = 'sidebar-head'><h1>Admin Panel</h1></div>
@@ -8,14 +8,15 @@ class SideBar extends HTMLElement{
                     <a href="./users.html" target="admin-frame"><li class="nav-item" id="users" onclick="setSelected('users')"><i class="fa-solid fa-users"></i>Users</li></a>
                     <a href="./restaurants.html" target="admin-frame"><li class="nav-item" id="restaurants" onclick="setSelected('restaurants')"><i class="fa-solid fa-store"></i>Restaurants</li></a>
                     <a href="./reviews.html" target="admin-frame"><li class="nav-item" id="reviews" onclick="setSelected('reviews')"><i class="fa-solid fa-star"></i>Reviews</li></a>
+                    <a href="../../"><li class="nav-item" id="reviews"><i class="fa-solid fa-house-chimney"></i>Home</li></a>
                 </ul>
             </div>
         `
     }
 }
 
-function setSelected(id){
-    document.querySelectorAll(".nav-item").forEach(item=>item.classList.remove('selected'))
+function setSelected(id) {
+    document.querySelectorAll(".nav-item").forEach(item => item.classList.remove('selected'))
     document.getElementById(id).classList.add('selected')
 }
 
