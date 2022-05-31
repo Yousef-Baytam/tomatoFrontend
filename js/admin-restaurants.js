@@ -206,6 +206,8 @@ async function editRest(id){
     let description = document.getElementById('restaurant-description').value
     let status = document.getElementById('restaurant-status').value
     let city = document.getElementById('restaurant-city').value
+    let category = document.getElementById('restaurant-edit-category').value
+    let type = document.getElementById('restaurant-edit-type').value
 
     const form = new FormData();
     form.append('id', id)
@@ -214,13 +216,10 @@ async function editRest(id){
     form.append('description', description)
     form.append('status', status)
     form.append('city', city)
+    form.append('category', category)
+    form.append('type', type)
 
     await axios.post('http://127.0.0.1/tomato/tomatoBackend/updateRestaurant.php', form).then(()=>{
-        document.getElementById('restaurant-logo').src = ''
-        document.getElementById('restaurant-namee').value = ''
-        document.getElementById('restaurant-description').value =''
-        document.getElementById('restaurant-status').value = ''
-        document.getElementById('restaurant-city').value = ''
         editModal.style.display = "none";
         location.reload()
     })
