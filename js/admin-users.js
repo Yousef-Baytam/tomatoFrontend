@@ -3,13 +3,13 @@ window.onload= ()=>{
 }
 
 const fetchData = async ()=>{
+    const container = document.getElementsByClassName('users-admin-container')[0];
     let users = []
     await axios.get('http://127.0.0.1/tomatobackend/getUsers.php').then(response=>{
         users = response.data
     })
 
     if(users.length > 0){
-        const container = document.getElementsByClassName('users-admin-container')[0];
         users.map(user=>
             container.innerHTML +=`
             <user-item 
@@ -24,6 +24,8 @@ const fetchData = async ()=>{
                 city = "${user.cities_id}"
                 type= "${user.user_types_id}"></user-item>`
         )
+    }else{
+        container.innerHTML += `No Users Found`
     }
     
 }
