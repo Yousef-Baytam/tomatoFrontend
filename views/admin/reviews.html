@@ -6,6 +6,10 @@
 <div class="reviews-admin-container">
     <h1>Reviews</h1>
     <div class="filter">
+        <div class="reviews-search-container">
+            <i class="fa-solid fa-magnifying-glass" id="reviews-search-icon"></i>
+            <input type="search" id="reviews-search" placeholder="Search"/>
+        </div>
         <select class="filter-list" id="filter-list" onchange="onFilterChange(this)">
             <option value="pending" selected>Pending</option>
             <option value="accepted">Accepted</option>
