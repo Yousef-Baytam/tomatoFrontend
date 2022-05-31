@@ -57,15 +57,17 @@ window.onload = (e)=>{
 
 const fetchData = async ()=>{
     let restaurants = []
+    const container = document.getElementsByClassName('restaurants-admin-container')[0];
     await axios.get('http://127.0.0.1/tomatobackend/getRestaurants.php').then(response=>{
         restaurants = response.data
     })
 
     if(restaurants.length > 0){
-        const container = document.getElementsByClassName('restaurants-admin-container')[0];
         restaurants.map(rest=>
             container.innerHTML +=`<restaurant-item id="${rest.id}" status="${rest.status}" name="${rest.name}" description="${rest.description}" rate="${rest.rate}" image="${rest.image}"></restaurant-item>`
         )
+    }else{
+       container.innerHTML += `No Restaurant Found`
     }
     
 }
