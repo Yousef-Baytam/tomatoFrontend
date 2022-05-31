@@ -133,6 +133,8 @@ async function saveNewRestaurant(){
     let description = document.getElementById('restaurant-add-description').value
     let status = document.getElementById('restaurant-add-status').value
     let city = document.getElementById('restaurant-add-city').value
+    let category = document.getElementById('restaurant-add-category').value
+    let type = document.getElementById('restaurant-add-type').value
 
     const form = new FormData();
     form.append('img', img)
@@ -140,6 +142,8 @@ async function saveNewRestaurant(){
     form.append('description', description)
     form.append('status', status)
     form.append('city', city)
+    form.append('category', category)
+    form.append('type', type)
 
         console.log(img,
             name,
