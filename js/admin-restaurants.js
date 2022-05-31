@@ -83,7 +83,7 @@ const fetchData = async ()=>{
 
 function showRestaurants(){
     container.innerHTML = ``
-    restaurants.filter(rest=>(rest.name.includes(searchInput) || rest.description.includes(searchInput))).map(rest=>
+    restaurants.filter(rest=>(rest.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase()) || rest.description.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase()))).map(rest=>
         container.innerHTML +=`<restaurant-item id="${rest.id}" status="${rest.status}" name="${rest.name}" description="${rest.description}" rate="${rest.rate}" image="${rest.image}"></restaurant-item>`
     )
 }
