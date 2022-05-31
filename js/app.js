@@ -18,6 +18,7 @@ const searchBar = document.querySelector('[placeholder="Search by Name"]')
 const logOut = document.querySelector('[logOut]')
 const cfilters = document.querySelector('.filters')
 const admin = document.querySelector('[admin]')
+let userData
 let allUserReviews
 let sessionCookie
 let userId = 0
@@ -98,6 +99,9 @@ const getUserData = (id) => {
             if (res.data.type === 'admin')
                 if (admin)
                     admin.classList.toggle('d-none')
+            if (document.querySelector('[userloc]')) {
+                document.querySelector('[userloc]').innerHTML = `Location ${ res.data.city }`
+            }
             if (myUser) {
                 myUser.name = res.data.name
                 myUser.lastName = res.data.last
@@ -125,7 +129,7 @@ const getUserData = (id) => {
 userId = getCookieValue('tomatoUser')
 if (!userId && !window.location.href.includes('tomatoFrontend/index.html'))
     window.location.href = '/tomato/tomatoFrontend/index.html'
-const userData = getUserData(userId)
+userData = getUserData(userId)
 /******************************************************************************* */
 
 /**********************Edit form on submit post request********************** */
