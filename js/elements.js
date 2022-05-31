@@ -1,6 +1,7 @@
 const conatiner = document.querySelector('.container')
 const myReview = document.querySelector('my-review')
 
+/**********************Get all active restaurants******************* */
 const fetchRes = () => {
     axios.get(`http://localhost/tomato/tomatoBackend/getAllRes.php`)
         .then((res) => {
@@ -16,7 +17,9 @@ const fetchRes = () => {
             console.log(e)
         })
 }
+/********************************************************************* */
 
+/*****************Gets user cookie (if any)******************* */
 const getCookieValue = (cname) => {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -32,7 +35,9 @@ const getCookieValue = (cname) => {
     }
     return "";
 }
+/************************************************************** */
 
+/******************Edit User Info post function***************** */
 const updateInfo = (id, n, l, e, p, loc, d) => {
     let data = new FormData()
     data.append('id', id)
@@ -47,6 +52,7 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
             window.location.reload()
         }).catch(err => console.log(err))
 }
+/***************************************************************** */
 
 /***********************Render cards plus review listeners*********************** */
 const renderRestaurants = (obj) => {
@@ -85,6 +91,6 @@ const renderRestaurants = (obj) => {
             .then(res => console.log(res))
             .catch(err => console.log(err))
         document.querySelector('[cols="30"]').value = ''
-    }, { once: true })
+    })
 }
 /***************************************************************************** */

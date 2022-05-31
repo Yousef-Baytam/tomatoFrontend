@@ -189,9 +189,9 @@ if (cat)
 if (profileCat)
     for (let c of profileCat)
         c.addEventListener('click', (e) => {
-            axios.get(`http://localhost/tomato/tomatoBackend/getReviews.php=${ e.target.innerText }`)
+            axios.get(`http://localhost/tomato/tomatoBackend/getReviews.php?id=${ userId }`)
                 .then((res) => {
-                    renderRestaurants(temRest)
+                    console.log(res)
                 }).catch(err => console.log(err))
         })
 
@@ -218,6 +218,5 @@ const logout = () => {
     document.cookie = `${ sessionCookie }; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/`;
     window.location.href = 'http://localhost/tomato/tomatoFrontend/index.html'
 }
-
 logOut.addEventListener('click', logout)
 

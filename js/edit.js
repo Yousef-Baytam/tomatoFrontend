@@ -64,7 +64,7 @@ class Edit extends HTMLElement {
                         <input type="Date" name="dob" id='dob123' value='${ this.getAttribute('dob') ? this.getAttribute('dob') : '' }'>
                     </div>
                     <div>
-                        <input type="text" name="Phone" editlocation placeholder="Location" value='${ this.getAttribute('location') }'>
+                        <input type="text" name="location" editlocation placeholder="Location" value='${ this.getAttribute('location') }'>
                     </div>
                     <input type="submit" name="submit" value="Submit">
                 </form>
