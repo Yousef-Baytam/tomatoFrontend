@@ -473,10 +473,10 @@ input[type='submit']:hover {
     display: flex;
     gap: 15px;
 }
-.reviews-search-container,.restaurant-search-container{
+.reviews-search-container,.restaurant-search-container, .users-search-container{
     width: 50%;
 }
-.filter-list, #reviews-search, #restaurants-search {
+.filter-list, #reviews-search, #restaurants-search, #users-search {
     width: 50%;
     margin-bottom: 1.5em;
     height: 3.5em;
@@ -485,18 +485,18 @@ input[type='submit']:hover {
     outline: none;
     border: 1px solid maroon;
 }
-#reviews-search, #restaurants-search{
+#reviews-search, #restaurants-search, #users-search{
     width: 100%;
 }
 
-#reviews-search-icon, #restaurants-search-icon{
+#reviews-search-icon, #restaurants-search-icon, #users-search-icon{
     position: absolute;
     padding: 15px 7px;
     transform: none;
     cursor: default;
 }
 
-.restaurant-head{
+.restaurant-head, .users-head{
     display: flex;
     width: 90%;
     justify-content: space-between;
