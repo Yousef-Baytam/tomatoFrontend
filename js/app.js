@@ -25,6 +25,7 @@ let allRestaurants
 let temRest
 fetchRes()
 
+
 /* ****************NavBar event listeners (to toggle animation classes)**************** */
 for (let items of logIn)
     items.addEventListener('click', () => {

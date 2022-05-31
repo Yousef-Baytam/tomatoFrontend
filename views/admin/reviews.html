@@ -1,0 +1,26 @@
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
+<link rel="stylesheet" href="../../styles/app.css">
+<link rel="stylesheet" href="../../styles/restaurants.css">
+
+<div class="reviews-admin-container">
+    <h1>Reviews</h1>
+    <div class="filter">
+        <div class="reviews-search-container">
+            <i class="fa-solid fa-magnifying-glass" id="reviews-search-icon"></i>
+            <input type="search" id="reviews-search" placeholder="Search"/>
+        </div>
+        <select class="filter-list" id="filter-list" onchange="onFilterChange(this)">
+            <option value="pending" selected>Pending</option>
+            <option value="accepted">Accepted</option>
+            <option value="declined">Declined</option>
+        </select>
+    </div>
+    <div class="reviews-list">
+
+    </div>
+</div>
+
+<script src="../../js/admin-reviews.js"></script>
+<script src="../../js/review-item.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

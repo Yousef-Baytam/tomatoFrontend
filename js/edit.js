@@ -47,11 +47,16 @@ class Edit extends HTMLElement {
             <div class="form-container">
                 <form action="" method="POST" class="form">
                     <div>
+
+                       // <i id="user-edit-close" class="fa-solid fa-xmark"></i>
+                      //  <input type="text" name="First" placeholder="First Name">
+
                         <i class="fa-solid fa-xmark"></i>
                         <input type="text" name="name" placeholder="First Name" editfirstname value='${ this.getAttribute('name') }'>
                     </div>
                     <div>
                         <input type="text" name="Last" placeholder="Last Name" editlastname value='${ this.getAttribute('lastName') }'>
+
                     </div>
                     <div>
                         <input type="text" name="email" placeholder="Email" editemail value='${ this.getAttribute('email') }'>
@@ -73,6 +78,9 @@ class Edit extends HTMLElement {
     </div>`
     }
 }
+
+
+
 
 customElements.define('my-edit', Edit)
 

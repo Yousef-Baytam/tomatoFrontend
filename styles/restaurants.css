@@ -126,7 +126,7 @@ input[name='search'] {
     object-fit: cover;
 }
 
-.title {
+.card-container .title {
     margin: 1em 0em;
     font-size: 150%;
     color: maroon;

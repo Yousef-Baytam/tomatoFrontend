@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css" integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
+<link rel="stylesheet" href="../../styles/app.css">
+<link rel="stylesheet" href="../../styles/restaurants.css">
+
+<div class="restaurants-admin-container">
+    <h1>Restaurants</h1>
+    <div class="restaurant-head">
+        <div class="restaurant-search-container">
+            <i class="fa-solid fa-magnifying-glass" id="restaurants-search-icon"></i>
+            <input type="search" id="restaurants-search" placeholder="Search"/>
+        </div>
+        <restaurant-add></restaurant-add>
+    </div>
+    <div class="restaurants-list">
+        
+    </div>
+    <edit-restaurant></edit-restaurant>
+</div>
+
+
+<script src="../../js/restaurant-item.js"></script>
+<script src="../../js/restaurant-edit.js"></script>
+<script src="../../js/restaurant-add.js"></script>
+<script src="../../js/admin-restaurants.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
