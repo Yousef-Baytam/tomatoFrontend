@@ -123,7 +123,7 @@ const getUserData = (id) => {
 
 /*********************on load get id from cookie (if any)********************* */
 userId = getCookieValue('tomatoUser')
-if (!userId && !window.location.href.includes('index.html'))
+if (!userId && !window.location.href.includes('tomatoFrontend/index.html'))
     window.location.href = '/tomato/tomatoFrontend/index.html'
 const userData = getUserData(userId)
 /******************************************************************************* */
