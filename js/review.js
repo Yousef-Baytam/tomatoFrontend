@@ -35,6 +35,13 @@ class Review extends HTMLElement {
         val ? this.querySelector('[ratinggg]').innerHTML = this.ratings(val) : ''
     }
 
+    get rev() {
+        return this.querySelector('[cols="30"]').innerHTML
+    }
+    set rev(val) {
+        val ? this.querySelector('[cols="30"]').innerHTML = val : ''
+    }
+
     ratings(val) {
         let stars = ``
         for (let i = 0; i < 5; i++) {
@@ -70,10 +77,10 @@ class Review extends HTMLElement {
                 <form action="#" method="POST" class="form" review-form>
                     <div> 
                         <i class="fa-solid fa-xmark" id="review-x123"></i>
-                        <textarea name="" id="" cols="30" rows="6" placeholder="Review"></textarea>
+                        <textarea name="" id="" cols="30" rows="6" placeholder="Review">${ this.getAttribute('rev') }</textarea>
                         </div>
                     <label for="rating">Rating</label>
-                    <input type="range" min="1" max="6" name="rating">
+                    <input type="range" min="1" max="6" name="rating" >
                     <input type="submit" name="submit" value="Submit" reviewSubmit>
                 </form>
             </div>

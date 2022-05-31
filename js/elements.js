@@ -71,7 +71,10 @@ const renderRestaurants = (obj) => {
         rev.addEventListener('click', (e) => {
             clickedEvtId = e.target.id
             const restro = getRestro(e.target.id)
+            const userReview = getUserRev(e.target.id)
+            console.log(userReview)
             myReview.imgSrc = restro.image
+            myReview.rev = userReview.review
             myReview.title = restro.name
             myReview.desc = restro.description
             myReview.cuisine = restro.category

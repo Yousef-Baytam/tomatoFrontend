@@ -18,7 +18,7 @@ const searchBar = document.querySelector('[placeholder="Search by Name"]')
 const logOut = document.querySelector('[logOut]')
 const cfilters = document.querySelector('.filters')
 const admin = document.querySelector('[admin]')
-let userReviews
+let allUserReviews
 let sessionCookie
 let userId = 0
 let allRestaurants
@@ -121,12 +121,10 @@ const getUserData = (id) => {
 /************************************************************************************************* */
 
 /*********************on load get id from cookie (if any)********************* */
-window.addEventListener("load", () => {
-    userId = getCookieValue('tomatoUser')
-    if (!userId && !window.location.href.includes('index.html'))
-        window.location.href = 'http://localhost/tomato/tomatoFrontend/index.html'
-    const userData = getUserData(userId)
-})
+userId = getCookieValue('tomatoUser')
+if (!userId && !window.location.href.includes('index.html'))
+    window.location.href = 'http://localhost/tomato/tomatoFrontend/index.html'
+const userData = getUserData(userId)
 /******************************************************************************* */
 
 /**********************Edit form on submit post request********************** */
@@ -200,8 +198,7 @@ if (profileCat)
 const AllReviews = () => {
     axios.get(`http://localhost/tomato/tomatoBackend/getReviews.php?id=${ userId }`)
         .then((res) => {
-            userReviews = res.data
-            console.log(res)
+            allUserReviews = res.data
         }).catch(err => console.log(err))
 }
 AllReviews()
@@ -239,7 +236,7 @@ logOut.addEventListener('click', logout)
 /********************************************** */
 
 const getUserRev = (id) => {
-    for (let rev of AllReviews) {
+    for (let rev of allUserReviews) {
         if (rev.restaurants_id == id) {
             return rev
         }
