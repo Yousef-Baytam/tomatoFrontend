@@ -1,22 +1,75 @@
 class Edit extends HTMLElement {
+    get name() {
+        return this.querySelector('[placeholder="First Name"]').value
+    }
+    set name(val) {
+        val ? this.querySelector('[placeholder="First Name"]').value = val : ''
+    }
+
+    get lastName() {
+        return this.querySelector('[placeholder="Last Name"]').value
+    }
+    set lastName(val) {
+        val ? this.querySelector('[placeholder="Last Name"]').value = val : ''
+    }
+
+    get email() {
+        return this.querySelector('[placeholder="Email"]').value
+    }
+    set email(val) {
+        val ? this.querySelector('[placeholder="Email"]').value = val : ''
+    }
+
+    get phone() {
+        return this.querySelector('[placeholder="Phone Number"]').value
+    }
+    set phone(val) {
+        val ? this.querySelector('[placeholder="Phone Number"]').value = val : ''
+    }
+
+    get location() {
+        return this.querySelector('[placeholder="Location"]').value
+    }
+    set location(val) {
+        val ? this.querySelector('[placeholder="Location"]').value = val : ''
+    }
+
+    get dob() {
+        return this.querySelector('[type="Date"]').value
+    }
+    set dob(val) {
+        val ? this.querySelector('[type="Date"]').value = val : ''
+    }
+
     connectedCallback() {
         this.innerHTML = `<div class="form-bg hidden">
         <div class="steps-container">
             <div class="form-container">
-                <form action="#" method="POST" class="form">
+                <form action="" method="POST" class="form">
                     <div>
-                        <i id="user-edit-close" class="fa-solid fa-xmark"></i>
-                        <input type="text" name="First" placeholder="First Name">
+
+                       // <i id="user-edit-close" class="fa-solid fa-xmark"></i>
+                      //  <input type="text" name="First" placeholder="First Name">
+
+                        <i class="fa-solid fa-xmark"></i>
+                        <input type="text" name="name" placeholder="First Name" editfirstname value='${ this.getAttribute('name') }'>
                     </div>
                     <div>
-                        <input type="text" name="Last" placeholder="Last Name">
+                        <input type="text" name="Last" placeholder="Last Name" editlastname value='${ this.getAttribute('lastName') }'>
+
                     </div>
                     <div>
-                        <input type="number" name="Phone" placeholder="Phone Number">
+                        <input type="text" name="email" placeholder="Email" editemail value='${ this.getAttribute('email') }'>
+                    </div>
+                    <div>
+                        <input type="text" name="Phone" placeholder="Phone Number" editphone value='${ this.getAttribute('phone') }'>
                     </div>
                     <div>
                         <label dob-label for="dob"> Date of Birth</label>
-                        <input type="Date" name="dob" id='dob'>
+                        <input type="Date" name="dob" id='dob123' value='${ this.getAttribute('dob') ? this.getAttribute('dob') : '' }'>
+                    </div>
+                    <div>
+                        <input type="text" name="location" editlocation placeholder="Location" value='${ this.getAttribute('location') }'>
                     </div>
                     <input type="submit" name="submit" value="Submit">
                 </form>

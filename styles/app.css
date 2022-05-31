@@ -18,7 +18,7 @@
     background-position: center;
     background-size: cover;
     height: 100vh;
-
+    overflow: hidden;
 }
 
 [main] {
@@ -28,6 +28,7 @@
     align-items: center;
     justify-content: center;
     color: white;
+    transition: all 200ms ease;
 }
 
 [main] div {
@@ -41,7 +42,7 @@
 }
 
 [main] img {
-    width: 25%;
+    width: 3em;
 }
 
 nav {
@@ -64,6 +65,13 @@ nav {
 .logo img {
     align-self: center;
     width: 50px;
+}
+
+[admin] {
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    font-size: 2em;
 }
 
 nav div {
@@ -97,6 +105,9 @@ nav div:nth-of-type(2) {
 
 .logged-in [img] img {
     border-radius: 50%;
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
 }
 
 .logged-in [img],
@@ -108,6 +119,7 @@ nav div:nth-of-type(2) {
 [profile] {
     background-color: rgba(0, 0, 0, 0.7);
     width: fit-content;
+    justify-content: center;
     padding: 0.51em 1.5em;
     position: absolute;
     top: 2.8em;
@@ -134,13 +146,17 @@ a {
     transition: all 200ms ease;
 }
 
-a:hover::after {
+a:not([href="http://localhost/tomato/tomatoFrontend/index.html"]):hover::after {
     content: ' »';
 }
 
-a:hover {
+a:hover:not([href="http://localhost/tomato/tomatoFrontend/index.html"]) {
     transform: translateX(-5%);
     color: var(--tertiary-color);
+}
+
+[not-found] {
+    color: rgb(255, 255, 255);
 }
 
 .form-bg {
@@ -156,6 +172,7 @@ a:hover {
     transition: all 200ms linear;
     opacity: 1;
     box-shadow: 0 0 50em black;
+    z-index: 1;
 }
 
 .hidden {
@@ -175,6 +192,8 @@ a:hover {
     border-radius: 10px;
     transition: all 100ms linear;
 }
+
+
 
 .form div {
     flex-direction: column;
@@ -197,7 +216,7 @@ a:hover {
 
 [dob-label] {
     color: white;
-    margin: 0 0 1em 0.5em;
+    margin: 0 0 0.5em 0.5em;
 }
 
 i {
@@ -270,6 +289,7 @@ input[type='submit']:hover {
 .slide {
     animation: slide 200ms ease-in-out reverse;
 }
+
 
 .admin-container{
     display: flex;
@@ -618,6 +638,38 @@ input[type='submit']:hover {
     from {top: -300px; opacity: 0}
     to {top: 0; opacity: 1}
   }
+
+[new-account] {
+    width: 700px;
+}
+
+[new-account] div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+[new-account] div div {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: baseline;
+}
+
+[new-account] input {
+    max-width: 300px;
+}
+
+.back {
+    justify-content: center !important;
+    align-items: center;
+    width: 44.8% !important;
+}
+
+[new-account] [type="submit"] {
+    margin-top: 1em;
+}
+
 
 @keyframes slide {
     0% {

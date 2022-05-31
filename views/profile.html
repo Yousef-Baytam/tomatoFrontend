@@ -1,16 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="../js/navbar.js"></script>
-    <script src="../js/card.js"></script>
-    <script src="../js/head.js"></script>
-    <script src="../js/user.js"></script>
-    <script src="../js/edit.js"></script>
-    <script src="../js/review.js"></script>
-    <my-header></my-header>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.1/css/all.css"
+            integrity="sha384-/frq1SRXYH/bSyou/HUp/hib7RVN1TawQYja658FEOodR/FQBKVqT9Ol+Oz3Olq5" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="../js/navbar.js"></script>
+        <script src="../js/card.js"></script>
+        <script src="../js/user.js"></script>
+        <script src="../js/edit.js"></script>
+        <script src="../js/review.js"></script>
+        <link rel="stylesheet" href="../styles/app.css">
+        <link rel="stylesheet" href="../styles/restaurants.css">
+        <link rel="stylesheet" href="../styles/profile.css">
+        <title>Profile</title>
+    </head>
     <body>
-        <my-navbar />
-        <my-user name="Yousef" lastName="Baytam" email="yousefbaytam.yb@gmail.com" phone="71751324" location="Beirut"
-            dob="4/5/1998">
+        <my-navbar name='' lastName='' imgSrc='' logoSrc='../assets/tomato.png' />
+        <my-user name="" lastName="" email="" phone="" location="" dob="">
             <div class="categories-container">
                 <div class="categories">
                     <div class="profile-cat" cat>Reviewed</div>
@@ -18,49 +27,10 @@
                 </div>
             </div>
             <div class="container">
-                <div class="card-container">
-                    <div class="card">
-                        <div class="img">
-                            <img src="../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
-                        </div>
-                        <div class="title">
-                            Hakoona Matata
-                        </div>
-                        <div class="rating">
-                            <div>Rating </div>
-                            <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                    class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i><i
-                                    class="fa-regular fa-star"></i></div>
-                        </div>
-                        <div>
-                            <div class="cuisine">Cuisine: catfood</div>
-                            <div class="leave-a-review">Leave a Review</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-container">
-                    <div class="card">
-                        <div class="img">
-                            <img src="../assets/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
-                        </div>
-                        <div class="title">
-                            Hakoona Matata
-                        </div>
-                        <div class="rating">
-                            <div>Rating </div>
-                            <div><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                    class="fa-solid fa-star"></i> <i class="fa-regular fa-star"></i><i
-                                    class="fa-regular fa-star"></i></div>
-                        </div>
-                        <div>
-                            <div class="cuisine">Cuisine: catfood</div>
-                            <div class="leave-a-review">Leave a Review</div>
-                        </div>
-                    </div>
-                </div>
             </div>
-            <my-edit />
+            <my-edit name='' lastName='' email='' phone='' location='' dob='' />
             <my-review />
+            <script src="../js/login.js"></script>
             <script src="../js/elements.js"></script>
             <script src="../js/app.js"></script>
     </body>

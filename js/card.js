@@ -21,7 +21,7 @@ class Card extends HTMLElement {
             <div class="rating">
                 <div>Rating </div>
                 <div>
-                ${ this.rating }
+                ${ this.rating() }
                 </div>
             </div>
             <div>

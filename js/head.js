@@ -10,7 +10,7 @@ class Header extends HTMLElement {
     <link rel="stylesheet" href="../styles/app.css">
     <link rel="stylesheet" href="../styles/restaurants.css">
     <link rel="stylesheet" href="../styles/profile.css">
-    <title>Tomato Home</title> </head>`
+    <title>${ this.getAttribute('pageTitle') }</title> </head>`
     }
 }
 
