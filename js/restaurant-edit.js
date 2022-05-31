@@ -67,10 +67,23 @@ class EditRestaurant extends HTMLElement {
                     <input id="restaurant-namee" placeholder="Name"/>
                     <textarea id="restaurant-description" placeholder="Description"></textarea>
 
+                    <label for="restaurant-city">City:</label>
                     <select id="restaurant-city" name="restaurant-city">
 
                     </select>
 
+
+                    <label for="restaurant-edit-category">Category:</label>
+                    <select id="restaurant-edit-category" name="restaurant-category">
+
+                    </select>
+
+                    <label for="restaurant-edit-type">Type:</label>
+                    <select id="restaurant-edit-type" name="restaurant-type">
+
+                    </select>
+
+                    <label for="restaurant-status">Status:</label>
                     <select id="restaurant-status" name="restaurant-status">
                         <option value="active">Active</option>
                         <option value="banned">Banned</option>
