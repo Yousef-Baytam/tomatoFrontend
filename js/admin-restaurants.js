@@ -68,7 +68,7 @@ window.onload = (e) => {
 const fetchData = async () => {
 
     container = document.getElementsByClassName('restaurants-list')[0];
-    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getRestaurants.php').then(response => {
+    await axios.get('http://localhost/tomato/tomatoBackend/getRestaurants.php').then(response => {
         restaurants = response.data
     })
 
@@ -100,7 +100,7 @@ async function addRest() {
     })
 
     let cities = []
-    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getCities.php').then(response => {
+    await axios.get('http://localhost/tomato/tomatoBackend/getCities.php').then(response => {
         cities = [...response.data]
         let citySelect = document.getElementById('restaurant-add-city');
         citySelect.innerHTML = ``
@@ -108,7 +108,7 @@ async function addRest() {
     })
 
     let categories = []
-    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getCategories.php').then(response => {
+    await axios.get('http://localhost/tomato/tomatoBackend/getCategories.php').then(response => {
         categories = [...response.data]
         let categorySelect = document.getElementById('restaurant-add-category');
         categorySelect.innerHTML = ``
@@ -116,7 +116,7 @@ async function addRest() {
     })
 
     let types = []
-    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getTypes.php').then(response => {
+    await axios.get('http://localhost/tomato/tomatoBackend/getTypes.php').then(response => {
         types = [...response.data]
         let typeSelect = document.getElementById('restaurant-add-type');
         typeSelect.innerHTML = ``
