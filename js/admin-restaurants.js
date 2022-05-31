@@ -107,6 +107,22 @@ async function addRest(){
         cities?.map(city=>citySelect.innerHTML+=`<option value='${city.id}'>${city.city_name}</option>`)
     })
 
+    let categories = []
+    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getCategories.php').then(response=>{
+        categories = [...response.data]
+        let categorySelect = document.getElementById('restaurant-add-category');
+        categorySelect.innerHTML = ``
+        categories?.map(category=>categorySelect.innerHTML+=`<option value='${category.id}'>${category.category}</option>`)
+    })
+
+    let types = []
+    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getTypes.php').then(response=>{
+        types = [...response.data]
+        let typeSelect = document.getElementById('restaurant-add-type');
+        typeSelect.innerHTML = ``
+        types?.map(type=>typeSelect.innerHTML+=`<option value='${type.id}'>${type.type}</option>`)
+    })
+
     document.getElementById('add-save').onclick = saveNewRestaurant
 
 }
@@ -146,6 +162,22 @@ async function editRest(id){
         let citySelect = document.getElementById('restaurant-city');
         citySelect.innerHTML = ``
         cities?.map(city=>citySelect.innerHTML+=`<option value='${city.id}'>${city.city_name}</option>`)
+    })
+
+    let categories = []
+    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getCategories.php').then(response=>{
+        categories = [...response.data]
+        let categorySelect = document.getElementById('restaurant-edit-category');
+        categorySelect.innerHTML = ``
+        categories?.map(category=>categorySelect.innerHTML+=`<option value='${category.id}'>${category.category}</option>`)
+    })
+
+    let types = []
+    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getTypes.php').then(response=>{
+        types = [...response.data]
+        let typeSelect = document.getElementById('restaurant-edit-type');
+        typeSelect.innerHTML = ``
+        types?.map(type=>typeSelect.innerHTML+=`<option value='${type.id}'>${type.type}</option>`)
     })
 
     await axios.post('http://127.0.0.1/tomato/tomatoBackend/getRestaurant.php', form).then(response=>{
