@@ -58,7 +58,6 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
 let clickedEvtId
 let userReview
 const renderRestaurants = (obj) => {
-
     conatiner.innerHTML = ''
     for (let i of obj) {
         let { image, name, category, id } = i
@@ -71,7 +70,6 @@ const renderRestaurants = (obj) => {
             clickedEvtId = e.target.id
             const restro = getRestro(e.target.id)
             userReview = getUserRev(e.target.id)
-            console.log(userReview)
             myReview.imgSrc = restro.image
             if (userReview)
                 myReview.rev = userReview.review
@@ -95,7 +93,6 @@ document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
     body.append('id', userId)
     body.append('restId', clickedEvtId)
     if (userReview) {
-        console.log(userReview)
         axios.post('/tomato/tomatoBackend/updateReview.php', body)
             .then(res => console.log(res))
             .catch(err => console.log(err))

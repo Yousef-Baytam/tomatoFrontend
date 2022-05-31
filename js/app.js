@@ -12,7 +12,7 @@ const myUser = document.querySelector('my-user')
 const myEdit = document.querySelector('my-edit')
 const userImg = document.querySelector('#imgyaay')
 const userImgDsiplay = document.querySelector('[alt="user Image"]')
-const cat = document.querySelectorAll('[cat]')
+const cat = document.querySelectorAll('[rescat]')
 const profileCat = document.querySelectorAll('.profile-cat')
 const searchBar = document.querySelector('[placeholder="Search by Name"]')
 const logOut = document.querySelector('[logOut]')
@@ -137,7 +137,6 @@ if (myEdit)
         let p = document.querySelector('[editphone]').value
         let loc = document.querySelector('[editlocation]').value
         let d = document.querySelector('#dob123').value
-        console.log(userId, f, l, m, p, loc, d)
         updateInfo(userId, f, l, m, p, loc, d)
     })
 /***************************************************************************** */
@@ -183,7 +182,6 @@ if (cat)
                         if (i.status == 'active')
                             filteredRestros.push(i)
                     temRest = filteredRestros
-                    console.log(temRest)
                     renderRestaurants(temRest)
                 }).catch(err => console.log(err))
         })
@@ -196,13 +194,10 @@ if (profileCat)
             let result = []
             for (let res of allRestaurants) {
                 for (let rev of allUserReviews) {
-                    console.log(rev.restaurants_id, res.i, !result.includes(res))
                     if (res.id == rev.restaurants_id && !result.includes(res))
                         result.push(res)
                 }
             }
-            console.log(result)
-            console.log(renderRestaurants)
             renderRestaurants(result)
         })
 
@@ -239,13 +234,13 @@ if (searchBar)
 
 /*******************Logout******************** */
 const logout = () => {
-    console.log('hello')
     document.cookie = `${ sessionCookie }; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/`;
     window.location.href = '/tomato/tomatoFrontend/index.html'
 }
 logOut.addEventListener('click', logout)
 /********************************************** */
 
+/********************Get User ******************* */
 const getUserRev = (id) => {
     for (let rev of allUserReviews) {
         if (rev.restaurants_id == id) {
@@ -253,3 +248,22 @@ const getUserRev = (id) => {
         }
     }
 }
+/************************************************* */
+
+const sortByPop = (arr, order = 'asc') => {
+    if (order === 'asc')
+        arr.sort((a, b) => {
+            return a.rating - b.rating
+        })
+    else {
+        arr.sort((a, b) => {
+            return b.rating - a.rating
+        })
+    }
+}
+
+document.querySelector('.Sort').addEventListener('click', () => {
+    let restr = [...allRestaurants]
+    sortByPop(restr)
+    renderRestaurants(restr)
+})
