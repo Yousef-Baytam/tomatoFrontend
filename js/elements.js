@@ -55,6 +55,8 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
 /***************************************************************** */
 
 /***********************Render cards plus review listeners*********************** */
+let clickedEvtId
+let userReview
 const renderRestaurants = (obj) => {
 
     conatiner.innerHTML = ''
@@ -64,15 +66,15 @@ const renderRestaurants = (obj) => {
         conatiner.insertAdjacentHTML('beforeend', card)
     }
     let review = [...document.querySelectorAll('.leave-a-review')]
-    let clickedEvtId
     for (let rev of review) {
         rev.addEventListener('click', (e) => {
             clickedEvtId = e.target.id
             const restro = getRestro(e.target.id)
-            const userReview = getUserRev(e.target.id)
+            userReview = getUserRev(e.target.id)
             console.log(userReview)
             myReview.imgSrc = restro.image
-            myReview.rev = userReview.review
+            if (userReview)
+                myReview.rev = userReview.review
             myReview.title = restro.name
             myReview.desc = restro.description
             myReview.cuisine = restro.category
@@ -92,9 +94,16 @@ document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
     body.append('text', document.querySelector('[cols="30"]').value)
     body.append('id', userId)
     body.append('restId', clickedEvtId)
-    axios.post('/tomato/tomatoBackend/addReview.php', body)
-        .then(res => console.log(res))
-        .catch(err => console.log(err))
+    if (userReview) {
+        console.log(userReview)
+        axios.post('/tomato/tomatoBackend/updateReview.php', body)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+    }
+    else
+        axios.post('/tomato/tomatoBackend/addReview.php', body)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
     document.querySelector('[cols="30"]').value = ''
 })
 /***************************************************************************** */

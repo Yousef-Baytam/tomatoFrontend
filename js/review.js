@@ -80,7 +80,7 @@ class Review extends HTMLElement {
                         <textarea name="" id="" cols="30" rows="6" placeholder="Review">${ this.getAttribute('rev') }</textarea>
                         </div>
                     <label for="rating">Rating</label>
-                    <input type="range" min="1" max="6" name="rating" >
+                    <input type="range" min="1" max="5" name="rating" >
                     <input type="submit" name="submit" value="Submit" reviewSubmit>
                 </form>
             </div>
