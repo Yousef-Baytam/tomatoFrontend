@@ -258,10 +258,10 @@ const sortByPop = (arr, order) => {
     })
 }
 
-
-document.querySelector('.Sort').addEventListener('click', () => {
-    let restr = [...allRestaurants]
-    sortByPop(restr)
-    renderRestaurants(restr)
-})
+if (document.querySelector('.Sort'))
+    document.querySelector('.Sort').addEventListener('click', () => {
+        let restr = [...allRestaurants]
+        sortByPop(restr)
+        renderRestaurants(restr)
+    })
 /*************************************************** */
