@@ -95,7 +95,8 @@ const getUserData = (id) => {
             for (let i of knownUser)
                 i.classList.toggle('d-none')
             if (res.data.type === 'admin')
-                admin.classList.toggle('d-non')
+                if (admin)
+                    admin.classList.toggle('d-none')
             if (myUser) {
                 myUser.name = res.data.name
                 myUser.lastName = res.data.last
@@ -188,13 +189,8 @@ if (cat)
 if (profileCat)
     for (let c of profileCat)
         c.addEventListener('click', (e) => {
-            axios.get(`=${ e.target.innerText }`)
+            axios.get(`http://localhost/tomato/tomatoBackend/getReviews.php=${ e.target.innerText }`)
                 .then((res) => {
-                    let filteredRestros = []
-                    for (let i of res.data)
-                        if (i.status == 'active')
-                            filteredRestros.push(i)
-                    temRest = filteredRestros
                     renderRestaurants(temRest)
                 }).catch(err => console.log(err))
         })

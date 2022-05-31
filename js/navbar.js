@@ -24,9 +24,6 @@ class Nav extends HTMLElement {
                 <a href="http://localhost/tomato/tomatoFrontend/views/restaurants.html">All restaurants</a>
             </div>
         </div>
-        <div class='logo d-none' admin>
-                <a href="http://localhost/tomato/tomatoFrontend/views/restaurants.html">Admin Panel 💀</a>
-            </div>
         <div>
             <div class="log-in logo" knownUser>
                 Login
