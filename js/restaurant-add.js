@@ -57,10 +57,22 @@ class RestaurantAdd extends HTMLElement{
                     <input id="restaurant-add-namee" placeholder="Name"/>
                     <textarea id="restaurant-add-description" placeholder="Description"></textarea>
 
+                    <label for="restaurant-add-city">City:</label>
                     <select id="restaurant-add-city" name="restaurant-city">
 
                     </select>
 
+                    <label for="restaurant-add-category">Category:</label>
+                    <select id="restaurant-add-category" name="restaurant-category">
+
+                    </select>
+
+                    <label for="restaurant-add-type">Type:</label>
+                    <select id="restaurant-add-type" name="restaurant-type">
+
+                    </select>
+
+                    <label for="restaurant-add-status">Status:</label>
                     <select id="restaurant-add-status" name="restaurant-status">
                         <option value="active">Active</option>
                         <option value="banned">Banned</option>

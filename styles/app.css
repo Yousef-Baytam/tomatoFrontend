@@ -668,7 +668,20 @@ input[type='submit']:hover {
 
     width: 50%;
 
+<<<<<<< HEAD
 }
+=======
+  #restaurant-edit-modal #restaurant-namee, #restaurant-edit-modal #restaurant-description, #restaurant-edit-modal #restaurant-city, #restaurant-edit-modal #restaurant-status, #restaurant-edit-modal #restaurant-edit-category, #restaurant-edit-modal #restaurant-edit-type,
+  #restaurant-add-modal #restaurant-add-namee, #restaurant-add-modal #restaurant-add-description, #restaurant-add-modal #restaurant-add-city, #restaurant-add-modal #restaurant-add-status, #restaurant-add-modal #restaurant-add-category, #restaurant-add-modal #restaurant-add-type{
+      width: 100%;
+      border: 1px solid maroon;
+      margin-bottom: 1.5em;
+      height: 3.5em;
+      border-radius: 5px;
+      padding: 0.5em 2em;
+      outline: none;
+  }
+>>>>>>> a8b1535e5dcb2dce1dfe9f87b27764d47d948527
 
 #restaurant-logo,
 #restaurant-add-logo {
