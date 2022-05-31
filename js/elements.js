@@ -64,9 +64,6 @@ const renderRestaurants = (obj) => {
         conatiner.insertAdjacentHTML('beforeend', card)
     }
     let review = [...document.querySelectorAll('.leave-a-review')]
-    document.querySelector('#review-x123').addEventListener('click', () => {
-        reviewForm.classList.toggle('hidden')
-    })
     let clickedEvtId
     for (let rev of review) {
         rev.addEventListener('click', (e) => {
@@ -83,19 +80,21 @@ const renderRestaurants = (obj) => {
             reviewForm.classList.toggle('hidden')
         })
     }
-
-    document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
-        evt.preventDefault()
-        let body = new FormData()
-        body.append('rating', document.querySelector('[type="range"]').value)
-        body.append('text', document.querySelector('[cols="30"]').value)
-        body.append('id', userId)
-        body.append('restId', clickedEvtId)
-        reviewForm.classList.toggle('hidden')
-        axios.post('/tomato/tomatoBackend/addReview.php', body)
-            .then(res => console.log(res))
-            .catch(err => console.log(err))
-        document.querySelector('[cols="30"]').value = ''
-    })
 }
+document.querySelector('#review-x123').addEventListener('click', () => {
+    reviewForm.classList.toggle('hidden')
+})
+document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
+    evt.preventDefault()
+    reviewForm.classList.toggle('hidden')
+    let body = new FormData()
+    body.append('rating', document.querySelector('[type="range"]').value)
+    body.append('text', document.querySelector('[cols="30"]').value)
+    body.append('id', userId)
+    body.append('restId', clickedEvtId)
+    axios.post('/tomato/tomatoBackend/addReview.php', body)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+    document.querySelector('[cols="30"]').value = ''
+})
 /***************************************************************************** */

@@ -183,6 +183,7 @@ if (cat)
                         if (i.status == 'active')
                             filteredRestros.push(i)
                     temRest = filteredRestros
+                    console.log(temRest)
                     renderRestaurants(temRest)
                 }).catch(err => console.log(err))
         })
