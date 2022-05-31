@@ -1,11 +1,15 @@
-var editModal;
-var editSpan;
-var editCancel;
+let editModal;
+let editSpan;
+let editCancel;
 
-var addModal;
-var addSpan;
-var addCancel;
+let addModal;
+let addSpan;
+let addCancel;
 
+let restaurants = []
+let searchInput = ""
+
+let container;
 
 window.onload = (e)=>{
     
@@ -41,6 +45,12 @@ window.onload = (e)=>{
             addModal.style.display = "none";
         }
     
+
+
+        document.getElementById('restaurants-search').oninput = (e)=>{
+            searchInput = e.target.value
+            showRestaurants()
+        }
     });
 
     
@@ -56,22 +66,27 @@ window.onload = (e)=>{
 // }
 
 const fetchData = async ()=>{
-    let restaurants = []
-    const container = document.getElementsByClassName('restaurants-admin-container')[0];
+
+    container = document.getElementsByClassName('restaurants-list')[0];
     await axios.get('http://127.0.0.1/tomatobackend/getRestaurants.php').then(response=>{
         restaurants = response.data
     })
 
     if(restaurants.length > 0){
-        restaurants.map(rest=>
-            container.innerHTML +=`<restaurant-item id="${rest.id}" status="${rest.status}" name="${rest.name}" description="${rest.description}" rate="${rest.rate}" image="${rest.image}"></restaurant-item>`
-        )
+        showRestaurants()
     }else{
        container.innerHTML += `No Restaurant Found`
     }
     
 }
 
+
+function showRestaurants(){
+    container.innerHTML = ``
+    restaurants.filter(rest=>(rest.name.includes(searchInput) || rest.description.includes(searchInput))).map(rest=>
+        container.innerHTML +=`<restaurant-item id="${rest.id}" status="${rest.status}" name="${rest.name}" description="${rest.description}" rate="${rest.rate}" image="${rest.image}"></restaurant-item>`
+    )
+}
 async function addRest(){
 
     addModal.style.display="block"
