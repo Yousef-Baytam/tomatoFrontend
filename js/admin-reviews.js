@@ -40,7 +40,7 @@ function onFilterChange(e){
 function showReviews(){
     
     container.innerHTML = ``
-    reviews.filter(review=>(review.status === filterValue && (review.name.includes(searchInput) || review.review.includes(searchInput)))).map(review=>
+    reviews.filter(review=>(review.status === filterValue && (review.name.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase()) || review.review.toLocaleLowerCase().includes(searchInput.toLocaleLowerCase())))).map(review=>
         container.innerHTML +=`<review-item id="${review.id}" name="${review.name}" review-text="${review.review}" rate="${review.rating}" status="${review.status}"></review-item>`
     )
 }
