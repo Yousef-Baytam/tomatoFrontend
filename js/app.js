@@ -83,7 +83,7 @@ document.addEventListener('scroll', () => {
 
 /*************************Get User Info from Id (Used only on page load)************************ */
 const getUserData = (id) => {
-    axios.get(`http://localhost/tomato/tomatoBackend/getUser.php?id=${ id }`)
+    axios.get(`/tomato/tomatoBackend/getUser.php?id=${ id }`)
         .then((res) => {
             if (res.data.response === 'User Not Found')
                 return false
@@ -123,7 +123,7 @@ const getUserData = (id) => {
 /*********************on load get id from cookie (if any)********************* */
 userId = getCookieValue('tomatoUser')
 if (!userId && !window.location.href.includes('index.html'))
-    window.location.href = 'http://localhost/tomato/tomatoFrontend/index.html'
+    window.location.href = '/tomato/tomatoFrontend/index.html'
 const userData = getUserData(userId)
 /******************************************************************************* */
 
@@ -154,7 +154,7 @@ if (userImg)
             let body = new FormData()
             body.append('id', userId)
             body.append('img', reader.result)
-            axios.post('http://localhost/tomato/tomatoBackend/userImage.php', body)
+            axios.post('/tomato/tomatoBackend/userImage.php', body)
                 .then((res) => {
                     console.log(res)
                 }).catch(e => console.log(e))
@@ -176,7 +176,7 @@ const getRestro = (id) => {
 if (cat)
     for (let c of cat)
         c.addEventListener('click', (e) => {
-            axios.get(`http://localhost/tomato/tomatoBackend/getByCat.php?cat=${ e.target.innerText }`)
+            axios.get(`/tomato/tomatoBackend/getByCat.php?cat=${ e.target.innerText }`)
                 .then((res) => {
                     let filteredRestros = []
                     for (let i of res.data)
@@ -206,7 +206,7 @@ if (profileCat)
         })
 
 const AllReviews = () => {
-    axios.get(`http://localhost/tomato/tomatoBackend/getReviews.php?id=${ userId }`)
+    axios.get(`/tomato/tomatoBackend/getReviews.php?id=${ userId }`)
         .then((res) => {
             allUserReviews = res.data
         }).catch(err => console.log(err))
@@ -240,7 +240,7 @@ if (searchBar)
 const logout = () => {
     console.log('hello')
     document.cookie = `${ sessionCookie }; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/`;
-    window.location.href = 'http://localhost/tomato/tomatoFrontend/index.html'
+    window.location.href = '/tomato/tomatoFrontend/index.html'
 }
 logOut.addEventListener('click', logout)
 /********************************************** */

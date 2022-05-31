@@ -3,7 +3,7 @@ const myReview = document.querySelector('my-review')
 
 /**********************Get all active restaurants******************* */
 const fetchRes = () => {
-    axios.get(`http://localhost/tomato/tomatoBackend/getAllRes.php`)
+    axios.get(`/tomato/tomatoBackend/getAllRes.php`)
         .then((res) => {
             let filteredRestros = []
             for (let i of res.data)
@@ -47,7 +47,7 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
     data.append('phone', p)
     data.append('location', loc)
     data.append('dob', d)
-    axios.post(`http://localhost/tomato/tomatoBackend/updateUserInfo.php`, data)
+    axios.post(`/tomato/tomatoBackend/updateUserInfo.php`, data)
         .then((res) => {
             window.location.reload()
         }).catch(err => console.log(err))
@@ -56,6 +56,7 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
 
 /***********************Render cards plus review listeners*********************** */
 const renderRestaurants = (obj) => {
+
     conatiner.innerHTML = ''
     for (let i of obj) {
         let { image, name, category, id } = i
@@ -82,6 +83,7 @@ const renderRestaurants = (obj) => {
             reviewForm.classList.toggle('hidden')
         })
     }
+
     document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
         evt.preventDefault()
         let body = new FormData()
@@ -90,7 +92,7 @@ const renderRestaurants = (obj) => {
         body.append('id', userId)
         body.append('restId', clickedEvtId)
         reviewForm.classList.toggle('hidden')
-        axios.post('http://localhost/tomato/tomatoBackend/addReview.php', body)
+        axios.post('/tomato/tomatoBackend/addReview.php', body)
             .then(res => console.log(res))
             .catch(err => console.log(err))
         document.querySelector('[cols="30"]').value = ''

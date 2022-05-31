@@ -32,7 +32,7 @@ class Nav extends HTMLElement {
                 <div username> ${ this.getAttribute('name') } ${ this.getAttribute('lastName') }</div>
                 <div img><img userimage src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
                 <div profile class='d-none'>
-                <div><a href="http://localhost/tomato/tomatoFrontend/views/profile.html">My profile</a></div>
+                <div><a href="/tomato/tomatoFrontend/views/profile.html">My profile</a></div>
                 <div logOut>log out
                     </div>
                 </div>
@@ -42,7 +42,7 @@ class Nav extends HTMLElement {
     <div class="form-bg hidden">
     <div class="steps-container">
         <div class="form-container">
-            <form action="http://localhost/tomato/tomatoBackend/login.php" method="POST" class="form login-form">
+            <form action="/tomato/tomatoBackend/login.php" method="POST" class="form login-form">
                 <div>
                     <i class="fa-solid fa-xmark"></i>
                     <input type="Email" id='loginEmail' name="email" placeholder="Email" required>
@@ -56,7 +56,7 @@ class Nav extends HTMLElement {
             </form>
         </div>
         <div class="form-container translate">
-            <form action="http://localhost/tomato/tomatoBackend/addUser.php" method="POST" class="form" new-account>
+            <form action="/tomato/tomatoBackend/addUser.php" method="POST" class="form" new-account>
                 <i class="fa-solid fa-xmark"></i>
                 <div>
                     <div>
