@@ -1,9 +1,11 @@
+let container;
+
 window.onload= ()=>{
     fetchData()
 }
 
 const fetchData = async ()=>{
-    const container = document.getElementsByClassName('users-admin-container')[0];
+    container = document.getElementsByClassName('users-list')[0];
     let users = []
     await axios.get('http://127.0.0.1/tomatobackend/getUsers.php').then(response=>{
         users = response.data
