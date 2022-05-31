@@ -120,13 +120,32 @@ nav div:nth-of-type(2) {
 [profile] {
     background-color: rgba(0, 0, 0, 0.7);
     width: fit-content;
-    justify-content: center;
+    height: 7.5em;
     padding: 0.51em 1.5em;
     position: absolute;
     top: 2.8em;
     right: 12%;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.profile-pic img {
+    transition: all 200ms ease;
+}
+
+.profile-pic img:hover {
+    transform: scale(1.1);
+    box-shadow: 0em 0em 1em black;
+}
+
+.edit:hover {
+    background-color: #b4b4b4;
+}
+
+[profile] div {
+    width: 7.5em;
+    height: 3em;
+    padding: 1em;
 }
 
 .logged-in:hover [profile] {
@@ -240,7 +259,8 @@ div[step]:hover {
     background-color: green;
 }
 
-input, .cousine-list {
+input,
+.cousine-list {
     width: 100%;
     margin-bottom: 1.5em;
     height: 3.5em;
@@ -292,121 +312,133 @@ input[type='submit']:hover {
 }
 
 
-.admin-container{
+.admin-container {
     display: flex;
     flex-direction: row;
     height: 100vh;
 }
-.sidebar{
+
+.sidebar {
     height: 100%;
     width: 256px;
     background-color: maroon;
 }
 
-.sidebar-head{
+.sidebar-head {
     color: var(--secondary-color);
     text-align: center;
     height: 64px;
 }
 
-.nav-list{
+.nav-list {
     list-style: none;
     padding-left: 0;
 }
 
-.nav-list a:hover::after{
-        content: '';
+.nav-list a:hover::after {
+    content: '';
 }
 
-.nav-list li{
+.nav-list li {
     height: 48px;
     padding-top: 16px;
     margin: 1px 5px;
     border-radius: 5px;
 }
-.nav-list li:hover, .nav-list .selected{
+
+.nav-list li:hover,
+.nav-list .selected {
     background-color: rgb(86, 0, 0);
 }
 
-.nav-list li *{
+.nav-list li * {
     padding-right: 32px;
 }
 
-.nav-list li i{
+.nav-list li i {
     transition: none;
     padding-left: 16px;
     color: var(--secondary-color);
 }
 
-.nav-list li i:hover{
+.nav-list li i:hover {
     transform: none;
 }
 
-.restaurants-admin-container, .users-admin-container, .reviews-admin-container{
+.restaurants-admin-container,
+.users-admin-container,
+.reviews-admin-container {
     margin: 10px;
 }
 
-.restaurants-admin-container>h1, .users-admin-container>h1{
+.restaurants-admin-container>h1,
+.users-admin-container>h1 {
     margin-bottom: 50px;
 }
 
-.admin-card{
-    display:flex;
+.admin-card {
+    display: flex;
     align-items: center;
     background-color: var(--secondary-color);
     width: 90%;
     padding: 10px 20px;
     margin: 10px auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 10px;
 }
 
 .admin-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  }
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 
 .admin-card .head {
     display: flex;
     justify-content: space-between;
 }
-.admin-card .head .title *, .admin-card .content .description *{
+
+.admin-card .head .title *,
+.admin-card .content .description * {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .restaurant-item-logo {
     margin: 10px;
 }
 
-.restaurant-item-logo img{
+.restaurant-item-logo img {
     width: 75px;
     height: 75px;
     border-radius: 50%;
 }
-.edit-restaurant .form-container, .add-restaurant .form-container{
+
+.edit-restaurant .form-container,
+.add-restaurant .form-container {
     flex-direction: column;
 }
-.edit-restaurant-close{
+
+.edit-restaurant-close {
     align-self: flex-end;
 }
 
-.admin-user-card{
+.admin-user-card {
     display: flex;
     background-color: var(--secondary-color);
     width: 90%;
     padding: 10px 20px;
     margin: auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 10px;
 }
 
 .admin-user-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.admin-user-card .profile-pic img{
+.admin-user-card .profile-pic img {
     height: 64px;
     width: 64px;
     border-radius: 50%;
@@ -416,28 +448,30 @@ input[type='submit']:hover {
     display: flex;
     justify-content: space-between;
 }
-.admin-user-card .head .title *, .admin-user-card .content .description *{
+
+.admin-user-card .head .title *,
+.admin-user-card .content .description * {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.admin-review-card{
+.admin-review-card {
     display: flex;
     background-color: var(--secondary-color);
     width: 90%;
     padding: 10px 20px;
     margin: 10px auto;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
     border-radius: 10px;
 }
 
 .admin-review-card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.admin-review-card .profile-pic img{
+.admin-review-card .profile-pic img {
     height: 64px;
     width: 64px;
     border-radius: 50%;
@@ -447,12 +481,14 @@ input[type='submit']:hover {
     display: flex;
     justify-content: space-between;
 }
-.admin-review-card .head .title *, .admin-review-card .content .description *{
+
+.admin-review-card .head .title *,
+.admin-review-card .content .description * {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-  
+
 
 .restaurant-add {
     /* width: 90%; */
@@ -461,40 +497,48 @@ input[type='submit']:hover {
     margin-bottom: 10px;
 }
 
-.restaurant-add button{
+.restaurant-add button {
     padding-top: 10px;
     border: none;
     border-radius: 5px;
     background-color: var(--secondary-color);
     color: maroon;
     cursor: pointer;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-}
-.restaurant-add button:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
-.restaurant-add button:active{
+.restaurant-add button:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.restaurant-add button:active {
     opacity: 0.7;
 }
 
 .restaurant-add button i {
     transform: none;
     color: inherit;
-    
+
 }
 
-.filter{
+.filter {
     width: 90%;
     margin: auto;
     margin-top: 25px;
     display: flex;
     gap: 15px;
 }
-.reviews-search-container,.restaurant-search-container, .users-search-container{
+
+.reviews-search-container,
+.restaurant-search-container,
+.users-search-container {
     width: 50%;
 }
-.filter-list, #reviews-search, #restaurants-search, #users-search {
+
+.filter-list,
+#reviews-search,
+#restaurants-search,
+#users-search {
     width: 50%;
     margin-bottom: 1.5em;
     height: 3.5em;
@@ -503,18 +547,24 @@ input[type='submit']:hover {
     outline: none;
     border: 1px solid maroon;
 }
-#reviews-search, #restaurants-search, #users-search{
+
+#reviews-search,
+#restaurants-search,
+#users-search {
     width: 100%;
 }
 
-#reviews-search-icon, #restaurants-search-icon, #users-search-icon{
+#reviews-search-icon,
+#restaurants-search-icon,
+#users-search-icon {
     position: absolute;
     padding: 15px 7px;
     transform: none;
     cursor: default;
 }
 
-.restaurant-head, .users-head{
+.restaurant-head,
+.users-head {
     display: flex;
     width: 90%;
     justify-content: space-between;
@@ -523,103 +573,104 @@ input[type='submit']:hover {
 }
 
 .modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto; 
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4); 
-  }
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
 
-  .modal-header {
+.modal-header {
     display: flex;
     justify-content: space-between;
     padding: 2px 16px;
     background-color: maroon;
     color: white;
-  }
-  
+}
 
-  .modal-body {padding: 2px 16px;}
-  
 
-  .modal-footer {
+.modal-body {
+    padding: 2px 16px;
+}
+
+
+.modal-footer {
     text-align: right;
     padding: 2px 16px;
     background-color: white;
     color: white;
     margin-bottom: 10px;
-  }
+}
 
-  .modal-footer #edit-save, .modal-footer #add-save{
+.modal-footer #edit-save,
+.modal-footer #add-save {
     padding: 5px 10px;
     background-color: maroon;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
 
-  .modal-footer #edit-cancel, .modal-footer #add-cancel{
+.modal-footer #edit-cancel,
+.modal-footer #add-cancel {
     padding: 5px 10px;
     background-color: transparent;
     color: maroon;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
+}
 
-  .modal-content {
+
+.modal-content {
     position: relative;
     background-color: #fefefe;
     margin: auto;
     padding: 0;
     border: 1px solid #888;
     width: 40%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     animation-name: animatetop;
     animation-duration: 0.4s
-  }
-  
-  .edit-close, .add-close {
+}
+
+.edit-close,
+.add-close {
     color: white;
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .edit-close:hover,
-  .edit-close:focus,
-  .add-close:hover,
-  .add-close:focus {
+}
+
+.edit-close:hover,
+.edit-close:focus,
+.add-close:hover,
+.add-close:focus {
     color: #aaa;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
-  .logo-container{
-      display: flex;
-      margin-bottom: 20px;
-      width: 100%;
+.logo-container {
+    display: flex;
+    margin-bottom: 20px;
+    width: 100%;
 
-  }
-  .logo-container input{
+}
 
-      width: 50%;
+.logo-container input {
 
-  }
-  #restaurant-logo, #restaurant-add-logo{
-      border: 1px solid maroon;
-      border-radius: 8px;
-      height: 200px;
-      width: 200px;
-  }
+    width: 50%;
 
+<<<<<<< HEAD
+}
+=======
   #restaurant-edit-modal #restaurant-namee, #restaurant-edit-modal #restaurant-description, #restaurant-edit-modal #restaurant-city, #restaurant-edit-modal #restaurant-status, #restaurant-edit-modal #restaurant-edit-category, #restaurant-edit-modal #restaurant-edit-type,
   #restaurant-add-modal #restaurant-add-namee, #restaurant-add-modal #restaurant-add-description, #restaurant-add-modal #restaurant-add-city, #restaurant-add-modal #restaurant-add-status, #restaurant-add-modal #restaurant-add-category, #restaurant-add-modal #restaurant-add-type{
       width: 100%;
@@ -630,15 +681,49 @@ input[type='submit']:hover {
       padding: 0.5em 2em;
       outline: none;
   }
+>>>>>>> a8b1535e5dcb2dce1dfe9f87b27764d47d948527
 
-  .action-buttons{
-      display: flex;
-      gap: 10px;
-  }
-  @keyframes animatetop {
-    from {top: -300px; opacity: 0}
-    to {top: 0; opacity: 1}
-  }
+#restaurant-logo,
+#restaurant-add-logo {
+    border: 1px solid maroon;
+    border-radius: 8px;
+    height: 200px;
+    width: 200px;
+}
+
+#restaurant-edit-modal #restaurant-namee,
+#restaurant-edit-modal #restaurant-description,
+#restaurant-edit-modal #restaurant-city,
+#restaurant-edit-modal #restaurant-status,
+#restaurant-add-modal #restaurant-add-namee,
+#restaurant-add-modal #restaurant-add-description,
+#restaurant-add-modal #restaurant-add-city,
+#restaurant-add-modal #restaurant-add-status {
+    width: 100%;
+    border: 1px solid maroon;
+    margin-bottom: 1.5em;
+    height: 3.5em;
+    border-radius: 5px;
+    padding: 0.5em 2em;
+    outline: none;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+@keyframes animatetop {
+    from {
+        top: -300px;
+        opacity: 0
+    }
+
+    to {
+        top: 0;
+        opacity: 1
+    }
+}
 
 [new-account] {
     width: 700px;

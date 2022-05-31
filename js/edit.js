@@ -47,10 +47,6 @@ class Edit extends HTMLElement {
             <div class="form-container">
                 <form action="" method="POST" class="form">
                     <div>
-
-                       // <i id="user-edit-close" class="fa-solid fa-xmark"></i>
-                      //  <input type="text" name="First" placeholder="First Name">
-
                         <i class="fa-solid fa-xmark"></i>
                         <input type="text" name="name" placeholder="First Name" editfirstname value='${ this.getAttribute('name') }'>
                     </div>
