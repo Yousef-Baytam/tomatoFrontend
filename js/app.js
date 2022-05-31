@@ -192,7 +192,17 @@ if (cat)
 if (profileCat)
     for (let c of profileCat)
         c.addEventListener('click', () => {
-            AllReviews()
+            let result = []
+            for (let res of allRestaurants) {
+                for (let rev of allUserReviews) {
+                    console.log(rev.restaurants_id, res.i, !result.includes(res))
+                    if (res.id == rev.restaurants_id && !result.includes(res))
+                        result.push(res)
+                }
+            }
+            console.log(result)
+            console.log(renderRestaurants)
+            renderRestaurants(result)
         })
 
 const AllReviews = () => {
