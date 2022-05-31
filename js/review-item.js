@@ -12,7 +12,7 @@ class ReviewItem extends HTMLElement{
                         </div>
                         <div class="action-buttons">` +
                             (this.status === 'pending' || this.status === 'declined' ? `<span title="Accept" onclick="accept(${this.id})"><i class="fa-solid fa-check"></i></span>` : '') +
-                            (this.status === 'pending' || this.status === 'accepted' ? `<span title="Decline" onclick="decline(${this.id})"><i class="fa-solid fa-xmark"></i></span>` : '')+
+                            (this.status === 'pending' || this.status === 'approved' ? `<span title="Decline" onclick="decline(${this.id})"><i class="fa-solid fa-xmark"></i></span>` : '')+
                             
                         `</div>
                     </div> 

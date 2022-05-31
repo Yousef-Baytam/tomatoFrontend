@@ -68,7 +68,7 @@ window.onload = (e) => {
 const fetchData = async () => {
 
     container = document.getElementsByClassName('restaurants-list')[0];
-    await axios.get('http://localhost/tomato/tomatoBackend/getRestaurants.php').then(response => {
+    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getRestaurants.php').then(response => {
         restaurants = response.data
     })
 
@@ -100,7 +100,7 @@ async function addRest() {
     })
 
     let cities = []
-    await axios.get('http://localhost/tomato/tomatoBackend/getCities.php').then(response => {
+    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getCities.php').then(response => {
         cities = [...response.data]
         let citySelect = document.getElementById('restaurant-add-city');
         citySelect.innerHTML = ``
@@ -108,7 +108,7 @@ async function addRest() {
     })
 
     let categories = []
-    await axios.get('http://localhost/tomato/tomatoBackend/getCategories.php').then(response => {
+    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getCategories.php').then(response => {
         categories = [...response.data]
         let categorySelect = document.getElementById('restaurant-add-category');
         categorySelect.innerHTML = ``
@@ -116,7 +116,7 @@ async function addRest() {
     })
 
     let types = []
-    await axios.get('http://localhost/tomato/tomatoBackend/getTypes.php').then(response => {
+    await axios.get('http://127.0.0.1/tomato/tomatoBackend/getTypes.php').then(response => {
         types = [...response.data]
         let typeSelect = document.getElementById('restaurant-add-type');
         typeSelect.innerHTML = ``
@@ -150,9 +150,10 @@ async function saveNewRestaurant() {
         description,
         status,
         city)
-    await axios.post('http://localhost/tomato/tomatoBackend/addRestaurant.php', form).then(response => {
+    await axios.post('/tomato/tomatoBackend/addRestaurant.php', form).then(response => {
+        console.log(response.data)
         addModal.style.display = 'none';
-        location.reload()
+        // location.reload()
     })
 }
 async function editRest(id) {
@@ -161,7 +162,7 @@ async function editRest(id) {
     editModal.style.display = "block"
 
     let cities = []
-    await axios.get('http://localhost/tomato/tomatoBackend/getCities.php').then(response => {
+    await axios.get('/tomato/tomatoBackend/getCities.php').then(response => {
         cities = [...response.data]
         let citySelect = document.getElementById('restaurant-city');
         citySelect.innerHTML = ``
@@ -169,7 +170,7 @@ async function editRest(id) {
     })
 
     let categories = []
-    await axios.get('http://localhost/tomato/tomatoBackend/getCategories.php').then(response => {
+    await axios.get('/tomato/tomatoBackend/getCategories.php').then(response => {
         categories = [...response.data]
         let categorySelect = document.getElementById('restaurant-edit-category');
         categorySelect.innerHTML = ``
@@ -177,14 +178,14 @@ async function editRest(id) {
     })
 
     let types = []
-    await axios.get('http://localhost/tomato/tomatoBackend/getTypes.php').then(response => {
+    await axios.get('/tomato/tomatoBackend/getTypes.php').then(response => {
         types = [...response.data]
         let typeSelect = document.getElementById('restaurant-edit-type');
         typeSelect.innerHTML = ``
         types?.map(type => typeSelect.innerHTML += `<option value='${ type.id }'>${ type.type }</option>`)
     })
 
-    await axios.post('http://localhost/tomato/tomatoBackend/getRestaurant.php', form).then(response => {
+    await axios.post('/tomato/tomatoBackend/getRestaurant.php', form).then(response => {
         const data = response.data[0];
         document.getElementById('restaurant-logo').src = data.image
         document.getElementById('restaurant-namee').defaultValue = data.name
@@ -223,7 +224,7 @@ async function saveRestaurantChanges(id) {
     form.append('category', category)
     form.append('type', type)
 
-    await axios.post('http://localhost/tomato/tomatoBackend/updateRestaurant.php', form).then(() => {
+    await axios.post('/tomato/tomatoBackend/updateRestaurant.php', form).then(() => {
         editModal.style.display = "none";
         location.reload()
     })
@@ -232,7 +233,7 @@ async function saveRestaurantChanges(id) {
 async function remove(id) {
     const form = new FormData();
     form.append('id', id)
-    await axios.post('http://localhost/tomato/tomatoBackend/removeRestaurant.php', form).then(response =>
+    await axios.post('/tomato/tomatoBackend/removeRestaurant.php', form).then(response =>
         location.reload()
     )
 }
@@ -241,7 +242,7 @@ async function ban(id) {
     const form = new FormData();
     form.append('status', 'banned')
     form.append('id', id)
-    await axios.post('http://localhost/tomato/tomatoBackend/updateRestaurantStatus.php', form).then(response =>
+    await axios.post('/tomato/tomatoBackend/updateRestaurantStatus.php', form).then(response =>
         location.reload()
     )
 }
@@ -250,7 +251,7 @@ async function activate(id) {
     const form = new FormData();
     form.append('status', 'active')
     form.append('id', id)
-    await axios.post('http://localhost/tomato/tomatoBackend/updateRestaurantStatus.php', form).then(response =>
+    await axios.post('/tomato/tomatoBackend/updateRestaurantStatus.php', form).then(response =>
         location.reload()
     )
 }
