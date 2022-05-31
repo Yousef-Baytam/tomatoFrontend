@@ -164,6 +164,7 @@ if (userImg)
     })
 /************************************************************ */
 
+/*******************Get a specific restaurant by Id***************** */
 const getRestro = (id) => {
     let rest = {}
     for (let restro of allRestaurants) {
@@ -171,7 +172,9 @@ const getRestro = (id) => {
     }
     return rest
 }
+/******************************************************************** */
 
+/**********************Filter by Category******************** */
 if (cat)
     for (let c of cat)
         c.addEventListener('click', (e) => {
@@ -185,7 +188,9 @@ if (cat)
                     renderRestaurants(temRest)
                 }).catch(err => console.log(err))
         })
+/************************************************************* */
 
+/*****************Get User Reviews**************** */
 if (profileCat)
     for (let c of profileCat)
         c.addEventListener('click', (e) => {
@@ -194,7 +199,9 @@ if (profileCat)
                     console.log(res)
                 }).catch(err => console.log(err))
         })
+/*************************************************** */
 
+/*******************Clear Filters***************** */
 const clearFilters = () => {
     temRest = []
     searchBar.value = ''
@@ -202,7 +209,9 @@ const clearFilters = () => {
 }
 if (cfilters)
     cfilters.addEventListener('click', clearFilters)
+/************************************************** */
 
+/*****************Search by restaurant name***************** */
 if (searchBar)
     searchBar.addEventListener('keyup', () => {
         let result = []
@@ -212,11 +221,13 @@ if (searchBar)
         }
         renderRestaurants(result)
     })
+/************************************************************ */
 
+/*******************Logout******************** */
 const logout = () => {
     console.log('hello')
     document.cookie = `${ sessionCookie }; expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/`;
     window.location.href = 'http://localhost/tomato/tomatoFrontend/index.html'
 }
 logOut.addEventListener('click', logout)
-
+/********************************************** */
