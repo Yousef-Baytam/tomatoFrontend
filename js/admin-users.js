@@ -55,9 +55,10 @@ async function remove(id){
     const form = new FormData();
     form.append('status', 'banned')
     form.append('id', id)
-    await axios.post('http://127.0.0.1/tomato/tomatoBackend/updateUserStatus.php', form).then(response=>
+    await axios.post('http://127.0.0.1/tomato/tomatoBackend/updateUserStatus.php', form).then(response=>{
+    console.log(response)
         location.reload()
-    )
+ })
  }
 
  async function activate(id){

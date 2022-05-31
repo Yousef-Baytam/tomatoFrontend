@@ -145,12 +145,9 @@ async function saveNewRestaurant(){
     form.append('category', category)
     form.append('type', type)
 
-        console.log(img,
-            name,
-            description,
-            status,
-            city)
-    await axios.post('http://127.0.0.1/tomato/tomatoBackend/addRestaurant.php', form).then(response=>{
+
+    await axios.post('http://localhost/tomato/tomatoBackend/addRestaurant.php', form).then(response=>{
+        console.log(response.data)
             addModal.style.display = 'none';
             location.reload()
     })
