@@ -19,7 +19,7 @@ window.onload = ()=>{
 const fetchData = async ()=>{
     container = document.getElementsByClassName('reviews-list')[0];
     
-    await axios.get('http://127.0.0.1/tomatobackend/getReviews.php').then(response=>{
+    await axios.get('http://127.0.0.1/tomatobackend/getAllReviews.php').then(response=>{
         reviews = response.data
     })
 
