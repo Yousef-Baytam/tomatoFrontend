@@ -63,7 +63,7 @@ await axios.post('http://127.0.0.1/tomato/tomatoBackend/updateUserStatus.php', f
     console.log(response)
     location.reload()
 })
- }
+
 
 async function activate(id) {
     const form = new FormData();
