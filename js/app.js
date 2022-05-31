@@ -251,20 +251,17 @@ const getUserRev = (id) => {
 }
 /************************************************* */
 
-const sortByPop = (arr, order = 'asc') => {
-    if (order === 'asc')
-        arr.sort((a, b) => {
-            return a.rating - b.rating
-        })
-    else {
-        arr.sort((a, b) => {
-            return b.rating - a.rating
-        })
-    }
+/******************Sort by type***************** */
+const sortByPop = (arr, order) => {
+    arr.sort((a, b) => {
+        return b.rating - a.rating
+    })
 }
+
 
 document.querySelector('.Sort').addEventListener('click', () => {
     let restr = [...allRestaurants]
     sortByPop(restr)
     renderRestaurants(restr)
 })
+/*************************************************** */
