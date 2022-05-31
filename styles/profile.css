@@ -57,6 +57,7 @@
     border: none;
     border-radius: 10px;
     cursor: pointer;
+    transition: all 200ms ease;
 }
 
 @keyframes color {
@@ -76,6 +77,15 @@
 @media (max-width:900px) {
     nav {
         font-size: 1em;
+    }
+
+    [profile] {
+        top: 4em;
+    }
+
+    [admin] {
+        font-size: 1em;
+        left: 4em;
     }
 
     [info] {
