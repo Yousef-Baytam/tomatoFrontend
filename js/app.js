@@ -182,8 +182,8 @@ if (cat)
                 }).catch(err => console.log(err))
         })
 
-if (cat)
-    for (let c of cat)
+if (profileCat)
+    for (let c of profileCat)
         c.addEventListener('click', (e) => {
             axios.get(`http://localhost/tomato/tomatoBackend/getByCat.php?cat=${ e.target.innerText }`)
                 .then((res) => {
