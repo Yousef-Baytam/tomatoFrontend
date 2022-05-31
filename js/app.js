@@ -237,3 +237,11 @@ const logout = () => {
 }
 logOut.addEventListener('click', logout)
 /********************************************** */
+
+const getUserRev = (id) => {
+    for (let rev of AllReviews) {
+        if (rev.restaurants_id == id) {
+            return rev
+        }
+    }
+}
