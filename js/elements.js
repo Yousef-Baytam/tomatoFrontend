@@ -4,14 +4,14 @@ const myReview = document.querySelector('my-review')
 const fetchRes = () => {
     axios.get(`http://localhost/tomato/tomatoBackend/getAllRes.php`)
         .then((res) => {
-            if (window.location.href.includes('restaurants.html')) {
-                renderRestaurants(res.data)
-            }
             let filteredRestros = []
             for (let i of res.data)
                 if (i.status == 'active')
                     filteredRestros.push(i)
             allRestaurants = filteredRestros
+            if (window.location.href.includes('restaurants.html')) {
+                renderRestaurants(allRestaurants)
+            }
         }).catch((e) => {
             console.log(e)
         })
@@ -42,7 +42,6 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
     data.append('phone', p)
     data.append('location', loc)
     data.append('dob', d)
-    console.log(id, n, l, e, p, loc, d, data)
     axios.post(`http://localhost/tomato/tomatoBackend/updateUserInfo.php`, data)
         .then((res) => {
             window.location.reload()
@@ -55,37 +54,38 @@ const renderRestaurants = (obj) => {
     conatiner.innerHTML = ''
     for (let i of obj) {
         let { image, name, category, id } = i
-        let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating='${ Math.round(i['AVG(rev.rating)']) }' id='${ id }'/>`
+        let card = `<my-card imgSrc='${ image }' title='${ name }' cuisine='${ category }' rating='${ Math.round(i.rating) }' id='${ id }'/>`
         conatiner.insertAdjacentHTML('beforeend', card)
     }
     let review = [...document.querySelectorAll('.leave-a-review')]
     document.querySelector('#review-x123').addEventListener('click', () => {
         reviewForm.classList.toggle('hidden')
     })
-    for (let rev of review)
+    let clickedEvtId
+    for (let rev of review) {
         rev.addEventListener('click', (e) => {
+            clickedEvtId = e.target.id
             const restro = getRestro(e.target.id)
-            console.log(restro['AVG(rev.rating)'])
             myReview.imgSrc = restro.image
             myReview.title = restro.name
             myReview.desc = restro.description
             myReview.cuisine = restro.category
-            console.log(Math.round(restro['AVG(rev.rating)']))
-            myReview.rating = Math.round(restro['AVG(rev.rating)'])
+            myReview.rating = Math.round(restro.rating)
             reviewForm.classList.toggle('hidden')
-            document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
-                evt.preventDefault()
-                let body = new FormData()
-                body.append('rating', document.querySelector('[type="range"]').value)
-                body.append('text', document.querySelector('[cols="30"]').value)
-                body.append('id', userId)
-                body.append('restId', e.target.id)
-                reviewForm.classList.toggle('hidden')
-                axios.post('http://localhost/tomato/tomatoBackend/addReview.php', body)
-                    .then(res => console.log(res))
-                    .catch(err => console.log(err))
-                document.querySelector('[cols="30"]').value = ''
-            })
         })
+    }
+    document.querySelector('[reviewSubmit]').addEventListener('click', (evt) => {
+        evt.preventDefault()
+        let body = new FormData()
+        body.append('rating', document.querySelector('[type="range"]').value)
+        body.append('text', document.querySelector('[cols="30"]').value)
+        body.append('id', userId)
+        body.append('restId', clickedEvtId)
+        reviewForm.classList.toggle('hidden')
+        axios.post('http://localhost/tomato/tomatoBackend/addReview.php', body)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
+        document.querySelector('[cols="30"]').value = ''
+    }, { once: true })
 }
 /***************************************************************************** */

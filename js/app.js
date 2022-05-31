@@ -13,6 +13,7 @@ const myEdit = document.querySelector('my-edit')
 const userImg = document.querySelector('#imgyaay')
 const userImgDsiplay = document.querySelector('[alt="user Image"]')
 const cat = document.querySelectorAll('[cat]')
+const profileCat = document.querySelectorAll('.profile-cat')
 const searchBar = document.querySelector('[placeholder="Search by Name"]')
 const logOut = document.querySelector('[logOut]')
 const cfilters = document.querySelector('.filters')
@@ -181,6 +182,20 @@ if (cat)
                 }).catch(err => console.log(err))
         })
 
+if (cat)
+    for (let c of cat)
+        c.addEventListener('click', (e) => {
+            axios.get(`http://localhost/tomato/tomatoBackend/getByCat.php?cat=${ e.target.innerText }`)
+                .then((res) => {
+                    let filteredRestros = []
+                    for (let i of res.data)
+                        if (i.status == 'active')
+                            filteredRestros.push(i)
+                    temRest = filteredRestros
+                    renderRestaurants(temRest)
+                }).catch(err => console.log(err))
+        })
+
 const clearFilters = () => {
     temRest = []
     searchBar.value = ''
@@ -191,12 +206,8 @@ if (cfilters)
 
 if (searchBar)
     searchBar.addEventListener('keyup', () => {
-        let arr
-        if (temRest)
-            arr = temRest
-        else arr = allRestaurants
         let result = []
-        for (let i of arr) {
+        for (let i of allRestaurants) {
             if (i.name.toLowerCase().includes(searchBar.value))
                 result.push(i)
         }
