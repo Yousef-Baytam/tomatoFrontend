@@ -18,6 +18,7 @@ const searchBar = document.querySelector('[placeholder="Search by Name"]')
 const logOut = document.querySelector('[logOut]')
 const cfilters = document.querySelector('.filters')
 const admin = document.querySelector('[admin]')
+let userReviews
 let sessionCookie
 let userId = 0
 let allRestaurants
@@ -71,7 +72,6 @@ if (review[0] != null)
 
 /* *************Navbar on scroll color toggler************ */
 document.addEventListener('scroll', () => {
-
     let scrollTop = window.pageYOffset
     if (scrollTop > 250)
         nav.classList.add('scrolled')
@@ -193,12 +193,18 @@ if (cat)
 /*****************Get User Reviews**************** */
 if (profileCat)
     for (let c of profileCat)
-        c.addEventListener('click', (e) => {
-            axios.get(`http://localhost/tomato/tomatoBackend/getReviews.php?id=${ userId }`)
-                .then((res) => {
-                    console.log(res)
-                }).catch(err => console.log(err))
+        c.addEventListener('click', () => {
+            AllReviews()
         })
+
+const AllReviews = () => {
+    axios.get(`http://localhost/tomato/tomatoBackend/getReviews.php?id=${ userId }`)
+        .then((res) => {
+            userReviews = res.data
+            console.log(res)
+        }).catch(err => console.log(err))
+}
+AllReviews()
 /*************************************************** */
 
 /*******************Clear Filters***************** */
