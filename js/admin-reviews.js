@@ -1,5 +1,6 @@
 let filterValue 
 let reviews = []
+let container
 
 window.onload = ()=>{
     filterValue = document.getElementById('filter-list').value
@@ -10,7 +11,7 @@ window.onload = ()=>{
 
 
 const fetchData = async ()=>{
-    
+    container = document.getElementsByClassName('reviews-list')[0];
     
     await axios.get('http://127.0.0.1/tomatobackend/getReviews.php').then(response=>{
         reviews = response.data
@@ -19,6 +20,8 @@ const fetchData = async ()=>{
     if(reviews.length > 0){
        
         showReviews()
+    }else{
+        container.innerHTML += `No Reviews Found`
     }
 }
 
@@ -29,7 +32,7 @@ function onFilterChange(e){
 }
 
 function showReviews(){
-    const container = document.getElementsByClassName('reviews-list')[0];
+    
     container.innerHTML = ``
     reviews.filter(review=>review.status === filterValue).map(review=>
         container.innerHTML +=`<review-item id="${review.id}" name="${review.name}" review-text="${review.review}" rate="${review.rating}" status="${review.status}"></review-item>`
