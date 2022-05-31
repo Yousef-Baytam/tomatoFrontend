@@ -17,6 +17,7 @@ const profileCat = document.querySelectorAll('.profile-cat')
 const searchBar = document.querySelector('[placeholder="Search by Name"]')
 const logOut = document.querySelector('[logOut]')
 const cfilters = document.querySelector('.filters')
+const admin = document.querySelector('[admin]')
 let sessionCookie
 let userId = 0
 let allRestaurants
@@ -86,13 +87,15 @@ const getUserData = (id) => {
         .then((res) => {
             if (res.data.response === 'User Not Found')
                 return false
-            if (res.data.status === 'suspended')
+            if (res.data.status !== 'active')
                 return false
             myNav.name = `${ res.data.name } ${ res.data.last }`
             myNav.imgSrc = res.data.profilePic
             const knownUser = document.querySelectorAll('[knownUser]')
             for (let i of knownUser)
                 i.classList.toggle('d-none')
+            if (res.data.type === 'admin')
+                admin.classList.toggle('d-non')
             if (myUser) {
                 myUser.name = res.data.name
                 myUser.lastName = res.data.last
@@ -185,7 +188,7 @@ if (cat)
 if (profileCat)
     for (let c of profileCat)
         c.addEventListener('click', (e) => {
-            axios.get(`http://localhost/tomato/tomatoBackend/getByCat.php?cat=${ e.target.innerText }`)
+            axios.get(`=${ e.target.innerText }`)
                 .then((res) => {
                     let filteredRestros = []
                     for (let i of res.data)

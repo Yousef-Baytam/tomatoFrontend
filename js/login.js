@@ -17,7 +17,7 @@ loginForm.addEventListener('submit', (e) => {
             console.log('it worked', res)
             let { response, user_id } = res.data
             if (!user_id) {
-                console.log('fuck you hacker')
+                console.log('User not found')
                 errorMsg.classList.remove('d-none')
                 return
             } else {

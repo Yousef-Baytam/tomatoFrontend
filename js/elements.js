@@ -49,7 +49,6 @@ const updateInfo = (id, n, l, e, p, loc, d) => {
 }
 
 /***********************Render cards plus review listeners*********************** */
-
 const renderRestaurants = (obj) => {
     conatiner.innerHTML = ''
     for (let i of obj) {
