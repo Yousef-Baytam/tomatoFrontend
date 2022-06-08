@@ -17,11 +17,11 @@ class Nav extends HTMLElement {
         <div>
             <div class='logo'>
             <img src="${ this.getAttribute('logoSrc') }" alt="">
-            <a href="http://localhost/tomato/tomatoFrontend/index.html">Tomato</a>
+            <a href="http://localhost/zomato/tomatoFrontend/index.html">Tomato</a>
                 
             </div>
             <div class='logo d-none' knownUser>
-                <a href="http://localhost/tomato/tomatoFrontend/views/restaurants.html">All restaurants</a>
+                <a href="http://localhost/zomato/tomatoFrontend/views/restaurants.html">All restaurants</a>
             </div>
         </div>
         <div>
@@ -33,7 +33,7 @@ class Nav extends HTMLElement {
                 <div img><img userimage src="${ this.getAttribute('imgSrc') ? this.getAttribute('imgSrc') : `../assets/blank-profile.webp` }" alt=""></div>
                 <div profile class='d-none'>
                 <div>
-                    <a href="/tomato/tomatoFrontend/views/profile.html">My profile</a>
+                    <a href="/zomato/tomatoFrontend/views/profile.html">My profile</a>
                 </div>
                 <div logOut>
                     log out
@@ -45,7 +45,7 @@ class Nav extends HTMLElement {
     <div class="form-bg hidden">
     <div class="steps-container">
         <div class="form-container">
-            <form action="/tomato/tomatoBackend/login.php" method="POST" class="form login-form">
+            <form action="/zomato/tomatoBackend/login.php" method="POST" class="form login-form">
                 <div>
                     <i class="fa-solid fa-xmark"></i>
                     <input type="Email" id='loginEmail' name="email" placeholder="Email" required>
@@ -59,16 +59,16 @@ class Nav extends HTMLElement {
             </form>
         </div>
         <div class="form-container translate">
-            <form action="/tomato/tomatoBackend/addUser.php" method="POST" class="form" new-account>
+            <form action="http://127.0.0.1:8000/api/add_user" method="POST" class="form" new-account>
                 <i class="fa-solid fa-xmark"></i>
                 <div>
                     <div>
                         <label dob-label for="first">First Name</label>
-                        <input type="text" name="first" placeholder="First Name" id='first' required>
+                        <input type="text" name="first_name" placeholder="First Name" id='first' required>
                     </div>
                     <div>
                         <label dob-label for="last">Last Name</label>
-                        <input type="text" name="last" placeholder="Last Name" id='last' required>
+                        <input type="text" name="last_name" placeholder="Last Name" id='last' required>
                     </div>
                 </div>
                 <div>
