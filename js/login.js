@@ -5,17 +5,23 @@ const pass = document.querySelector('#password')
 const errorMsg = document.querySelector('[not-found]')
 
 
-loginForm.addEventListener('submit', (e) => {
+loginForm.addEventListener('submit', async (e) => {
     e.preventDefault()
     let body = new FormData()
     body.append('email', em.value)
     body.append('password', pass.value)
     if (!loginForm.reportValidity())
         return
-    axios.post('http://localhost/tomato/tomatoBackend/login.php', body)
+    await fetch('http://127.0.0.1:8000/api/login', {
+        method: 'POST',
+        body: body,
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    })
         .then((res) => {
             console.log('it worked', res)
-            let { response, user_id } = res.data
+            let { user_id } = res.data
             if (!user_id) {
                 console.log('User not found')
                 errorMsg.classList.remove('d-none')
