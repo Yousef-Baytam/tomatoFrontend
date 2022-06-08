@@ -153,7 +153,7 @@ async function saveNewRestaurant() {
     await axios.post('/tomato/tomatoBackend/addRestaurant.php', form).then(response => {
         console.log(response.data)
         addModal.style.display = 'none';
-        // location.reload()
+        location.reload()
     })
 }
 async function editRest(id) {
